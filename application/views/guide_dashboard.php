@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Login/Registration</title>
+  <title>Guide Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -19,7 +19,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="navbar-brand">Welcome!</span>
+        <span class="navbar-brand">Welcome <?php echo $user['name']; ?>!</span>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -65,56 +65,7 @@
       ?>
     </div>
     <div class="container">
-      <div class="col-md-6">
-        <h3>Register</h3>
-        <form class='form-horizontal' roll='form' action='/users/register_action' method='post'>
-          <div class="form-group">
-            <label>Name: </label>
-            <input type="text" class="form-control" name="name" required>
-          </div>
-          <div class="form-group">
-            <label>Alias: </label>
-            <input type="text" class="form-control" name="alias" required>
-          </div>
-          <div class="form-group">
-            <label>Email: </label>
-            <input type="email" class="form-control" name="email" required>
-          </div>
-          <div class="form-group">
-            <label>Password: </label>
-            <P>*Password should be at least 8 characters.</p>
-            <input type="password" class="form-control" name="password" required>
-          </div>
-          <div class="form-group">
-            <label>Confirm PW: </label>
-            <input type="password" class="form-control" name="passwordconf" required>
-          </div>
-          <div class="form-group">
-            <label>Date of Birth: </label>
-            <input type="date" class="form-control" name="dob" required>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary">Register</button>
-          </div>
-        </form>
-      </div>
-      <div class="col-md-6">
-        <h3>Login</h3>
-        <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
-          <div class="form-group">
-            <label>Email: </label>
-            <input type="email" class="form-control" name="email" required>
-          </div>
-          <div class="form-group">
-            <label>Password: </label>
-            <input type="password" class="form-control" name="password" required>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary">Sign In</button>
-          </div>
-        </form>
-      </div>
-    </div> <!-- /container -->
+    </div>
   </div>
 </body>
 </html>

@@ -25,14 +25,13 @@ class User extends CI_Model{
 		$t = time();
 		$now = date("Y-m-d H:i:s",$t);
 		$encrypted_password = md5($now.$user['password']);
-		$query = "INSERT INTO users (name, alias, email, password, created_at, dob) VALUES (?,?,?,?,?,?)";
-		$values = array($user['name'], $user['alias'], $user['email'], $encrypted_password, $now, $user['dob']); 
+		$query = "INSERT INTO users (name, email, password, created_at, dob) VALUES (?,?,?,?,?)";
+		$values = array($user['name'], $user['email'], $encrypted_password, $now, $user['dob']); 
 		return $this->db->query($query, $values);
 	} 
 
 	function validate($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
-		$this->form_validation->set_rules('alias', 'Alias', 'trim|max_length[45]|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[255]|is_unique[users.email]');
 		$this->form_validation->set_message('email', 'The email has been registered by another user!');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[45]|matches[passwordconf]');

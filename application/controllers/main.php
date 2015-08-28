@@ -7,6 +7,6 @@ class Main extends CI_Controller {
 		parent::__construct();
 	}
 	public function index(){
-		$this->load->view('login');
+		$this->load->view('user_login');
 	}
 }
