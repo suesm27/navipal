@@ -54,7 +54,7 @@
     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
   </div>
   <!-- section 2 -->
-  <div class="section-container bg-color2">
+  <div class="section-container bg-color2" id="section2">
     <div class="icon-container"><i class="flaticon-plussign1"></i></div>
     <h1>choose a navi<span>pal</span></h1>
     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
