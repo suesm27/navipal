@@ -56,6 +56,16 @@ class Guides extends CI_Controller {
 		$this->load->view('show_guides', array("guides" => $guides));
 	}
 
+	public function get_all_guides_locations(){
+		$data['locations'] = $this->Guide->get_all_guides_locations();
+		echo json_encode($data);
+	}
+
+	public function get_all_guides_names(){
+		$data['guides_names'] = $this->Guide->get_all_guides_names();
+		echo json_encode($data);
+	}
+
 	public function image_upload()
 	{
 		$config['upload_path'] = './uploads/';

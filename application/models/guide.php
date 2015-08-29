@@ -23,6 +23,14 @@ class Guide extends CI_Model{
 		return $this->db->query("SELECT * FROM guides WHERE id = ?", array($id))->row_array();
 	}
 
+	function get_all_guides_locations(){
+		return $this->db->query("SELECT location FROM guides")->result_array();
+	}
+
+	function get_all_guides_names(){
+		return $this->db->query("SELECT name FROM guides")->result_array();
+	}
+
 	function add_guide($guide)
 	{
 		date_default_timezone_set("America/Los_Angeles");
