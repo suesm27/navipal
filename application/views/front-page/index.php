@@ -4,7 +4,7 @@
 <?php $this->load->view("partials/navigation"); ?>
 <!-- cover -->
 <div class="jumbotron front-cover">
-  <img src="assets/images/cover1.jpg" class="img-responsive" alt="Traveler taking a photo">
+  <img src="../assets/images/cover1.jpg" class="img-responsive" alt="Traveler taking a photo">
   <div class="search-container">
     <form  action="" method="get" id="search">
       <input type="search" name="search" placeholder="Search the city..." class="search">
