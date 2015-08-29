@@ -8,60 +8,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" 
 type="text/javascript"></script>
-<script type="text/javascript">
-var addresses = [];
-var guides_names = [];
-$(document).ready(function(){
-  $.get('/guides/get_all_guides_locations', function(res) {
-    console.log(res);
-    for(var i=0; i<res.locations.length; i++){
-      addresses.push(res.locations[i].location);
-    }
-  }, "json");
-  $.get('/guides/get_all_guides_names', function(res) {
-    console.log(res);
-    for(var i=0; i<res.guides_names.length; i++){
-      guides_names.push(res.guides_names[i].name);
-    }
-  }, "json");
-  $('form').submit(function(){
-    return false;
-  });
-});
-function initialize(){
-  console.log(guides_names);
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
-  var geocoder = new google.maps.Geocoder();
-  var infowindow = new google.maps.InfoWindow();
-  var coordinate;
-  for(var i=0; i<addresses.length; i++){
-    geocoder.geocode({'address': addresses[i]}, function(results, status) {
-      if (status === google.maps.GeocoderStatus.OK) {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location,
-        });
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function() {
-            //somehow the value of "i" is messed up inside here, it's always "5"
-            //infowindow.setContent(guides_names[0]); //that works and sets the content to the first element in the array
-            infowindow.setContent(guides_names[i]);
-            infowindow.open(map, marker);
-          }
-        })(marker, i));
-      } 
-      else {
-        alert('Geocode was not successful for the following reason: ' + status);
-     }
-   });
-  }
-}
-google.maps.event.addDomListener(window, "load", initialize);
-</script>
+<script type="text/javascript" src="/assets/js/maps.js"></script>
 </style>
 <link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
@@ -84,8 +31,8 @@ google.maps.event.addDomListener(window, "load", initialize);
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/main">Login</a></li>
       </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
+    </div>
+  </div>
 </nav>
 <div class="main-container">
   <div class="container">
