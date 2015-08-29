@@ -11,6 +11,15 @@
 /*blue*/
 .bg-color1{
 	background-color: #42b8dd;
+
+	
+}
+
+.btn-2 {
+    color: #fff;
+    background-color: #f5bd25;
+    border-color: #2e6da4;
+    border-radius: 0px;
 }
 
 .text-color1{
@@ -43,7 +52,19 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	font-family: 'Open Sans', sans-serif;
 }
 
+/*buttons*/
 
+.btn-1 {
+    color: #fff;
+    background-color: #138dd8;
+    border-color: #42b8dd;
+    border-radius: 0px;
+
+}
+
+.float-right{
+	float: right;
+}
 
 
 /*containers*/
@@ -71,14 +92,45 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	font-size: 1.2em;
 }
 
+/*mobile menu*/
+.navbar-default .navbar-toggle{
+	border-color: rgba(255,255,255,0);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+
+}
+
+/*modal*/
+
+.modal-header {
+	padding: 20px;
+	color: #fff;
+	border-bottom: none;
+}
+
+.modal-body{
+	padding: 50px;
+}
+.modal-content {
+
+	background-color: #42b8dd;
+	border-radius: 0px;
+}
+
+.modal-footer{
+	border-top: none;
+} 
+
 
 /*cover*/
 .front-cover{
-padding: 0px;
-margin: 0 auto;
-/*background-color: green;*/
-height: 600px;
-z-index: -1;
+	padding: 0px;
+	margin: 0 auto;
+	/*background-color: green;*/
+	height: 600px;
+	z-index: -1;
 
 
 
@@ -107,6 +159,22 @@ input[type="search"]{
 	padding: 15px;
 	font-size: 2.3em;
 	color: #2d2c2c;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"]{
+	border: none;
+	width: 100%;
+	height: 60px;
+	background-color: #fff;
+	padding: 15px;
+	color: #42b8dd;
+	font-size: 1.5em;
+}
+
+label{
+	color: #fff;
 }
 
 button.explore{
@@ -166,31 +234,31 @@ button.explore:hover{
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
 	font-family: Flaticon;
-        font-size: 40px;
-font-style: normal;
-/*margin-left: 20px;*/
-}.flaticon-magnifier72:before {
-	content: "\e000";
-	color: #2d2c2c; 
-}
-.flaticon-plussign1:before {
-	content: "\e001";
-	color: #42b8dd;
-}
-.flaticon-travel25:before {
-	content: "\e002";
-	color: #f5bd25
-}
+	font-size: 40px;
+	font-style: normal;
+	/*margin-left: 20px;*/
+	}.flaticon-magnifier72:before {
+		content: "\e000";
+		color: #2d2c2c; 
+	}
+	.flaticon-plussign1:before {
+		content: "\e001";
+		color: #42b8dd;
+	}
+	.flaticon-travel25:before {
+		content: "\e002";
+		color: #f5bd25
+	}
 
-/*footer*/
-.footer{
-	background-color: #42b8dd;
-	padding: 20px;
-	margin: 0 auto;
-	text-align: center;
-	line-height: 12px;
+	/*footer*/
+	.footer{
+		background-color: #42b8dd;
+		padding: 20px;
+		margin: 0 auto;
+		text-align: center;
+		line-height: 12px;
 
-}
+	}
 
 
 

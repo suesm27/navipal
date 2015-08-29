@@ -13,7 +13,7 @@
  		<div id="navbar" class="navbar-collapse collapse">
 
  			<ul class="nav navbar-nav navbar-right">
- 				<li><a href="#">Login</a></li>
+ 				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
  				<li><a href="#">Sign up </a></li>
 
  			</ul>
