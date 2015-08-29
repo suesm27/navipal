@@ -13,14 +13,30 @@
 	background-color: #42b8dd;
 }
 
+.text-color1{
+	color: #42b8dd;
+}
+
 /*yellow*/
 .bg-color2{
 	background-color: #f5bd25;
+}
+.text-color2{
+	color: #f5bd25;
 }
 
 /*dark gery*/
 .bg-color3{
 	background-color: #2d2c2c;
+}
+
+.text-color3{
+	color: #2d2c2c;
+}
+
+/*white*/
+.text-color4{
+	color: #fff;
 }
 
 h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
@@ -155,7 +171,7 @@ font-style: normal;
 /*margin-left: 20px;*/
 }.flaticon-magnifier72:before {
 	content: "\e000";
-	color: #2d2c2c;
+	color: #2d2c2c; 
 }
 .flaticon-plussign1:before {
 	content: "\e001";
@@ -165,6 +181,17 @@ font-style: normal;
 	content: "\e002";
 	color: #f5bd25
 }
+
+/*footer*/
+.footer{
+	background-color: #42b8dd;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 12px;
+
+}
+
 
 
 
