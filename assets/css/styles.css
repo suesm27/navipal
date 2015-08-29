@@ -1,0 +1,127 @@
+/*navigation*/
+
+/*containers*/
+.search-container{
+	width: 100%;
+	margin: 20px auto;
+	text-align: center;
+	/*background-color: green;*/
+	position: relative;
+	bottom: 250px;
+
+}
+
+.section-container{
+	width: 100%;
+	padding: 20px;
+}
+
+.icon-container{
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	background-color: rgba(255,255,255, 0.5);
+	text-align: center;
+	margin: 100px auto 0px;
+}
+
+/*navigation*/
+
+.navbar-default .navbar-nav>li>a/*login styles*/{
+
+	color: #42b8dd;
+	font-size: 1.2em;
+}
+
+
+/*cover*/
+.front-cover{
+padding: 0px;
+margin: 0 auto;
+position: relative;
+bottom: 50px;
+/*background-color: green;*/
+
+
+
+}
+
+.jumbotron{
+	max-height: 560px;
+}
+
+/*inputs*/
+input[type="search"]{
+	height: 80px;
+	width: 65%;
+	border:2px solid #42b8dd;
+	border-radius: 50px;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 15px;
+	font-size: 2.3em;
+	color: #2d2c2c;
+}
+
+button.explore{
+	display: block;
+	text-align: center;
+	margin: 20px auto;
+	color: #fff;
+	font-size: 3.8em;
+	cursor: pointer;
+
+}
+
+button.explore:hover{
+	color: #42b8dd;
+}
+
+/*sections*/
+.section-container h1{
+	font-size: 9.0em;
+	color: #fff;
+	text-align: center;
+}
+
+.section-container h1 span{
+	color: #2d2c2c;
+}
+
+.section-container p{
+	font-size: 1.4em;
+	color: #fff;
+	text-align: center;
+	width: 60%;
+	margin: 10px auto 100px;
+}
+
+
+
+
+
+/*general*/
+.no-margin{
+	margin: 0px;
+}
+
+.no-bg{
+	background-color: rgba(0,0,0,0);
+	border-color:rgba(0,0,0,0) ;
+}
+
+/*blue*/
+.bg-color1{
+	background-color: #42b8dd;
+}
+
+/*yello*/
+.bg-color2{
+	background-color: #f5bd25;
+}
+
+
+
+
+
+
+

@@ -2,5 +2,6 @@
 
 $route['default_controller'] = "main";
 $route['404_override'] = '';
+$route['home'] = "main/index";
 
 //end of routes.php
