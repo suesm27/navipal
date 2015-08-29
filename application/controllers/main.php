@@ -10,4 +10,7 @@ class Main extends CI_Controller {
 
 		$this->load->view('user_login');
 	}
+	public function show_home(){
+		$this->load->view('front-page/index');
+	}
 }
