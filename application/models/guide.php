@@ -14,6 +14,10 @@ class Guide extends CI_Model{
 		}
 	}
 
+	function get_all_guides(){
+		return $this->db->query("SELECT * FROM guides")->result_array();
+	}
+
 	function get_guide_by_id($id)
 	{
 		return $this->db->query("SELECT * FROM guides WHERE id = ?", array($id))->row_array();

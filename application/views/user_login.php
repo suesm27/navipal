@@ -118,6 +118,9 @@
     <div class="container">
       <a href='/guides'>Interested in being a guide?</a>
     </div>
+    <div class="container">
+      <a href='/guides/show_guides'>Browse guides</a>
+    </div>
   </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Show All Guides</title>
+  <title>Guide Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -30,7 +30,7 @@
           <li></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/main">Login</a></li>
+          <li></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div><!--/.container -->
@@ -38,23 +38,7 @@
   <div class="main-container">
     <div class="container">
       <?php 
-        foreach($guides as $guide){
-          echo "<h1>{$guide['name']}</h1>";
-          echo "<img src='/uploads/{$guide['image']}'>";
-          echo "<h4>\"{$guide['description']}\"</h4>";
-          echo "<h4>Rating: ";
-          for ($i = 0; $i < $guide['rating']; $i++)
-                         {
-                             echo "<img src='/assets/star.png' height='25' width='25'>";
-                         }
-                         $star = 5 - $guide['rating'];
-                         for ($i = 0; $i < $star; $i++)
-                         {
-                             echo "<img src='/assets/blank.png' height='25' width='25'>";
-                         }
-          echo "</h4>";
-          echo "<h4>Price: \${$guide['price']}/night</h4>";
-        }
+            
        ?>
     </div>
   </div>

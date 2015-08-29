@@ -48,7 +48,12 @@ class Guides extends CI_Controller {
 	public function view_profile($guide_id)
 	{
 		$guide = $this->Guide->get_guide_by_id($guide_id);
-		$this->load->view('profile', array("guide" => $guide));
+		$this->load->view('guide_profile', array("guide" => $guide));
+	}
+
+	public function show_guides(){
+		$guides = $this->Guide->get_all_guides();
+		$this->load->view('show_guides', array("guides" => $guides));
 	}
 
 	public function image_upload()
