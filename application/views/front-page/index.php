@@ -1,3 +1,4 @@
+<body>
 <!-- header -->
 <?php $this->load->view("partials/header"); ?>
 <!-- navigation -->
@@ -14,16 +15,23 @@
 </div>
 <!-- section 1 -->
 <div class="section-container bg-color1">
-  <div class="icon-container"></div>
+  <div class="icon-container"><i class="flaticon-magnifier72"></i> </div>
   <h1>explore</h1>
   <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
 </div>
 <!-- section 2 -->
 <div class="section-container bg-color2">
-  <div class="icon-container"></div>
+  <div class="icon-container"><i class="flaticon-plussign1"></i></div>
   <h1>choose a navi<span>pal</span></h1>
   <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
 </div>
+<!-- section 3 -->
+<div class="section-container bg-color3">
+  <div class="icon-container"><i class="flaticon-travel25"></i></div>
+  <h1>happy arrivals</span></h1>
+  <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
+</div>
+
 
 
 
