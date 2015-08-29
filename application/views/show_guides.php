@@ -3,15 +3,45 @@
   <meta charset="UTF-8">
   <title>Show All Guides</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script>
+  function initMap() {
+   var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 11,
+     center: {lat: 37.376818, lng: -121.912378}
+   });
+   var geocoder = new google.maps.Geocoder();
+
+   document.getElementById('submit').addEventListener('click', function() {
+     geocodeAddress(geocoder, map);
+   });
+ }
+
+ function geocodeAddress(geocoder, resultsMap) {
+   var address = document.getElementById('address').value;
+   geocoder.geocode({'address': address}, function(results, status) {
+     if (status === google.maps.GeocoderStatus.OK) {
+       resultsMap.setCenter(results[0].geometry.location);
+       var marker = new google.maps.Marker({
+         map: resultsMap,
+         position: results[0].geometry.location
+       });
+     } else {
+       alert('Geocode was not successful for the following reason: ' + status);
+     }
+   });
+ }
+ </script>
+ <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"
+       async defer></script>
  <style>
  .navbar-brand {
   padding: 0;
- }
- </style>
- <link rel="stylesheet" type="text/css" href="/assets/style.css">
+}
+</style>
+<link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,26 +67,35 @@
   </nav>
   <div class="main-container">
     <div class="container">
-      <?php 
+      <div id="panel">
+      <input id="address" type="textbox" value="San Jose, CA">
+      <!-- <input id="submit" type="button" value="Geocode"> -->
+      <button type="submit" id="submit" class="btn btn-primary" value="Geocode">Search!</button>
+      </div>
+      <div class="col-md-6">
+        <?php 
         foreach($guides as $guide){
           echo "<h1>{$guide['name']}</h1>";
           echo "<img src='/uploads/{$guide['image']}'>";
           echo "<h4>\"{$guide['description']}\"</h4>";
           echo "<h4>Rating: ";
           for ($i = 0; $i < $guide['rating']; $i++)
-                         {
-                             echo "<img src='/assets/star.png' height='25' width='25'>";
-                         }
-                         $star = 5 - $guide['rating'];
-                         for ($i = 0; $i < $star; $i++)
-                         {
-                             echo "<img src='/assets/blank.png' height='25' width='25'>";
-                         }
-          echo "</h4>";
-          echo "<h4>Price: \${$guide['price']}/night</h4>";
-        }
+          {
+           echo "<img src='/assets/star.png' height='25' width='25'>";
+         }
+         $star = 5 - $guide['rating'];
+         for ($i = 0; $i < $star; $i++)
+         {
+           echo "<img src='/assets/blank.png' height='25' width='25'>";
+         }
+         echo "</h4>";
+         echo "<h4>Price: \${$guide['price']}/night</h4>";
+       }
        ?>
+     </div>
+    <div class="col-md-6" id="map">
     </div>
   </div>
+</div><!--/.main-container -->
 </body>
 </html>

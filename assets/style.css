@@ -11,3 +11,14 @@
 	max-width: 500px;
 	
 }
+
+#map {
+       height: 100%;
+     }
+#panel {
+ top: 10px;
+ left: 25%;
+ z-index: 5;
+ padding: 5px;
+ text-align: center;
+}
