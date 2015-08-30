@@ -1,8 +1,8 @@
-  <!-- header -->
-  <?php $this->load->view("partials/header"); ?>
+  <!-- header-login -->
+  <?php $this->load->view("partials/header-login"); ?>
+<body>
   <!-- navigation -->
   <?php $this->load->view("partials/navigation"); ?>
-<body>
 
   <div class="bg-color2 margin-top-Negative51 padding-top-60">
     <div class="main-container">

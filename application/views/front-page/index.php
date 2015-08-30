@@ -1,6 +1,6 @@
-<body>
   <!-- header -->
   <?php $this->load->view("partials/header"); ?>
+<body>
   <!-- navigation -->
   <?php $this->load->view("partials/navigation"); ?>
   
