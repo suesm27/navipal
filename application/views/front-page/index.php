@@ -3,7 +3,7 @@
   <?php $this->load->view("partials/header"); ?>
   <!-- navigation -->
   <?php $this->load->view("partials/navigation"); ?>
-  <!-- Modal -->
+  
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -11,19 +11,23 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h3 class="modal-title">Login</h3>
-        </div>
-        <div class="modal-body">
 
-          <form class="form-horizontal" roll='form' action='/guides/signin_action' method='post'>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h3 class="modal-title">Login</h3>
+          <!-- login succes and error message will go here -->
+          
+          </div>
+          <div class="modal-body">
+
+           <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
             <div class="form-group">
               <label>Email: </label>
-              <input type="email" name="email" required>
+              <input type="email" class="form-control" name="email" required>
             </div>
             <div class="form-group">
               <label>Password: </label>
-              <input type="password" name="password" required>
+              <input type="password" class="form-control" name="password" required>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
@@ -40,8 +44,8 @@
   <!-- scroll to navigation -->
   <div class="regular-container">
     <div class="scroll-nav-container" >
-    <a href="#" id="ScrollToSectionHome"><span class="scroll-nav">1</span></a>
-     <a href="#" id="ScrollToSection1"> <span class="scroll-nav">2</span></a>
+      <a href="#" id="ScrollToSectionHome"><span class="scroll-nav">1</span></a>
+      <a href="#" id="ScrollToSection1"> <span class="scroll-nav">2</span></a>
       <a href="#" id="ScrollToSection2"><span class="scroll-nav">3</span></a>
       <a href="#" id="ScrollToSection3"><span class="scroll-nav">4</span></a>
     </div>
@@ -86,3 +90,5 @@
 
   <!-- footer -->
   <?php $this->load->view("partials/footer"); ?>
+
+

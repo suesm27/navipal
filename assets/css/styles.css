@@ -26,6 +26,23 @@
 	color: #42b8dd;
 }
 
+.right-margin{
+	margin-right: 10px;
+}
+
+.left-margin{
+	margin-left: 10px;
+}
+
+.margin-top-Negative51{
+	margin-top: -51px;
+}
+
+.padding-top-60{
+	padding-top: 60px;
+}
+
+
 /*yellow*/
 .bg-color2{
 	background-color: #f5bd25;
@@ -186,7 +203,8 @@ input[type="search"]{
 
 input[type="email"],
 input[type="password"],
-input[type="text"]{
+input[type="text"],
+input[type="date"]{
 	border: none;
 	width: 100%;
 	height: 60px;
@@ -195,6 +213,8 @@ input[type="text"]{
 	color: #42b8dd;
 	font-size: 1.5em;
 }
+
+
 
 label{
 	color: #fff;
