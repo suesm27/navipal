@@ -1,11 +1,43 @@
-<body>
   <!-- header -->
   <?php $this->load->view("partials/header"); ?>
   <!-- navigation -->
   <?php $this->load->view("partials/navigation"); ?>
+<body>
 
   <div class="bg-color2 margin-top-Negative51 padding-top-60">
     <div class="main-container">
+     <!--Form error and success messages -->
+    <div class="container">
+      <?php 
+      if ($this->session->flashdata('success'))
+      {
+        ?>
+        <div class="alert alert-success">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Nice!</strong>
+          <?php 
+          foreach($this->session->flashdata('success') as $s){
+            echo $s;
+          }
+          ?>
+        </div>
+        <?php
+      }
+      if ($this->session->flashdata('errors'))
+      {
+        ?>
+        <div class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>
+          <?php 
+          foreach($this->session->flashdata('errors') as $error){
+            echo $error;
+          }
+          ?>
+        </div>
+        <?php
+      }
+      ?>
 
       <!-- registration form -->
       <div class="container">
@@ -70,38 +102,7 @@
         </div>
       </div>
     </div>
-    <!--Form error and success messages -->
-    <div class="container">
-      <?php 
-      if ($this->session->flashdata('success'))
-      {
-        ?>
-        <div class="alert alert-success">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Nice!</strong>
-          <?php 
-          foreach($this->session->flashdata('success') as $s){
-            echo $s;
-          }
-          ?>
-        </div>
-        <?php
-      }
-      if ($this->session->flashdata('errors'))
-      {
-        ?>
-        <div class="alert alert-danger">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Error!</strong>
-          <?php 
-          foreach($this->session->flashdata('errors') as $error){
-            echo $error;
-          }
-          ?>
-        </div>
-        <?php
-      }
-      ?>
+   
     </div> <!--main container close-->
   </div>  <!--color container close-->
   <!-- footer -->
