@@ -37,6 +37,15 @@
 
     </div>
   </div>
+  <!-- scroll to navigation -->
+  <div class="regular-container">
+    <div class="scroll-nav-container" >
+    <a href="#" id="ScrollToSectionHome"><span class="scroll-nav">1</span></a>
+     <a href="#" id="ScrollToSection1"> <span class="scroll-nav">2</span></a>
+      <a href="#" id="ScrollToSection2"><span class="scroll-nav">3</span></a>
+      <a href="#" id="ScrollToSection3"><span class="scroll-nav">4</span></a>
+    </div>
+  </div>
   <!-- cover -->
   <div class="jumbotron ">
     <!-- <img src="../assets/images/cover1.jpg" class="img-responsive" alt="Traveler taking a photo"> -->
@@ -48,7 +57,7 @@
     </div>
   </div>
   <!-- section 1 -->
-  <div class="section-container bg-color1">
+  <div class="section-container bg-color1" id="section1">
     <div class="icon-container"><i class="flaticon-magnifier72"></i> </div>
     <h1>explore</h1>
     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
@@ -60,7 +69,7 @@
     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
   </div>
   <!-- section 3 -->
-  <div class="section-container bg-color3">
+  <div class="section-container bg-color3" id="section3">
     <div class="icon-container"><i class="flaticon-travel25"></i></div>
     <h1>happy arrivals</span></h1>
     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.</p>
