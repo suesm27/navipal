@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><?php echo $guide['name']; ?> Profile</title>
+  <title><?php echo $user['name']; ?> Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -37,26 +37,11 @@
   </nav>
   <div class="main-container">
     <div class="container">
-      <h1><?php echo "{$guide['name']}'s profile"; ?></h1>
-      <h3>Name: <?php echo $guide['name']; ?></h3>
-      <?php echo "<img src='/uploads/{$guide['image']}'>"; ?>
-      <h4>Email: <?php echo $guide['email']; ?></h4>
-      <h4>Date of Birth: <?php echo $guide['dob']; ?></h4>
-      <?php
-      echo "<h4>Rating: ";
-      for ($i = 0; $i < $guide['rating']; $i++)
-      {
-        echo "<img src='/assets/star.png' height='25' width='25'>";
-      }
-      $star = 5 - $guide['rating'];
-      for ($i = 0; $i < $star; $i++)
-      {
-        echo "<img src='/assets/blank.png' height='25' width='25'>";
-      }
-      echo "</h4>";
-      echo "<h4>Price: \${$guide['price']}/night</h4>";
-      echo "<h4>Location: {$guide['location']}</h4>";
-     ?>
+      <h1><?php echo "{$user['name']}'s profile"; ?></h1>
+      <h3>Name: <?php echo $user['name']; ?></h3>
+      <h3>Email: <?php echo $user['email']; ?></h3>
+      <h3>Alias: <?php echo $user['alias']; ?></h3>
+      <h3>Date of Birth: <?php echo $user['dob']; ?></h3>
     </div>
   </div>
 </body>

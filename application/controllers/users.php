@@ -45,10 +45,15 @@ class Users extends CI_Controller {
 		}
 	}
 
+	public function show_users(){
+		$users = $this->User->get_all_users();
+		$this->load->view('show_users', array("users" => $users));
+	}
+
 	public function view_profile($user_id)
 	{
 		$user = $this->User->get_user_by_id($user_id);
-		$this->load->view('profile', array("user" => $user));
+		$this->load->view('user_profile', array("user" => $user));
 	}
 
 	public function logoff()

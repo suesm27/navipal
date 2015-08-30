@@ -122,6 +122,9 @@
       <a href='/guides/show_guides'>Browse guides</a>
     </div>
     <div class="container">
+      <a href='/users/show_users'>Browse users</a>
+    </div>
+    <div class="container">
       <a href='/main/show_home'>Home page</a>
     </div>
     <div class="container">

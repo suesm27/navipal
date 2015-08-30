@@ -14,6 +14,10 @@ class User extends CI_Model{
 		}
 	}
 
+	function get_all_users(){
+		return $this->db->query("SELECT * FROM users")->result_array();
+	}
+
 	function get_user_by_id($id)
 	{
 		return $this->db->query("SELECT * FROM users WHERE id = ?", array($id))->row_array();
