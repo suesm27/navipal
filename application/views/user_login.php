@@ -124,6 +124,9 @@
     <div class="container">
       <a href='/main/show_home'>Home page</a>
     </div>
+    <div class="container">
+      <a href='/reservations'>Show Reservations</a>
+    </div>
   </div>
 </body>
 </html>
