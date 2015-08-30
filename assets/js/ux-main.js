@@ -17,7 +17,7 @@ $(document).ready(function(){
 		    }, 600);
 		});
 	}
-
+	// scrollToSection function call
 	scrollTosection(gotoSection1,section1 );
 	scrollTosection(gotoSection2,section2 );
 	scrollTosection(gotoSection3,section3 );
