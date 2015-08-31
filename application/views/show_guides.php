@@ -63,7 +63,9 @@ type="text/javascript"></script>
      }
      ?>
    </div>
-   <div class="col-md-6" id="map">
+   <div class="col-md-6">
+   <div id="map"><!--do not style this div-->
+   </div>
    </div>
  </div>
 </div><!--/.main-container -->
