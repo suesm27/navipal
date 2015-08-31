@@ -8,7 +8,7 @@
   <div id="panel" class="bg-color3 margin-top-Negative51 padding-top-60">
     <input id="address" type="textbox" value="San Jose, CA">
     <!-- <input id="submit" type="button" value="Geocode"> -->
-    <button type="submit" id="submit" class="explore no-bg" value="Geocode">explore</button>
+    <button type="submit" id="submit" class="explore-small no-bg" value="Geocode">explore</button>
   </div>
   <div class="">
     <div class="guides-container bg-color2">
@@ -39,4 +39,3 @@
    </div>
  </div>
 
-<?php $this->load->view("partials/footer"); ?>

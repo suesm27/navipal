@@ -122,19 +122,23 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 }
 
 .guides-container{
-	width: 55%;
-	display: inline-block;
-	vertical-align: top;
-	padding: 45px;
-	height: 700px;
-	overflow: scroll;
+	width: 65%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 45px;
+    height: 476px;
+    overflow: scroll;
+    margin: 0px;
+    margin-right: -8px;
 	
 }
 
 .map-container{
-	width: 44%;
+	width: 35%;
 	display: inline-block;
 	vertical-align: top;
+	height: 476px;
+	margin: 0px;
 }
 
 
@@ -252,6 +256,16 @@ button.explore{
 	margin: 20px auto 0px;
 	color: #fff;
 	font-size: 3.8em;
+	cursor: pointer;
+
+}
+
+button.explore-small{
+	display: block;
+	text-align: center;
+	margin: 20px auto 0px;
+	color: #fff;
+	font-size: 3.0em;
 	cursor: pointer;
 
 }

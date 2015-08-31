@@ -19,7 +19,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="navbar-brand">Welcome <?php echo $user['name']; ?>!</span>
+        <span class="navbar-brand">Welcome <?php echo $this->session->userdata['name']; ?>!</span>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -65,6 +65,26 @@
       ?>
     </div>
     <div class="container">
+      <h1><?php echo "{$guide['name']}'s profile"; ?></h1>
+      <h3>Name: <?php echo $guide['name']; ?></h3>
+      <?php echo "<img src='/uploads/{$guide['image']}'>"; ?>
+      <h4>Email: <?php echo $guide['email']; ?></h4>
+      <h4>Date of Birth: <?php echo $guide['dob']; ?></h4>
+      <?php
+      echo "<h4>Rating: ";
+      for ($i = 0; $i < $guide['rating']; $i++)
+      {
+        echo "<img src='/assets/star.png' height='25' width='25'>";
+      }
+      $star = 5 - $guide['rating'];
+      for ($i = 0; $i < $star; $i++)
+      {
+        echo "<img src='/assets/blank.png' height='25' width='25'>";
+      }
+      echo "</h4>";
+      echo "<h4>Price: \${$guide['price']}/night</h4>";
+      echo "<h4>Location: {$guide['location']}</h4>";
+     ?>
     </div>
   </div>
 </body>
