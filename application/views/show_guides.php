@@ -11,30 +11,40 @@
     <button type="submit" id="submit" class="explore-small no-bg" value="Geocode">explore</button>
   </div>
   <div class="">
-    <div class="guides-container bg-color2">
+    <div class="guides-container bg-color2 inner-shadow">
       <?php 
       foreach($guides as $guide){
-        
-        echo "<img class='profile-photo' width='124' height='125' src='/uploads/{$guide['image']}'>";
-        echo "<h2><a href='/guides/view_profile/{$guide['id']}'>{$guide['name']}</a></h2>";
-        // star rating
-        
-        for ($i = 0; $i < $guide['rating']; $i++)
-        {
-         echo "<img src='/assets/star.png' height='25' width='25'>";
-       }
-       $star = 5 - $guide['rating'];
-       for ($i = 0; $i < $star; $i++)
-       {
-         echo "<img src='/assets/blank.png' height='25' width='25'>";
-       }
-       // star rating ends
-      
-        echo "<h4>\"{$guide['description']}\"</h4>";
-       echo "<h4>Price: \${$guide['price']}/night</h4>";
-       echo "<h4>{$guide['location']}</h4>";
-     }
-     ?>
+?>
+        <!-- Profile image -->
+      <img class='profile-photo' width='125' height='125' src='/uploads/<?php echo $guide['image'];?>'>
+      <!-- name -->
+      <h2 class="guide-name"><a class="text-color4" href='/guides/view_profile/<?php echo $guide['id']?>;'><?php echo $guide['name'];?></a></h2>
+        <!-- star rating -->
+              <div class="margin-bottom-45">
+      <?php        
+              for ($i = 0; $i < $guide['rating']; $i++)
+              {
+      ?>
+                <span class="glyphicon glyphicon-star text-color2a"></span>
+      <?php    }
+             $star = 5 - $guide['rating'];
+             for ($i = 0; $i < $star; $i++)
+             {
+      ?>
+              <span class="glyphicon glyphicon-star-empty text-color2a"></span>
+      <?php
+             }
+      ?>
+      </div>
+
+       
+      <!-- description -->
+        <!-- <h4 class="text-color4"><?php echo $guide['description'];?></h4> -->
+       <!-- <h4>Price: \<?php echo $guide['price'];?>/night</h4> -->
+       <h4><?php echo $guide['location'];?></h4>
+<?php 
+      }
+?>
    </div>
    <div class="map-container">
      <div id="map"><!--do not style this div-->

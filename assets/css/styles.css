@@ -12,6 +12,12 @@
 	display: inline-block;
 }
 
+.inner-shadow{
+	-webkit-box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
+	-moz-box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
+	box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
+}
+
 
 
 /*blue*/
@@ -22,10 +28,10 @@
 }
 
 .btn-2 {
-    color: #fff;
-    background-color: #f5bd25;
-    border-color: #2e6da4;
-    border-radius: 0px;
+	color: #fff;
+	background-color: #f5bd25;
+	border-color: #2e6da4;
+	border-radius: 0px;
 }
 
 .text-color1{
@@ -47,6 +53,9 @@
 .padding-top-60{
 	padding-top: 60px;
 }
+.margin-bottom-45{
+	margin-bottom: 45px;
+}
 
 
 /*yellow*/
@@ -57,6 +66,10 @@
 	color: #f5bd25;
 }
 
+/*yellow 2*/
+.text-color2a{
+	color: #ffe100;
+}
 /*dark gery*/
 .bg-color3{
 	background-color: #2d2c2c;
@@ -78,10 +91,10 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 /*buttons*/
 
 .btn-1 {
-    color: #fff;
-    background-color: #138dd8;
-    border-color: #42b8dd;
-    border-radius: 0px;
+	color: #fff;
+	background-color: #138dd8;
+	border-color: #42b8dd;
+	border-radius: 0px;
 
 }
 
@@ -123,14 +136,15 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 
 .guides-container{
 	width: 65%;
-    display: inline-block;
-    vertical-align: top;
-    padding: 45px;
-    height: 476px;
-    overflow: scroll;
-    margin: 0px;
-    margin-right: -8px;
-    text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	padding: 45px;
+	height: 476px;
+	overflow: scroll;
+	margin: 0px;
+	margin-right: -8px;
+	text-align: center;
+
 	
 }
 
@@ -346,37 +360,42 @@ button.explore:hover{
 
 	/**********************GUIDES PAGE********************/
 	.main-container {
-	margin-top: 70px;
-}
+		margin-top: 70px;
+	}
 
 /*.form-horizontal, .alert{
 	max-width: 300px;
 	margin-left: 15px;
-}*/
+	}*/
 
-.table {
-	max-width: 500px;
-	
-}
+	.table {
+		max-width: 500px;
 
-#map {
-       height: 100%;
-     }
-#panel {
- top: 10px;
- left: 25%;
- z-index: 5;
- /*padding: 5px;*/
- text-align: center;
-}
+	}
 
-.navbar-brand {
-  padding: 0;
-}
+	#map {
+		height: 100%;
+	}
+	#panel {
+		top: 10px;
+		left: 25%;
+		z-index: 5;
+		/*padding: 5px;*/
+		text-align: center;
+	}
 
-.profile-photo{
-	border-radius: 50%;
-}
+	.navbar-brand {
+		padding: 0;
+	}
+
+	.profile-photo{
+		border-radius: 50%;
+	}
+	/*stars rating*/
+	.glyphicon-star,
+	.glyphicon-star-empty{
+		font-size: 2.0em;
+	}
 
 
 
