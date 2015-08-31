@@ -13,6 +13,12 @@ class Reservations extends CI_Controller {
 		$this->load->view('show_reservations', array('reservations' => $reservations));
 	}
 
+	public function show_confirmation($user_id, $guide_id, $date){
+		$reservation_id = $this->add_reservation($user_id, $guide_id, $date);
+		$reservation = $this->get_reservation_by_id($reservation_id);
+		$this->load->view('confirmation', array('reservation' => $reservation));
+	}
+
 	public function get_all_reservations(){
 		$reservations = $this->Reservation->get_all_reservations();
 		return $reservations;
@@ -23,10 +29,7 @@ class Reservations extends CI_Controller {
 		return $reservation;
 	}
 
-	public function add_reservation(){
-		$user_id = $this->input->post('user_id');
-		$guide_id = $this->input->post('guide_id');
-		$date = $this->input->post('date');
+	public function add_reservation($user_id, $guide_id, $date){
 		return $this->Reservation->add_reservation($user_id, $guide_id, $date);
 	}
 

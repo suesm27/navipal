@@ -14,7 +14,10 @@ class Reservation extends CI_Model{
 	{
 		$query = "INSERT INTO reservations (user_id, guide_id, date) VALUES (?,?,?)";
 		$values = array($user_id, $guide_id, $date); 
-		return $this->db->query($query, $values);
+		$this->db->query($query, $values);
+		$reservation_id = $this->db->insert_id();
+		return $reservation_id;
+
 	} 
 	function delete_reservation_by_id($id)
 	{
