@@ -16,6 +16,6 @@ class Main extends CI_Controller {
 	}
 	public function datepicker()
 	{
-		$this->load->view('datepicker-testting/datepicker');
+		$this->load->view('datepicker-testting/datepicker'); // datepicker testing view
 	}
 }
