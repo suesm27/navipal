@@ -14,4 +14,8 @@ class Main extends CI_Controller {
 	public function show_home(){
 		$this->load->view('front-page/index');
 	}
+	public function datepicker()
+	{
+		$this->load->view('datepicker-testting/datepicker');
+	}
 }
