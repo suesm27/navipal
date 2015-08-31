@@ -38,7 +38,7 @@ function initialize(){
           return function() {
             //somehow the value of "i" is messed up inside here, it's always "5"
             //infowindow.setContent(guides_names[0]); //that works and sets the content to the first element in the array
-            infowindow.setContent(guides_names[i]);
+            infowindow.setContent("shit is not working");
             infowindow.open(map, marker);
           }
         })(marker, i));
