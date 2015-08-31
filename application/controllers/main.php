@@ -18,4 +18,8 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('datepicker-testting/datepicker'); // datepicker testing view
 	}
+	public function phone()
+	{
+		$this->load->view('phone-testing');
+	}
 }

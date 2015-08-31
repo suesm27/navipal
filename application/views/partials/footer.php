@@ -9,6 +9,9 @@
         <div class="container">
           <a href='/reservations'>Show Reservations</a>
         </div>
+        <div class="container">
+          <a href='/main/phone'>Test Phone</a>
+        </div>
       </div>
     </div>
 </div>
