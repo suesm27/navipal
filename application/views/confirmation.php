@@ -40,6 +40,8 @@ type="text/javascript"></script>
       <?php 
         echo "<h1>Reservation Confirmation: </h1>";
         echo "<h3>Guide: {$reservation['guide_name']}</h3>";
+        echo "<h4>Price: \${$reservation['guide_price']}</h4>";
+        echo "<img src='/uploads/{$reservation['guide_image']}'>";
         echo "<h3>User: {$reservation['user_name']}</h3>";
         echo "<h3>Reservation Date: {$reservation['date']}</h3><br>";
      ?>

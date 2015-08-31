@@ -13,18 +13,46 @@ class Users extends CI_Controller {
 	}
 
 	public function signin_action(){
+		if($this->session->userdata('guide_login')){
+			$this->session->set_userdata('guide_login', false);
+			$this->session->set_userdata('current_guide_id', null);
+			$this->session->set_userdata('name', null);
+		}
 		$user = $this->User->get_user($this->input->post());
 		if($user){
 			$this->session->set_userdata('current_user_id', $user['id']);
 			$this->session->set_userdata('name', $user['name']);
+			$this->session->set_userdata('user_login', true);
 			$success[] = 'Login successful!';
 			$this->session->set_flashdata('success', $success);
-			redirect('/main');
+			redirect('/main/show_home');
 		}
 		else{
 			$error[] = 'No matching record found!';
 			$this->session->set_flashdata('errors', $error);
 			redirect('/users');
+		}
+	}
+
+	public function signin_action_other($guide_id){
+		if($this->session->userdata('guide_login')){
+			$this->session->set_userdata('guide_login', false);
+			$this->session->set_userdata('current_guide_id', null);
+			$this->session->set_userdata('name', null);
+		}
+		$user = $this->User->get_user($this->input->post());
+		if($user){
+			$this->session->set_userdata('current_user_id', $user['id']);
+			$this->session->set_userdata('name', $user['name']);
+			$this->session->set_userdata('user_login', true);
+			$success[] = 'Login successful!';
+			$this->session->set_flashdata('success', $success);
+			redirect("/guides/view_profile/$guide_id");
+		}
+		else{
+			$error[] = 'No matching record found!';
+			$this->session->set_flashdata('errors', $error);
+			redirect("/guides/view_profile/$guide_id");
 		}
 	}
 
@@ -35,7 +63,7 @@ class Users extends CI_Controller {
 			$success[] = 'Registration successful!';
 			$this->session->set_flashdata('success', $success);
 			$this->User->add_user($this->input->post());
-			redirect('/users');
+			redirect('/main/show_home');
 		} 
 		else {
 			$errors = array(validation_errors());
@@ -59,6 +87,6 @@ class Users extends CI_Controller {
 	public function logoff()
 	{
 		$this->session->sess_destroy();
-		redirect('/users');
+		redirect('/main/show_home');
 	}
 }

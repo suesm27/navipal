@@ -37,6 +37,38 @@
   </nav>
   <div class="main-container">
     <div class="container">
+      <?php 
+      if ($this->session->flashdata('success'))
+      {
+        ?>
+        <div class="alert alert-success">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Nice!</strong>
+          <?php 
+          foreach($this->session->flashdata('success') as $s){
+            echo $s;
+          }
+          ?>
+        </div>
+        <?php
+      }
+      if ($this->session->flashdata('errors'))
+      {
+        ?>
+        <div class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Error!</strong>
+          <?php 
+          foreach($this->session->flashdata('errors') as $error){
+            echo $error;
+          }
+          ?>
+        </div>
+        <?php
+      }
+      ?>
+    </div>
+    <div class="container">
       <h1><?php echo "{$guide['name']}'s profile"; ?></h1>
       <h3>Name: <?php echo $guide['name']; ?></h3>
       <?php echo "<img src='/uploads/{$guide['image']}'>"; ?>
@@ -57,19 +89,73 @@
       echo "<h4>Price: \${$guide['price']}/night</h4>";
       echo "<h4>Location: {$guide['location']}</h4>";
      ?>
-     <form action="" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-        data-name="Book Your Tour"
-        data-image="/assets/navipal_icon.png"
-        data-description="Your friendly neighborhood guide..."
-        data-billing-address="true"
-        data-amount="2000"
-        data-label="Book Tour!"
-        data-locale="auto">
-      </script>
-    </form>
+     <?php 
+     if($this->session->userdata('user_login')){?>
+       <form action="<?php 
+         $user_id = $this->session->userdata('current_user_id');
+         echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-08-31"; 
+         ?>" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+            data-name="Book Your Tour"
+            data-image="/assets/navipal_icon.png"
+            data-description="Your friendly neighborhood guide..."
+            data-billing-address="true"
+            data-amount="<?= $guide['price']*100 ?>"
+            data-label="Book Tour!"
+            data-locale="auto">
+          </script>
+        </form>
+    <?php
+    }
+    else{
+      echo "<h4 data-toggle='modal' data-target='#myModal'><a href='#'>";
+      echo "Login to book the tour";
+      echo "</a></h4>";
+    ?>
+
+<!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+          <h3 class="modal-title">Login</h3>
+          <!-- login succes and error message will go here -->
+          
+          </div>
+          <div class="modal-body">
+
+           <form class="form-horizontal" roll='form' action='/Users/signin_action_other/<?php echo $guide['id']; ?>' method='post'>
+            <div class="form-group">
+              <label>Email: </label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+              <label>Password: </label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+    <?php
+     }
+    ?>
     </div>
   </div>
 </body>

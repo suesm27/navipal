@@ -13,10 +13,16 @@ class Guides extends CI_Controller {
 	}
 
 	public function signin_action(){
+		if($this->session->userdata('user_login')){
+			$this->session->set_userdata('user_login', false);
+			$this->session->set_userdata('current_user_id', null);
+			$this->session->set_userdata('name', null);
+		}
 		$guide = $this->Guide->get_guide($this->input->post());
 		if($guide){
 			$this->session->set_userdata('current_guide_id', $guide['id']);
 			$this->session->set_userdata('name', $guide['name']);
+			$this->session->set_userdata('guide_login', true);
 			$success[] = 'Login successful!';
 			$this->session->set_flashdata('success', $success);
 			redirect("/guides/show_guide_dashboard/{$guide['id']}");
@@ -100,6 +106,6 @@ class Guides extends CI_Controller {
 	public function logoff()
 	{
 		$this->session->sess_destroy();
-		redirect('/guides');
+		redirect('/main/show_home');
 	}
 }
