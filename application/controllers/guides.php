@@ -52,8 +52,10 @@ class Guides extends CI_Controller {
 	}
 
 	public function show_guides(){
+		$location = $this->input->post('search');
 		$guides = $this->Guide->get_all_guides();
-		$this->load->view('show_guides', array("guides" => $guides));
+		$this->load->view('show_guides', array("guides" => $guides,
+												"location" => $location));
 	}
 
 	public function get_all_guides_locations(){

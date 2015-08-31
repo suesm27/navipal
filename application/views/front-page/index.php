@@ -1,5 +1,5 @@
   <!-- header -->
-  <?php $this->load->view("partials/header"); ?>
+  <?php $this->load->view("partials/header-login"); ?>
 <body>
   <!-- navigation -->
   <?php $this->load->view("partials/navigation"); ?>
@@ -54,7 +54,7 @@
   <div class="jumbotron ">
     <!-- <img src="../assets/images/cover1.jpg" class="img-responsive" alt="Traveler taking a photo"> -->
     <div class="search-container">
-      <form  action="" method="get" id="search">
+      <form  action="/guides/show_guides" method="post" id="search">
         <input type="search" name="search" placeholder="Search the city..." class="search">
         <button type="submit" class="explore no-bg">explore</button>
       </form>

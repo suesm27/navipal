@@ -1,5 +1,6 @@
 var addresses = [];
 var guides_names = [];
+var map;
 $(document).ready(function(){
   $.get('/guides/get_all_guides_locations', function(res) {
     console.log(res);
@@ -19,7 +20,7 @@ $(document).ready(function(){
 });
 function initialize(){
   console.log(guides_names);
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -48,5 +49,23 @@ function initialize(){
      }
    });
   }
+}
+
+function initMap() {
+ var geocoder = new google.maps.Geocoder();
+ document.getElementById('submit').addEventListener('click', function() {
+   geocodeAddress(geocoder, map);
+ });
+}
+
+function geocodeAddress(geocoder, resultsMap) {
+ var address = document.getElementById('address').value;
+ geocoder.geocode({'address': address}, function(results, status) {
+   if (status === google.maps.GeocoderStatus.OK) {
+     resultsMap.setCenter(results[0].geometry.location);
+   } else {
+     alert('Geocode was not successful for the following reason: ' + status);
+   }
+ });
 }
 google.maps.event.addDomListener(window, "load", initialize);
