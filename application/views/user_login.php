@@ -1,47 +1,47 @@
   <!-- header-login -->
   <?php $this->load->view("partials/header-login"); ?>
-<body>
-  <!-- navigation -->
-  <?php $this->load->view("partials/navigation"); ?>
+  <body>
+    <!-- navigation -->
+    <?php $this->load->view("partials/navigation"); ?>
 
-  <div class="bg-color2 margin-top-Negative51 padding-top-60">
-    <div class="main-container">
-     <!--Form error and success messages -->
-    <div class="container">
-      <?php 
-      if ($this->session->flashdata('success'))
-      {
-        ?>
-        <div class="alert alert-success">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Nice!</strong>
-          <?php 
-          foreach($this->session->flashdata('success') as $s){
-            echo $s;
-          }
+    <div class="bg-color2 margin-top-Negative51 padding-top-60">
+      <div class="main-container">
+       <!--Form error and success messages -->
+       <div class="container">
+        <?php 
+        if ($this->session->flashdata('success'))
+        {
           ?>
-        </div>
-        <?php
-      }
-      if ($this->session->flashdata('errors'))
-      {
-        ?>
-        <div class="alert alert-danger">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Error!</strong>
-          <?php 
-          foreach($this->session->flashdata('errors') as $error){
-            echo $error;
-          }
+          <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Nice!</strong>
+            <?php 
+            foreach($this->session->flashdata('success') as $s){
+              echo $s;
+            }
+            ?>
+          </div>
+          <?php
+        }
+        if ($this->session->flashdata('errors'))
+        {
           ?>
-        </div>
-        <?php
-      }
-      ?>
+          <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>
+            <?php 
+            foreach($this->session->flashdata('errors') as $error){
+              echo $error;
+            }
+            ?>
+          </div>
+          <?php
+        }
+        ?>
 
-      <!-- registration form -->
-      <div class="container">
-        <div class="col-md-6">
+        <!-- registration form -->
+        <div class="small-container">
+
           <h3>Register</h3>
           <form class='form-horizontal right-margin left-margin' roll='form' action='/users/register_action' method='post'>
             <div class="form-group">
@@ -70,40 +70,32 @@
               </div>
             </form>
           </div>
-          <div class="col-md-6">
-            <!-- login form -->
-            <h3>Login</h3>
-            <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
-              <div class="form-group">
-                <label>Email: </label>
-                <input type="email" name="email" required>
-              </div>
-              <div class="form-group">
-                <label>Password: </label>
-                <input type="password" name="password" required>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
-              </div>
-            </form>
-          </div>
-        </div> 
-        <div class="container">
-          <a href='/guides'>Interested in being a guide?</a>
+          
+          
         </div>
-        <div class="container">
-          <a href='/guides/show_guides'>Browse guides</a>
+
+
+
+  </div> <!--main container close-->
+  <div class="section-container bg-color3">
+    <div class="small-container">
+
+      <!-- login form -->
+      <h3 class="text-color4">Login</h3>
+      <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
+        <div class="form-group">
+          <label>Email: </label>
+          <input type="email" name="email" required>
         </div>
-        <div class="container">
-          <a href='/main/show_home'>Home page</a>
+        <div class="form-group">
+          <label>Password: </label>
+          <input type="password" name="password" required>
         </div>
-        <div class="container">
-          <a href='/reservations'>Show Reservations</a>
+        <div class="form-group">
+          <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
         </div>
-      </div>
+      </form>
     </div>
-   
-    </div> <!--main container close-->
   </div>  <!--color container close-->
   <!-- footer -->
   <?php $this->load->view("partials/footer"); ?>
