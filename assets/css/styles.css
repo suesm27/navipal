@@ -8,6 +8,12 @@
 	border-color:rgba(0,0,0,0) ;
 }
 
+.inline-block{
+	display: inline-block;
+}
+
+
+
 /*blue*/
 .bg-color1{
 	background-color: #42b8dd;
@@ -115,8 +121,21 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	margin: 0 auto;
 }
 
-
+.guides-container{
+	width: 55%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 45px;
+	height: 700px;
+	overflow: scroll;
 	
+}
+
+.map-container{
+	width: 44%;
+	display: inline-block;
+	vertical-align: top;
+}
 
 
 
@@ -196,7 +215,8 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 }
 
 /*inputs*/
-input[type="search"]{
+input[type="search"],
+input[type="textbox"]{
 	height: 80px;
 	width: 65%;
 	border:2px solid #42b8dd;
@@ -229,7 +249,7 @@ label{
 button.explore{
 	display: block;
 	text-align: center;
-	margin: 20px auto;
+	margin: 20px auto 0px;
 	color: #fff;
 	font-size: 3.8em;
 	cursor: pointer;
@@ -308,6 +328,40 @@ button.explore:hover{
 		line-height: 12px;
 
 	}
+
+	/**********************GUIDES PAGE********************/
+	.main-container {
+	margin-top: 70px;
+}
+
+/*.form-horizontal, .alert{
+	max-width: 300px;
+	margin-left: 15px;
+}*/
+
+.table {
+	max-width: 500px;
+	
+}
+
+#map {
+       height: 100%;
+     }
+#panel {
+ top: 10px;
+ left: 25%;
+ z-index: 5;
+ /*padding: 5px;*/
+ text-align: center;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.profile-photo{
+	border-radius: 50%;
+}
 
 
 
