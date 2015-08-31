@@ -57,6 +57,19 @@
       echo "<h4>Price: \${$guide['price']}/night</h4>";
       echo "<h4>Location: {$guide['location']}</h4>";
      ?>
+     <form action="" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+        data-name="Book Your Tour"
+        data-image="/assets/navipal_icon.png"
+        data-description="Your friendly neighborhood guide..."
+        data-billing-address="true"
+        data-amount="2000"
+        data-label="Book Tour!"
+        data-locale="auto">
+      </script>
+    </form>
     </div>
   </div>
 </body>
