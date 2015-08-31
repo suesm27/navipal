@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Show All Guides</title>
+<title>Show All Users</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -36,35 +36,14 @@ type="text/javascript"></script>
 </nav>
 <div class="main-container">
   <div class="container">
-    <div id="panel">
-      <input id="address" type="textbox" value="San Jose, CA">
-      <!-- <input id="submit" type="button" value="Geocode"> -->
-      <button type="submit" id="submit" class="btn btn-primary" value="Geocode">Search!</button>
-    </div>
-    <div class="col-md-6">
       <?php 
-      foreach($guides as $guide){
-        echo "<h1><a href='/guides/view_profile/{$guide['id']}'>{$guide['name']}</a></h1>";
-        echo "<img src='/uploads/{$guide['image']}'>";
-        echo "<h4>\"{$guide['description']}\"</h4>";
-        echo "<h4>Rating: ";
-        for ($i = 0; $i < $guide['rating']; $i++)
-        {
-         echo "<img src='/assets/star.png' height='25' width='25'>";
-       }
-       $star = 5 - $guide['rating'];
-       for ($i = 0; $i < $star; $i++)
-       {
-         echo "<img src='/assets/blank.png' height='25' width='25'>";
-       }
-       echo "</h4>";
-       echo "<h4>Price: \${$guide['price']}/night</h4>";
-       echo "<h4>{$guide['location']}</h4>";
+      foreach($users as $user){
+        echo "<h1><a href='/users/view_profile/{$user['id']}'>{$user['name']}</a></h1>";
+        echo "<h4>Email: {$user['email']}</h4>";
+        echo "<h4>Alias: {$user['alias']}</h4>";
+        echo "<h4>Date of Birth: {$user['dob']}</h4>";
      }
      ?>
-   </div>
-   <div class="col-md-6" id="map">
-   </div>
  </div>
 </div><!--/.main-container -->
 </body>

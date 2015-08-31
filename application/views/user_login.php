@@ -70,31 +70,37 @@
               </div>
             </form>
           </div>
+
           
           
         </div>
 
 
 
-  </div> <!--main container close-->
-  <div class="section-container bg-color3">
-    <div class="small-container">
+      </div> <!--main container close-->
+      <div class="section-container bg-color3">
+        <div class="small-container">
 
-      <!-- login form -->
-      <h3 class="text-color4">Login</h3>
-      <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
-        <div class="form-group">
-          <label>Email: </label>
-          <input type="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label>Password: </label>
-          <input type="password" name="password" required>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
-        </div>
-      </form>
+          <!-- login form -->
+          <h3 class="text-color4">Login</h3>
+          <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
+            <div class="form-group">
+              <label>Email: </label>
+              <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label>Password: </label>
+              <input type="password" name="password" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
+            </div>
+          </form>
+
+        </form>
+      </div>
+      
+
     </div>
   </div>  <!--color container close-->
   <!-- footer -->
