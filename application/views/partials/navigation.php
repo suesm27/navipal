@@ -14,7 +14,7 @@
 
  			<ul class="nav navbar-nav navbar-right">
  				<li data-toggle="modal" data-target="#myModal"><a href="#">Login</a></li>
- 				<li id="scroll-test"><a href="#">Sign up </a></li>
+ 				<li id="scroll-test"><a href="/main">Sign up </a></li>
 
  			</ul>
  		</div><!--/.nav-collapse -->
