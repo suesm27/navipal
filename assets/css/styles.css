@@ -130,6 +130,7 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
     overflow: scroll;
     margin: 0px;
     margin-right: -8px;
+    text-align: center;
 	
 }
 

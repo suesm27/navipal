@@ -14,7 +14,11 @@
     <div class="guides-container bg-color2">
       <?php 
       foreach($guides as $guide){
-        echo "<h4>Rating: ";
+        
+        echo "<img class='profile-photo' width='124' height='125' src='/uploads/{$guide['image']}'>";
+        echo "<h2><a href='/guides/view_profile/{$guide['id']}'>{$guide['name']}</a></h2>";
+        // star rating
+        
         for ($i = 0; $i < $guide['rating']; $i++)
         {
          echo "<img src='/assets/star.png' height='25' width='25'>";
@@ -24,9 +28,8 @@
        {
          echo "<img src='/assets/blank.png' height='25' width='25'>";
        }
-       echo "</h4>";
-        echo "<img class='profile-photo' src='/uploads/{$guide['image']}'>";
-        echo "<h2><a href='/guides/view_profile/{$guide['id']}'>{$guide['name']}</a></h2>";
+       // star rating ends
+      
         echo "<h4>\"{$guide['description']}\"</h4>";
        echo "<h4>Price: \${$guide['price']}/night</h4>";
        echo "<h4>{$guide['location']}</h4>";
