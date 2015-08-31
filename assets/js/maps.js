@@ -24,6 +24,7 @@ function initialize(){
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+  map.set('scrollwheel', false);
   var geocoder = new google.maps.Geocoder();
   var infowindow = new google.maps.InfoWindow();
   var coordinate;

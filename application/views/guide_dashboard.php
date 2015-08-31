@@ -19,7 +19,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <span class="navbar-brand">Welcome <?php echo $user['name']; ?>!</span>
+        <span class="navbar-brand">Welcome <?php echo $this->session->userdata['name']; ?>!</span>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
