@@ -3,13 +3,11 @@ var guides_names = [];
 var map;
 $(document).ready(function(){
   $.get('/guides/get_all_guides_locations', function(res) {
-    console.log(res);
     for(var i=0; i<res.locations.length; i++){
       addresses.push(res.locations[i].location);
     }
   }, "json");
   $.get('/guides/get_all_guides_names', function(res) {
-    console.log(res);
     for(var i=0; i<res.guides_names.length; i++){
       guides_names.push(res.guides_names[i].name);
     }
@@ -19,7 +17,6 @@ $(document).ready(function(){
   });
 });
 function initialize(){
-  console.log(guides_names);
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
