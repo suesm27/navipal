@@ -62,6 +62,10 @@
                 <input type="password" name="passwordconf" required>
               </div>
               <div class="form-group">
+               <label>Phone Number:</label>
+               <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd" required>
+              </div>
+              <div class="form-group">
                 <label>Date of Birth: </label>
                 <input type="date" name="dob" required>
               </div>

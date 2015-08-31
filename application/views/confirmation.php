@@ -36,16 +36,20 @@ type="text/javascript"></script>
 </nav>
 <div class="main-container">
   <div class="container">
-    <div class="col-md-6">
       <?php 
         echo "<h1>Reservation Confirmation: </h1>";
+        echo "<h2>Confirmation #: {$reservation['confirmation']}</h2>";
+        echo "<h2>Reservation made on: {$reservation['created_at']}</h2>";
         echo "<h3>Guide: {$reservation['guide_name']}</h3>";
         echo "<h4>Price: \${$reservation['guide_price']}</h4>";
         echo "<img src='/uploads/{$reservation['guide_image']}'>";
         echo "<h3>User: {$reservation['user_name']}</h3>";
         echo "<h3>Reservation Date: {$reservation['date']}</h3><br>";
+        echo "<h3>Payment info:</h3>";
+        echo "<h4>Name: {$post_info['stripeBillingName']}</h4>";
+        echo "<h4>Email: {$post_info['stripeEmail']}</h4>";
+        echo "<h4>Billing Address: {$post_info['stripeBillingAddressLine1']} {$post_info['stripeBillingAddressZip']} {$post_info['stripeBillingAddressCity']} {$post_info['stripeBillingAddressState']} {$post_info['stripeBillingAddressCountry']}</h4>";
      ?>
-   </div>
  </div>
 </div><!--/.main-container -->
 </body>

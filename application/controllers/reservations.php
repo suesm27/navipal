@@ -14,9 +14,11 @@ class Reservations extends CI_Controller {
 	}
 
 	public function show_confirmation($user_id, $guide_id, $date){
+		$post = $this->input->post();
 		$reservation_id = $this->add_reservation($user_id, $guide_id, $date);
 		$reservation = $this->get_reservation_by_id($reservation_id);
-		$this->load->view('confirmation', array('reservation' => $reservation));
+		$this->load->view('confirmation', array('reservation' => $reservation,
+												'post_info' => $post));
 	}
 
 	public function get_all_reservations(){
