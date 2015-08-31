@@ -18,7 +18,7 @@ $(document).ready(function(){
 });
 function initialize(){
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
+    zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
   map.set('scrollwheel', false);
