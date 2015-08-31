@@ -19,7 +19,7 @@ class Guides extends CI_Controller {
 			$this->session->set_userdata('name', $guide['name']);
 			$success[] = 'Login successful!';
 			$this->session->set_flashdata('success', $success);
-			redirect('/guides/show_guide_dashboard');
+			redirect("/guides/show_guide_dashboard/{$guide['id']}");
 		}
 		else{
 			$error[] = 'No matching record found!';
@@ -68,8 +68,9 @@ class Guides extends CI_Controller {
 		echo json_encode($data);
 	}
 
-	public function show_guide_dashboard(){
-		$this->load->view('guide_dashboard');
+	public function show_guide_dashboard($guide_id){
+		$guide = $this->Guide->get_guide_by_id($guide_id);
+		$this->load->view('guide_dashboard', array("guide" => $guide));
 	}
 
 	public function image_upload()
