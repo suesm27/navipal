@@ -6,6 +6,8 @@ class Reservations extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Reservation');
+		$this->load->model('User');
+		$this->load->model('Guide');
 	}
 
 	public function index(){
@@ -15,10 +17,14 @@ class Reservations extends CI_Controller {
 
 	public function show_confirmation($user_id, $guide_id, $date){
 		$post = $this->input->post();
+		$user_phone = $this->User->get_phone_number_by_id($user_id);
+		$guide_phone = $this->Guide->get_phone_number_by_id($guide_id);
 		$reservation_id = $this->add_reservation($user_id, $guide_id, $date);
 		$reservation = $this->get_reservation_by_id($reservation_id);
 		$this->load->view('confirmation', array('reservation' => $reservation,
-												'post_info' => $post));
+												'post_info' => $post,
+												'user_phone' => $user_phone,
+												'guide_phone' => $guide_phone));
 	}
 
 	public function get_all_reservations(){

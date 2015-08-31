@@ -49,7 +49,43 @@ type="text/javascript"></script>
         echo "<h4>Name: {$post_info['stripeBillingName']}</h4>";
         echo "<h4>Email: {$post_info['stripeEmail']}</h4>";
         echo "<h4>Billing Address: {$post_info['stripeBillingAddressLine1']} {$post_info['stripeBillingAddressZip']} {$post_info['stripeBillingAddressCity']} {$post_info['stripeBillingAddressState']} {$post_info['stripeBillingAddressCountry']}</h4>";
+        
      ?>
+
+     <?php
+
+        // Get the PHP helper library from twilio.com/docs/php/install
+          require_once('assets/twilio-php/Services/Twilio.php'); // Loads the library
+           
+          // set your AccountSid and AuthToken from www.twilio.com/user/account
+          $AccountSid = "AC0509bdc2efb7771b8e0e8cbbc0006bfe";
+          $AuthToken = "a415e2044b826566e515b413672ac234";
+          $user_phone_number = $user_phone['phone'];
+          $guide_phone_number = $guide_phone['phone'];
+
+          $client = new Services_Twilio($AccountSid, $AuthToken);
+          //send confirmation text to customer
+          try {
+              $message = $client->account->messages->create(array(
+                  "From" => "6092773538",
+                  "To" => "$user_phone_number",
+                  "Body" => "Your reservation has been confirmed! Confirmation #: {$reservation['confirmation']} Date: {$reservation['date']}",
+              ));
+          } catch (Services_Twilio_RestException $e) {
+              echo $e->getMessage();
+          }
+          //send confirmation text to guide
+          try {
+              $message = $client->account->messages->create(array(
+                  "From" => "6092773538",
+                  "To" => "$guide_phone_number",
+                  "Body" => "You have a new booking! Confirmation #: {$reservation['confirmation']} Date: {$reservation['date']}",
+              ));
+          } catch (Services_Twilio_RestException $e) {
+              echo $e->getMessage();
+          }
+
+      ?> 
  </div>
 </div><!--/.main-container -->
 </body>

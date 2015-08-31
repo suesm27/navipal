@@ -23,6 +23,10 @@ class Guide extends CI_Model{
 		return $this->db->query("SELECT * FROM guides WHERE id = ?", array($id))->row_array();
 	}
 
+	function get_phone_number_by_id($guide_id){
+		return $this->db->query("SELECT phone FROM guides WHERE id = ?", array($guide_id))->row_array();
+	}
+
 	function get_all_guides_locations(){
 		return $this->db->query("SELECT location FROM guides")->result_array();
 	}

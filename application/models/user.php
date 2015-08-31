@@ -23,6 +23,10 @@ class User extends CI_Model{
 		return $this->db->query("SELECT * FROM users WHERE id = ?", array($id))->row_array();
 	}
 
+	function get_phone_number_by_id($user_id){
+		return $this->db->query("SELECT phone FROM users WHERE id = ?", array($user_id))->row_array();
+	}
+
 	function add_user($user)
 	{
 		date_default_timezone_set("America/Los_Angeles");
