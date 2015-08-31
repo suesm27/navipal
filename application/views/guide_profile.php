@@ -86,7 +86,7 @@
         echo "<img src='/assets/blank.png' height='25' width='25'>";
       }
       echo "</h4>";
-      echo "<h4>Price: \${$guide['price']}/night</h4>";
+      echo "<h4>Price: \${$guide['price']}</h4>";
       echo "<h4>Location: {$guide['location']}</h4>";
      ?>
      <?php 
