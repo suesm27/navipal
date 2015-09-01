@@ -108,12 +108,24 @@
             data-locale="auto">
           </script>
         </form>
+
+       <form class="form-horizontal" roll='form' action="/guides/message_guide/<?php echo $guide['id'];?>/<?php echo $this->session->userdata('current_user_id') ?>" method='post'>
+          <input type='hidden' name='action' value='message'>
+          <div class="form-group">
+            <label>Message: </label>
+            <textarea class="form-control" rows="5" name="message" placeholder="Leave a message for <?php echo "{$guide['name']}"; ?>" required></textarea>
+          </div> 
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-primary">Send!</button>
+          </div>
+        </form>    
     <?php
     }
     else{
       echo "<h4 data-toggle='modal' data-target='#myModal'><a href='#'>";
-      echo "Login to book the tour";
+      echo "Login to book the tour or message {$guide['name']}";
       echo "</a></h4>";
+    }
     ?>
     </div>
     <div class="col-md-6">
@@ -174,9 +186,6 @@
     </div>
   </div><!-- end of Modal -->
 
-    <?php
-     }
-    ?>
     </div>
   </div>
 </body>

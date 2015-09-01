@@ -67,6 +67,12 @@ class Guide extends CI_Model{
 		return $this->db->query($query, $values);
 	} 
 
+	function message_guide($guide_id, $user_id, $message){
+		$query = "INSERT INTO messages (guide_id, user_id, message, created_at) VALUES (?,?,?, NOW())";
+		$values = array($guide_id, $user_id, $message);
+		return $this->db->query($query, $values);
+	}
+
 	function validate($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[255]|is_unique[guides.email]');
@@ -98,6 +104,15 @@ class Guide extends CI_Model{
 	function validate_password($post){
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[45]|matches[passwordconf]');
 		$this->form_validation->set_rules('passwordconf', 'Password Confirmation', 'trim|required');
+		if($this->form_validation->run()) {
+			return "valid";
+		} else {
+			return array(validation_errors());
+		}
+	}
+
+	function validate_message($post){
+		$this->form_validation->set_rules('message', 'Message', 'trim|required|max_length[255]');
 		if($this->form_validation->run()) {
 			return "valid";
 		} else {
