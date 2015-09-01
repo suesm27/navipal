@@ -77,11 +77,11 @@
       <h4>Date of Birth: <?php echo $guide['dob']; ?></h4>
       <?php
       echo "<h4>Rating: ";
-      for ($i = 0; $i < $guide['rating']; $i++)
+      for ($i = 0; $i < $rating; $i++)
       {
         echo "<img src='/assets/star.png' height='25' width='25'>";
       }
-      $star = 5 - $guide['rating'];
+      $star = 5 - $rating;
       for ($i = 0; $i < $star; $i++)
       {
         echo "<img src='/assets/blank.png' height='25' width='25'>";

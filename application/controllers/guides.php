@@ -56,15 +56,19 @@ class Guides extends CI_Controller {
 	{
 		$guide = $this->Guide->get_guide_by_id($guide_id);
 		$reviews = $this->Review->get_reviews_by_guide_id($guide_id);
+		$rating = $this->Guide->get_guide_rating_by_id($guide_id);
 		$this->load->view('guide_profile', array("guide" => $guide,
-												"reviews" => $reviews));
+												"reviews" => $reviews,
+												"rating" => $rating));
 	}
 
 	public function show_guides(){
 		$location = $this->input->post('search');
 		$guides = $this->Guide->get_all_guides();
+		$ratings = $this->Guide->get_all_guides_ratings();
 		$this->load->view('show_guides', array("guides" => $guides,
-												"location" => $location));
+												"location" => $location,
+												"ratings" => $ratings));
 	}
 
 	public function get_all_guides_locations(){
