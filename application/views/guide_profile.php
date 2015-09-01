@@ -69,6 +69,7 @@
       ?>
     </div>
     <div class="container">
+      <div class="col-md-6">
       <h1><?php echo "{$guide['name']}'s profile"; ?></h1>
       <h3>Name: <?php echo $guide['name']; ?></h3>
       <?php echo "<img src='/uploads/{$guide['image']}'>"; ?>
@@ -114,7 +115,27 @@
       echo "Login to book the tour";
       echo "</a></h4>";
     ?>
-
+    </div>
+    <div class="col-md-6">
+      <h2>Recent Reviews: </h2>
+      <?php       
+      foreach($reviews as $review){
+        echo "<h3>{$review['user_name']} says: </h3>";
+        echo "<h4>{$review['review']}</h4>";
+        echo "<h4>Rating: ";
+        for ($i = 0; $i < $review['star']; $i++)
+        {
+          echo "<img src='/assets/star.png' height='25' width='25'>";
+        }
+        $star = 5 - $review['star'];
+        for ($i = 0; $i < $star; $i++)
+        {
+          echo "<img src='/assets/blank.png' height='25' width='25'>";
+        }
+        echo "</h4>";
+        }
+       ?>
+    </div>
 <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -151,7 +172,7 @@
       </div>
 
     </div>
-  </div>
+  </div><!-- end of Modal -->
 
     <?php
      }

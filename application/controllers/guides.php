@@ -6,6 +6,7 @@ class Guides extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Guide');
+		$this->load->model('Review');
 	}
 
 	public function index(){
@@ -54,7 +55,9 @@ class Guides extends CI_Controller {
 	public function view_profile($guide_id)
 	{
 		$guide = $this->Guide->get_guide_by_id($guide_id);
-		$this->load->view('guide_profile', array("guide" => $guide));
+		$reviews = $this->Review->get_reviews_by_guide_id($guide_id);
+		$this->load->view('guide_profile', array("guide" => $guide,
+												"reviews" => $reviews));
 	}
 
 	public function show_guides(){
