@@ -12,7 +12,7 @@ class Reservations extends CI_Controller {
 
 	public function index(){
 		$reservations = $this->get_all_reservations();
-		$this->load->view('show_reservations', array('reservations' => $reservations));
+		$this->load->view('reservations/show_reservations', array('reservations' => $reservations));
 	}
 
 	public function show_confirmation($user_id, $guide_id, $date){
@@ -21,7 +21,7 @@ class Reservations extends CI_Controller {
 		$guide_phone = $this->Guide->get_phone_number_by_id($guide_id);
 		$reservation_id = $this->add_reservation($user_id, $guide_id, $date);
 		$reservation = $this->get_reservation_by_id($reservation_id);
-		$this->load->view('confirmation', array('reservation' => $reservation,
+		$this->load->view('reservations/confirmation', array('reservation' => $reservation,
 												'post_info' => $post,
 												'user_phone' => $user_phone,
 												'guide_phone' => $guide_phone));

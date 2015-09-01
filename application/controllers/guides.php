@@ -10,7 +10,7 @@ class Guides extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('guide_login');
+		$this->load->view('guides/guide_login');
 	}
 
 	public function signin_action(){
@@ -57,7 +57,7 @@ class Guides extends CI_Controller {
 		$guide = $this->Guide->get_guide_by_id($guide_id);
 		$reviews = $this->Review->get_reviews_by_guide_id($guide_id);
 		$rating = $this->Guide->get_guide_rating_by_id($guide_id);
-		$this->load->view('guide_profile', array("guide" => $guide,
+		$this->load->view('guides/guide_profile', array("guide" => $guide,
 												"reviews" => $reviews,
 												"rating" => $rating));
 	}
@@ -66,7 +66,7 @@ class Guides extends CI_Controller {
 		$location = $this->input->post('search');
 		$guides = $this->Guide->get_all_guides();
 		$ratings = $this->Guide->get_all_guides_ratings();
-		$this->load->view('show_guides', array("guides" => $guides,
+		$this->load->view('guides/show_guides', array("guides" => $guides,
 												"location" => $location,
 												"ratings" => $ratings));
 	}
@@ -92,12 +92,12 @@ class Guides extends CI_Controller {
 
 	public function show_guide_dashboard($guide_id){
 		$guide = $this->Guide->get_guide_by_id($guide_id);
-		$this->load->view('guide_dashboard', array("guide" => $guide));
+		$this->load->view('guides/guide_dashboard', array("guide" => $guide));
 	}
 
 	public function edit_guide($guide_id){
 		$guide = $this->Guide->get_guide_by_id($guide_id);
-		$this->load->view('edit_guide_profile', array("guide" => $guide));
+		$this->load->view('/guides/edit_guide_profile', array("guide" => $guide));
 	}
 
 	public function edit_guide_action($guide_id){
@@ -128,7 +128,7 @@ class Guides extends CI_Controller {
 			$message = $this->input->post('message');
 			$guide = $this->Guide->get_guide_by_id($guide_id);
 			$this->Guide->message_guide($guide_id, $user_id, $message);
-			$this->load->view('message_sent', array("message" => $message,
+			$this->load->view('guides/message_sent', array("message" => $message,
 													"guide" => $guide));
 		} 
 		else {
