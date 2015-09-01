@@ -5,6 +5,7 @@ class Main extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->helper(array('form', 'url'));
 	}
 	public function index(){
 
@@ -17,9 +18,5 @@ class Main extends CI_Controller {
 	public function datepicker()
 	{
 		$this->load->view('datepicker-testting/datepicker'); // datepicker testing view
-	}
-	public function phone()
-	{
-		$this->load->view('phone-testing');
 	}
 }
