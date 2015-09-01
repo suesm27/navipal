@@ -15,12 +15,12 @@ class Guide extends CI_Model{
 	}
 
 	function get_all_guides(){
-		return $this->db->query("SELECT id, name, description, rating, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password FROM guides")->result_array();
+		return $this->db->query("SELECT id, name, description, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password FROM guides")->result_array();
 	}
 
 	function get_guide_by_id($id)
 	{
-		return $this->db->query("SELECT id, name, description, rating, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password FROM guides WHERE id = ?", array($id))->row_array();
+		return $this->db->query("SELECT id, name, description, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password FROM guides WHERE id = ?", array($id))->row_array();
 	}
 
 	function get_phone_number_by_id($guide_id){
@@ -35,6 +35,27 @@ class Guide extends CI_Model{
 		return $this->db->query("SELECT name FROM guides")->result_array();
 	}
 
+	function get_guide_rating_by_id($guide_id){
+		$total = $this->db->query("select sum(star) as stars from reviews WHERE guide_id = ?", array($guide_id))->row_array();
+		$count = $this->db->query("select count(*) as numReviews from reviews WHERE guide_id = ?", array($guide_id))->row_array();
+		if($count['numReviews'] == 0){
+			return 0;
+		}
+		else{
+			$rating = floor($total['stars']/$count['numReviews']);
+			return $rating;
+		}
+	}
+
+	function get_all_guides_ratings(){
+		$ratings = array();
+		$guides = $this->get_all_guides();
+		foreach ($guides as $guide){
+			$ratings[$guide['id']] = $this->get_guide_rating_by_id($guide['id']);
+		}
+		return $ratings;
+	}
+
 	function add_guide($guide)
 	{
 		date_default_timezone_set("America/Los_Angeles");
@@ -45,6 +66,12 @@ class Guide extends CI_Model{
 		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob']); 
 		return $this->db->query($query, $values);
 	} 
+
+	function message_guide($guide_id, $user_id, $message){
+		$query = "INSERT INTO messages (guide_id, user_id, message, created_at) VALUES (?,?,?, NOW())";
+		$values = array($guide_id, $user_id, $message);
+		return $this->db->query($query, $values);
+	}
 
 	function validate($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
@@ -84,6 +111,15 @@ class Guide extends CI_Model{
 		}
 	}
 
+	function validate_message($post){
+		$this->form_validation->set_rules('message', 'Message', 'trim|required|max_length[255]');
+		if($this->form_validation->run()) {
+			return "valid";
+		} else {
+			return array(validation_errors());
+		}
+	}
+
 	function update_guide($guide_id, $info)
 	{
 		$guideInfo = $this->get_guide_by_id($guide_id);
@@ -97,8 +133,8 @@ class Guide extends CI_Model{
 		else{
 			$encrypted_password = $guideInfo['password'];
 		}
-		$query = "UPDATE guides SET name = ?, email = ?, description = ?, rating = ?, location = ?, image = ?, price = ?, dob = ?, phone = ?, password = ?, updated_at = NOW() WHERE id = ?";
-		$values = array($guideInfo['name'], $guideInfo['email'], $guideInfo['description'], $guideInfo['rating'], $guideInfo['location'], $guideInfo['image'], $guideInfo['price'], $guideInfo['dob'], $guideInfo['phone'], $encrypted_password, $guideInfo['id']);
+		$query = "UPDATE guides SET name = ?, email = ?, description = ?, location = ?, image = ?, price = ?, dob = ?, phone = ?, password = ?, updated_at = NOW() WHERE id = ?";
+		$values = array($guideInfo['name'], $guideInfo['email'], $guideInfo['description'], $guideInfo['location'], $guideInfo['image'], $guideInfo['price'], $guideInfo['dob'], $guideInfo['phone'], $encrypted_password, $guideInfo['id']);
 		return $this->db->query($query, $values);
 	}
 }

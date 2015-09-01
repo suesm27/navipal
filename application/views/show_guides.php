@@ -22,12 +22,12 @@
         <!-- star rating -->
               <div class="margin-bottom-45">
       <?php        
-              for ($i = 0; $i < $guide['rating']; $i++)
+              for ($i = 0; $i < $ratings[$guide['id']]; $i++)
               {
       ?>
                 <span class="glyphicon glyphicon-star text-color2a"></span>
       <?php    }
-             $star = 5 - $guide['rating'];
+             $star = 5 - $ratings[$guide['id']];
              for ($i = 0; $i < $star; $i++)
              {
       ?>

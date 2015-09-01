@@ -56,15 +56,19 @@ class Guides extends CI_Controller {
 	{
 		$guide = $this->Guide->get_guide_by_id($guide_id);
 		$reviews = $this->Review->get_reviews_by_guide_id($guide_id);
+		$rating = $this->Guide->get_guide_rating_by_id($guide_id);
 		$this->load->view('guide_profile', array("guide" => $guide,
-												"reviews" => $reviews));
+												"reviews" => $reviews,
+												"rating" => $rating));
 	}
 
 	public function show_guides(){
 		$location = $this->input->post('search');
 		$guides = $this->Guide->get_all_guides();
+		$ratings = $this->Guide->get_all_guides_ratings();
 		$this->load->view('show_guides', array("guides" => $guides,
-												"location" => $location));
+												"location" => $location,
+												"ratings" => $ratings));
 	}
 
 	public function get_all_guides_locations(){
@@ -103,32 +107,25 @@ class Guides extends CI_Controller {
 		} else {
 			$errors = array(validation_errors());
 			$this->session->set_flashdata('errors', $errors);
-			// $this->edit_guide($guide_id);
 			redirect("/guides/edit_guide/$guide_id");
 		}
 	}
 
-	public function image_upload()
-	{
-		$config['upload_path'] = './uploads/';
-		$config['allowed_types'] = 'gif|jpg|png';
-		$config['max_size']	= '100';
-		$config['max_width']  = '1024';
-		$config['max_height']  = '768';
-
-		$this->load->library('upload', $config);
-
-		if ( ! $this->upload->image_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-
-			$this->load->view('upload_form', $error);
-		}
-		else
-		{
-			$data = array('upload_data' => $this->upload->data());
-
-			$this->load->view('upload_success', $data);
+	public function message_guide($guide_id, $user_id){
+		$result = $this->Guide->validate_message($this->input->post());
+		if($result == "valid") {
+			$success[] = 'Message sent!';
+			$this->session->set_flashdata('success', $success);
+			$message = $this->input->post('message');
+			$guide = $this->Guide->get_guide_by_id($guide_id);
+			$this->Guide->message_guide($guide_id, $user_id, $message);
+			$this->load->view('message_sent', array("message" => $message,
+													"guide" => $guide));
+		} 
+		else {
+			$errors = array(validation_errors());
+			$this->session->set_flashdata('errors', $errors);
+			redirect("/guides/view_profile/$guide_id");
 		}
 	}
 
