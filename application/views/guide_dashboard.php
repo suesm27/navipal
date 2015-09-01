@@ -66,6 +66,7 @@
     </div>
     <div class="container">
       <h1><?php echo "{$guide['name']}'s profile"; ?></h1>
+      <?php  echo "<form action='/guides/edit_guide/{$guide['id']}' method='post'><button class='btn btn-sm btn-primary'>Edit <span class='glyphicon glyphicon-edit'></button></form>"; ?>
       <h3>Name: <?php echo $guide['name']; ?></h3>
       <?php echo "<img src='/uploads/{$guide['image']}'>"; ?>
       <h4>Email: <?php echo $guide['email']; ?></h4>

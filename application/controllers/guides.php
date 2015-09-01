@@ -82,6 +82,16 @@ class Guides extends CI_Controller {
 		$this->load->view('guide_dashboard', array("guide" => $guide));
 	}
 
+	public function edit_guide($guide_id){
+		$guide = $this->Guide->get_guide_by_id($guide_id);
+		$this->load->view('edit_guide_profile', array("guide" => $guide));
+	}
+
+	public function edit_guide_action($guide_id){
+		//add steps to update the guide table
+		$this->show_guide_dashboard($guide_id);
+	}
+
 	public function image_upload()
 	{
 		$config['upload_path'] = './uploads/';
