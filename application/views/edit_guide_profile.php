@@ -83,7 +83,7 @@
           </div>  
           <div class="form-group">
             <label>Date of Birth: </label>
-            <input type="text" class="form-control" name="dob" value="<?php echo $guide['dob'];?>" required>
+            <input type="date" class="form-control" name="dob" value="<?php echo $guide['dob'];?>" required>
           </div> 
           <div class="form-group">
             <label>Phone number: </label>

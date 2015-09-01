@@ -88,8 +88,24 @@ class Guides extends CI_Controller {
 	}
 
 	public function edit_guide_action($guide_id){
-		//add steps to update the guide table
-		$this->show_guide_dashboard($guide_id);
+		$action = $this->input->post('action');
+		if($action == 'basic'){
+			$result = $this->Guide->validate_basic($this->input->post());
+		}
+		if($action == 'password'){
+			$result = $this->Guide->validate_password($this->input->post());
+		}
+		if($result == "valid") {
+			$success[] = 'Changes saved!';
+			$this->session->set_flashdata('success', $success);
+			$this->Guide->update_guide($guide_id, $this->input->post());
+			redirect("/guides/show_guide_dashboard/$guide_id");
+		} else {
+			$errors = array(validation_errors());
+			$this->session->set_flashdata('errors', $errors);
+			// $this->edit_guide($guide_id);
+			redirect("/guides/edit_guide/$guide_id");
+		}
 	}
 
 	public function image_upload()

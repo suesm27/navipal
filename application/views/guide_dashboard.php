@@ -70,6 +70,7 @@
       <h3>Name: <?php echo $guide['name']; ?></h3>
       <?php echo "<img src='/uploads/{$guide['image']}'>"; ?>
       <h4>Email: <?php echo $guide['email']; ?></h4>
+      <!-- DOB is not populated correctly into the form field -->
       <h4>Date of Birth: <?php echo $guide['dob']; ?></h4>
       <?php
       echo "<h4>Rating: ";
