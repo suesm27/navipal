@@ -73,16 +73,6 @@
       <!-- DOB is not populated correctly into the form field -->
       <h4>Date of Birth: <?php echo $guide['dob']; ?></h4>
       <?php
-      echo "<h4>Rating: ";
-      for ($i = 0; $i < $guide['rating']; $i++)
-      {
-        echo "<img src='/assets/star.png' height='25' width='25'>";
-      }
-      $star = 5 - $guide['rating'];
-      for ($i = 0; $i < $star; $i++)
-      {
-        echo "<img src='/assets/blank.png' height='25' width='25'>";
-      }
       echo "</h4>";
       echo "<h4>Price: \${$guide['price']}</h4>";
       echo "<h4>Location: {$guide['location']}</h4>";

@@ -15,7 +15,7 @@ class Guide extends CI_Model{
 	}
 
 	function get_all_guides(){
-		return $this->db->query("SELECT id, name, description, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password FROM guides")->result_array();
+		return $this->db->query("SELECT id, name, description, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password, created_at, updated_at FROM guides")->result_array();
 	}
 
 	function get_guide_by_id($id)
@@ -66,6 +66,13 @@ class Guide extends CI_Model{
 		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob']); 
 		return $this->db->query($query, $values);
 	} 
+
+	function delete_guide_by_id($guide_id){
+		$this->db->query("DELETE FROM messages WHERE guide_id = ?", array($guide_id));
+		$this->db->query("DELETE FROM reviews WHERE guide_id = ?", array($guide_id));
+		$this->db->query("DELETE FROM reservations WHERE guide_id = ?", array($guide_id));
+		return $this->db->query("DELETE FROM guides where id = ?", array($guide_id));
+	}
 
 	function message_guide($guide_id, $user_id, $message){
 		$query = "INSERT INTO messages (guide_id, user_id, message, created_at) VALUES (?,?,?, NOW())";

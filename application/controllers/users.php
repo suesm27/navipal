@@ -73,6 +73,11 @@ class Users extends CI_Controller {
 		}
 	}
 
+	public function remove_user_action($user_id){
+		$this->User->delete_user_by_id($user_id);
+		redirect("/main/admin_dashboard");
+	}
+
 	public function show_users(){
 		$users = $this->User->get_all_users();
 		$this->load->view('show_users', array("users" => $users));
@@ -82,6 +87,11 @@ class Users extends CI_Controller {
 	{
 		$user = $this->User->get_user_by_id($user_id);
 		$this->load->view('user_profile', array("user" => $user));
+	}
+
+	public function get_all_users()
+	{
+		return $this->User->get_all_users();
 	}
 
 	public function logoff()

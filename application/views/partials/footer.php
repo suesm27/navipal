@@ -12,6 +12,9 @@
         <div class="container">
           <a href='/upload'>Upload File</a>
         </div>
+        <div class="container">
+          <a href='/main/admin_dashboard'>Admin Dashboard</a>
+        </div>
       </div>
 </div>
 </body>

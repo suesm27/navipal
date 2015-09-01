@@ -27,6 +27,11 @@ class Reservations extends CI_Controller {
 												'guide_phone' => $guide_phone));
 	}
 
+	public function remove_reservation_action($reservation_id){
+		$this->Reservation->delete_reservation_by_id($reservation_id);
+		redirect("/main/admin_dashboard");
+	}
+
 	public function get_all_reservations(){
 		$reservations = $this->Reservation->get_all_reservations();
 		return $reservations;

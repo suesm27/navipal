@@ -38,6 +38,13 @@ class User extends CI_Model{
 		return $this->db->query($query, $values);
 	} 
 
+	function delete_user_by_id($user_id){
+		$this->db->query("DELETE FROM messages WHERE user_id = ?", array($user_id));
+		$this->db->query("DELETE FROM reviews WHERE user_id = ?", array($user_id));
+		$this->db->query("DELETE FROM reservations WHERE user_id = ?", array($user_id));
+		return $this->db->query("DELETE FROM users where id = ?", array($user_id));
+	}
+
 	function validate($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[255]|is_unique[users.email]');

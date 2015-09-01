@@ -71,6 +71,15 @@ class Guides extends CI_Controller {
 												"ratings" => $ratings));
 	}
 
+	public function remove_guide_action($guide_id){
+		$this->Guide->delete_guide_by_id($guide_id);
+		redirect("/main/admin_dashboard");
+	}
+
+	public function get_all_guides(){
+		return $this->Guide->get_all_guides();
+	}
+
 	public function get_all_guides_locations(){
 		$data['locations'] = $this->Guide->get_all_guides_locations();
 		echo json_encode($data);

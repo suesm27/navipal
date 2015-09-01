@@ -2,7 +2,7 @@
 class Reservation extends CI_Model{
 	function get_all_reservations()
 	{
-		return $this->db->query("select reservations.id, user_id, guide_id, users.name as user_name, guides.name as guide_name, reservations.date from reservations join users on reservations.user_id = users.id join guides on reservations.guide_id = guides.id")->result_array();
+		return $this->db->query("select reservations.id, user_id, guide_id, users.name as user_name, guides.name as guide_name, reservations.date, reservations.confirmation, reservations.created_at, reservations.updated_at from reservations join users on reservations.user_id = users.id join guides on reservations.guide_id = guides.id")->result_array();
 	}
 
 	function get_reservation_by_id($id)
