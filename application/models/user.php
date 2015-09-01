@@ -33,8 +33,8 @@ class User extends CI_Model{
 		$t = time();
 		$now = date("Y-m-d H:i:s",$t);
 		$encrypted_password = md5($now.$user['password']);
-		$query = "INSERT INTO users (name, email, password, created_at, dob) VALUES (?,?,?,?,?)";
-		$values = array($user['name'], $user['email'], $encrypted_password, $now, $user['dob']); 
+		$query = "INSERT INTO users (name, email, password, created_at, updated_at, dob, phone) VALUES (?,?,?,?,?,?,?)";
+		$values = array($user['name'], $user['email'], $encrypted_password, $now, $now, $user['dob'], $user['phone']); 
 		return $this->db->query($query, $values);
 	} 
 

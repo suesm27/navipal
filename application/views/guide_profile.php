@@ -94,7 +94,7 @@
      if($this->session->userdata('user_login')){?>
        <form action="<?php 
          $user_id = $this->session->userdata('current_user_id');
-         echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-08-31"; 
+         echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-09-10"; 
          ?>" method="post">
           <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"

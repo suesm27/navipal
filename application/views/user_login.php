@@ -63,7 +63,7 @@
               </div>
               <div class="form-group">
                <label>Phone Number:</label>
-               <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd" required>
+               <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd" name="phone" required>
               </div>
               <div class="form-group">
                 <label>Date of Birth: </label>

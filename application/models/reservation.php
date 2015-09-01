@@ -13,13 +13,14 @@ class Reservation extends CI_Model{
 	function add_reservation($user_id, $guide_id, $date)
 	{
 		$confirmation_number = rand(100000, 900000);
-		$query = "INSERT INTO reservations (user_id, guide_id, date, confirmation, created_at) VALUES (?,?,?,$confirmation_number, NOW())";
+		$query = "INSERT INTO reservations (user_id, guide_id, date, confirmation, created_at, updated_at) VALUES (?,?,?,$confirmation_number, NOW(), NOW())";
 		$values = array($user_id, $guide_id, $date); 
 		$this->db->query($query, $values);
 		$reservation_id = $this->db->insert_id();
 		return $reservation_id;
 
 	} 
+	
 	function delete_reservation_by_id($id)
 	{
 		$query = "DELETE FROM reservations where id = ?";
