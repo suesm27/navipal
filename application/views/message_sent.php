@@ -70,8 +70,6 @@
     </div>
     <div class="container">
 	<?php
-	var_dump($guide);
-	var_dump($message);
     // Get the PHP helper library from twilio.com/docs/php/install
       require_once('assets/twilio-php/Services/Twilio.php'); // Loads the library
        
