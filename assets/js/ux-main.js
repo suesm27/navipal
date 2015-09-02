@@ -1,3 +1,6 @@
+var array = ["2015-09-05","2015-09-10","2015-10-23"];
+var guide_id = 1;
+
 $(document).ready(function(){
 	var ScrollToSectionHome = "#ScrollToSectionHome";
 	var gotoSection1 = "#ScrollToSection1";
@@ -23,6 +26,17 @@ $(document).ready(function(){
 	scrollTosection(gotoSection3,section3 );
 	scrollTosection(ScrollToSectionHome,sectionHome );
 	
+	
+	$.get("/guides/get_guide_availability_by_guide_id/"+guide_id, function(res) {
+		console.log(res);
+		for(var i=0; i<res.availability.length; i++){
+			array.push(res.availability[i].date);
+		}
+		initDatePicker();
+		console.log(array);
+	}, "json");
+
+	function initDatePicker(){
 	// datepicker
 	$("#datepicker").datepicker({
 			firstDay: 1,
@@ -33,23 +47,26 @@ $(document).ready(function(){
 			// maxDate: "+3D",
 			numberOfMonths: 2,
 
-			beforeShowDay: booked,
+			// beforeShowDay: booked,
+			beforeShowDay: function(date) {
+							    if($.inArray($.datepicker.formatDate('yy-mm-dd', date ), array) > -1)
+							    {
+							        return [true,"","Available"];
+							    }
+							    else
+							    {
+							        return [false,'',"Booked"];
+							    }
+							},
 
 			constraintInput: true,
 
 			onSelect: function(){
 				if ($('#datepicker').datepicker('getDate') !== null){
-				console.log("in there");
   				document.getElementById('checkout').style.display = "block";
   				}	
 			}
 	});
-
-	function booked(theDate){
-			if (theDate.getDay() == 0 || theDate.getDay() == 6)
-				return [false, "", "Weekends disable"];
-
-			return[true, ""];
 	}
 
 	// 	// select picker

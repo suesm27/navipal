@@ -17,5 +17,8 @@ class Availability extends CI_Model{
 		}
 		return true;
 	}
+	function get_guide_availability_by_guide_id($guide_id){
+		return $this->db->query("select date_format(date, '%Y-%m-%d') as date from availability where guide_id = ?", array($guide_id))->result_array();
+	}
 }
 ?>

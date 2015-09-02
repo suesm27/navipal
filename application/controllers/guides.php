@@ -7,6 +7,7 @@ class Guides extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Guide');
 		$this->load->model('Review');
+		$this->load->model('Availability');
 	}
 
 	public function index(){
@@ -92,6 +93,11 @@ class Guides extends CI_Controller {
 
 	public function get_all_guides_reservations(){
 		$data['reservations'] = $this->Guide->get_all_guides_reservations();
+		echo json_encode($data);
+	}
+
+	public function get_guide_availability_by_guide_id($guide_id){
+		$data['availability'] = $this->Availability->get_guide_availability_by_guide_id($guide_id);
 		echo json_encode($data);
 	}
 
