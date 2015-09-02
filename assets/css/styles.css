@@ -29,7 +29,9 @@
 	text-align: center;
 }
 
-
+.med-font{
+	font-size: 0.9em;
+}
 
 /*blue*/
 .bg-color1{
@@ -74,6 +76,9 @@
 .padding-bottom10{
 	padding: 10px;
 }
+.padding20{
+	padding: 20px;
+}
 .margin-bottom-45{
 	margin-bottom: 45px;
 }
@@ -89,6 +94,10 @@
 
 .border-bottom{
 	border-bottom:1px solid #2D2C2C;
+}
+
+.border-bottom-light{
+	border-bottom:1px solid #e0e0e0;
 }
 
 
@@ -120,6 +129,10 @@
 
 .bg-color4{
 	background-color: #fff;
+}
+
+.bg-color5{
+	background-color: #F9F9F9;
 }
 
 h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
@@ -201,7 +214,18 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	height: 100%;
 	bottom: 0px;
 }
+.guide-mesages-container{
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+	/*padding: 45px;*/
+	height: 100%;
+	overflow-y: scroll;
+	
+	
+	text-align: center;
 
+}
 
 
 /*navigation*/
