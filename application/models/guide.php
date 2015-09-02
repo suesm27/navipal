@@ -80,6 +80,11 @@ class Guide extends CI_Model{
 		return $this->db->query($query, $values);
 	}
 
+	function populate_guides_table(){
+		// $query = "INSERT INTO guides (name, description, location, price, dob, phone, email, password, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)";
+		// $values = array($name, $description, $location, $price, $dob, $phone, $email, $password, $time, $time);
+	}
+
 	function validate($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[255]|is_unique[guides.email]');

@@ -7,7 +7,7 @@
       <!-- guide profile info -->
       <div class="text-color4">
         <!-- photo -->
-        <img src='/uploads/<?php echo $guide['image'];?>' width='100' height='100' class='profile-photo'>
+        <img src='/uploads/<?php echo "{$guide['id']}.png";?>' width='100' height='100' class='profile-photo'>
         <!-- name -->
         <h3 class="dash-p"><?php echo "{$guide['name']}"; ?></h3>
         <!-- star rating -->
