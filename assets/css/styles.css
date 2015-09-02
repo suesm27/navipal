@@ -199,6 +199,18 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	
 }
 
+.interactive-booktour-container{
+	width: 60%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 45px;
+	height: 600px;
+	overflow-y: auto;
+	margin: 0px;
+	margin-right: -8px;
+	text-align: center;
+}
+
 .map-container{
 	width: 35%;
 	display: inline-block;
@@ -544,6 +556,8 @@ button.explore:hover{
 		.info-box li p{
 		font-size: 1.4em;
 	}
+
+
 
 	/**********selected********/
 	.styled-select select {

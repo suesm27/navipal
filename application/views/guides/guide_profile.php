@@ -39,110 +39,111 @@
             <p class="inline-block margin10"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $guide['location'];?></p>
           </div>
           <!-- book a tour button -->
-          <div>
-            <?php 
-            if($this->session->userdata('user_login')){
-              ?>
-              <form id="checkout" action="<?php 
-              $user_id = $this->session->userdata('current_user_id');
-              echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-09-10"; 
-              ?>" method="post">
-              <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button "
-              data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-              data-name="Book Your Tour"
-              data-image="/assets/navipal_icon.png"
-              data-description="Your friendly neighborhood guide..."
-              data-billing-address="true"
-              data-amount="<?= $guide['price']*100 ?>"
-              data-label="Book Tour!"
-              data-locale="auto">
-            </script>
-          </form>
 
-          <input type="text" name="datepicker" id="datepicker" placeholder="Check Available Dates">
-          <div class="styled-select">
-           <select>
-            <optgroup label="# People">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </optgroup>
-            
-          </select>
-        </div>
+          <?php 
+          if($this->session->userdata('user_login')){
+            ?>
+            <form id="checkout" action="<?php 
+            $user_id = $this->session->userdata('current_user_id');
+            echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-09-10"; 
+            ?>" method="post">
+            <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button "
+            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+            data-name="Book Your Tour"
+            data-image="/assets/navipal_icon.png"
+            data-description="Your friendly neighborhood guide..."
+            data-billing-address="true"
+            data-amount="<?= $guide['price']*100 ?>"
+            data-label="Book Tour!"
+            data-locale="auto">
+          </script>
+        </form>
 
+        <input type="text" name="datepicker" id="datepicker" placeholder="Check Available Dates">
+        <div class="styled-select">
+         <select>
+          <optgroup label="# People">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </optgroup>
 
+        </select>
+        
       </div>
 
 
     </div>
-  </div>
 
 
-  
-  <!-- message box -->
-  <div class="message-container bg-color2 margin-auto text-center">
-    <div class="container">
-      <form class="form-horizontal" roll='form' action="/guides/message_guide/<?php echo $guide['id'];?>/<?php echo $this->session->userdata('current_user_id') ?>" method='post'>
-        <input type='hidden' name='action' value='message'>
-        <div class="form-group">
-
-          <textarea class="form-control" id="guide-message" rows="3" name="message" placeholder="Leave a message for <?php echo "{$guide['name']}"; ?>" required></textarea>
-        </div> 
-        <div class="form-group">
-          <button type="submit" class="btn btn-lg btn-1 ">Send!</button>
-        </div>
-      </form>    
-      <?php
-    }
-    else{
-      echo "<h4 data-toggle='modal' data-target='#myModal'><a href='#'>";
-      echo "Login to book the tour or message {$guide['name']}";
-      echo "</a></h4>";
-    }
-    ?>
-    <?php 
-    if ($this->session->flashdata('success'))
-    {
-      ?>
-      <div class="alert alert-success">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Nice!</strong>
-        <?php 
-        foreach($this->session->flashdata('success') as $s){
-          echo $s;
-        }
-        ?>
-      </div>
-      <?php
-    }
-    if ($this->session->flashdata('errors'))
-    {
-      ?>
-      <div class="alert alert-danger">
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Error!</strong>
-        <?php 
-        foreach($this->session->flashdata('errors') as $error){
-          echo $error;
-        }
-        ?>
-      </div>
-      <?php
-    }
-    ?>
   </div>
 </div>
-<div class="bg-color4">
 
+
+
+<!-- message box -->
+<div class="message-container bg-color2 margin-auto text-center">
+  <div class="container">
+    <form class="form-horizontal" roll='form' action="/guides/message_guide/<?php echo $guide['id'];?>/<?php echo $this->session->userdata('current_user_id') ?>" method='post'>
+      <input type='hidden' name='action' value='message'>
+      <div class="form-group">
+
+        <textarea class="form-control" id="guide-message" rows="3" name="message" placeholder="Leave a message for <?php echo "{$guide['name']}"; ?>" required></textarea>
+      </div> 
+      <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-1 ">Send!</button>
+      </div>
+    </form>    
+    <?php
+  }
+  else{
+    echo "<h4 data-toggle='modal' data-target='#myModal'><a href='#'>";
+    echo "Login to book the tour or message {$guide['name']}";
+    echo "</a></h4>";
+  }
+  ?>
+  <?php 
+  if ($this->session->flashdata('success'))
+  {
+    ?>
+    <div class="alert alert-success">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Nice!</strong>
+      <?php 
+      foreach($this->session->flashdata('success') as $s){
+        echo $s;
+      }
+      ?>
+    </div>
+    <?php
+  }
+  if ($this->session->flashdata('errors'))
+  {
+    ?>
+    <div class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Error!</strong>
+      <?php 
+      foreach($this->session->flashdata('errors') as $error){
+        echo $error;
+      }
+      ?>
+    </div>
+    <?php
+  }
+  ?>
+</div>
+</div>
+<div class="bg-color4">
+  <!-- messages -->
   <div class="guide-mesages-container bg-color5 padding20">
     <h2 class="text-center">Recent Reviews: </h2>
     <?php       
     foreach($reviews as $review){ 
      ?>
-    <div class="border-bottom-light">
+     <div class="border-bottom-light">
 
 
       <h4><?php echo $review['user_name'];?> says: </h4>
@@ -165,6 +166,13 @@
     <?php    }
     ?>
   </div>
+  <!-- right column -->
+  <div class="interactive-booktour-container">
+    Place your code here
+    
+  </div>
+  <!-- right column ends -->
+
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
