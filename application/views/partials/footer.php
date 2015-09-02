@@ -7,12 +7,6 @@
           <a href='/guides'>Interested in being a guide?</a>
         </div>
         <div class="container">
-          <a href='/reservations'>Show Reservations</a>
-        </div>
-        <div class="container">
-          <a href='/upload'>Upload File</a>
-        </div>
-        <div class="container">
           <a href='/main/admin_dashboard'>Admin Dashboard</a>
         </div>
         <div class="container">

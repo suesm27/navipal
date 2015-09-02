@@ -11,7 +11,7 @@
         <div class="guides-dashboard-header bg-color3 ">
 
          <!-- photo -->
-         <img src='/uploads/<?php echo $guide['image'];?>' width='65' height='65' class='profile-photo'>
+         <img src='/uploads/<?php echo "{$guide['id']}.png";?>' width='65' height='65' class='profile-photo'>
          <!-- name -->
          <p class="dash-p"><?php echo "{$guide['name']}"; ?></p>
          <!-- edit button -->
