@@ -63,11 +63,12 @@
         <input type="text" name="datepicker" id="datepicker" placeholder="Check Available Dates">
         <div class="styled-select">
          <select>
-            <option disabled="disable">#People</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
+            <optgroup label="# People">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </optgroup>
             
          </select>
         </div>
@@ -78,19 +79,20 @@
          
   </div>
 </div>
-<div class="main-container ">
-  <div class="container">
-  
 
+
+  
   <!-- message box -->
+<div class="message-container bg-color2 margin-auto text-center">
+<div class="container">
       <form class="form-horizontal" roll='form' action="/guides/message_guide/<?php echo $guide['id'];?>/<?php echo $this->session->userdata('current_user_id') ?>" method='post'>
         <input type='hidden' name='action' value='message'>
         <div class="form-group">
-          <label>Message: </label>
-          <textarea class="form-control" rows="5" name="message" placeholder="Leave a message for <?php echo "{$guide['name']}"; ?>" required></textarea>
+          
+          <textarea class="form-control" id="guide-message" rows="3" name="message" placeholder="Leave a message for <?php echo "{$guide['name']}"; ?>" required></textarea>
         </div> 
         <div class="form-group">
-          <button type="submit" class="btn btn-lg btn-primary">Send!</button>
+          <button type="submit" class="btn btn-lg btn-1 ">Send!</button>
         </div>
       </form>    
       <?php
@@ -131,7 +133,8 @@
       <?php
     }
     ?>
-  </div>
+ </div>
+ </div>
   <div class="bg-color4">
 
     <div class="col-md-6">
@@ -193,6 +196,6 @@
   </div><!-- end of Modal -->
 
 </div>
-</div>
+
 </body>
 </html>
