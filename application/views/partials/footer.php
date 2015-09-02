@@ -18,6 +18,9 @@
         <div class="container">
           <a href='/populate/populate_reviews_table'>Populate Reviews table (+100 entries)</a>
         </div>
+        <div class="container">
+          <a href='/populate/populate_guides_table'>Populate Guides table (+1 entry)</a>
+        </div>
         </div>
 </div>
 </body>
