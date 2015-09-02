@@ -27,6 +27,7 @@
  					echo "<li id='scroll-test'><a href='/users/logoff'>";
  					echo "Log Off";
  					echo "</a></li>";
+ 					
  				} 
  				if($this->session->userdata('guide_login')){
  					echo "<li id='scroll-test'><a href='/guides/logoff'>";
