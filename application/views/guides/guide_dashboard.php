@@ -21,7 +21,7 @@
         </form>
       </div>
       <div class="">
-
+      <!-- email -->
        <p class="dash-info border-bottom"><span class="glyphicon glyphicon-envelope"></span> <?php echo $guide['email']; ?></p>
        <!-- DOB is not populated correctly into the form field -->
        <!-- <p>Date of Birth: <?php echo $guide['dob']; ?></p> -->

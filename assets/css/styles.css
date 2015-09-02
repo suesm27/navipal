@@ -16,6 +16,9 @@
 	display: inline-block;
 }
 
+.block{
+	display: block;
+}
 .inner-shadow{
 	-webkit-box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
 	-moz-box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
@@ -44,6 +47,9 @@
 
 .text-color1{
 	color: #42b8dd;
+}
+.margin10{
+	margin: 10px;
 }
 
 .right-margin{
