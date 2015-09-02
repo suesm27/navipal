@@ -35,22 +35,34 @@ $(document).ready(function(){
 
 			beforeShowDay: booked,
 
-			constraintInput: true
-		});
+			constraintInput: true,
 
-		function booked(theDate){
+			onSelect: function(){
+				if ($('#datepicker').datepicker('getDate') !== null){
+				console.log("in there");
+  				document.getElementById('checkout').style.display = "block";
+  				}	
+			}
+	});
+
+	function booked(theDate){
 			if (theDate.getDay() == 0 || theDate.getDay() == 6)
 				return [false, "", "Weekends disable"];
 
 			return[true, ""];
-		}
+	}
 
-	// select picker
-	$('.selectpicker').selectpicker({
-      style: 'btn-info',
-      size: 4
-  });
+	// 	// select picker
+	// $('.selectpicker').selectpicker({
+	//       style: 'btn-info',
+	//       size: 4
+	// });
+
+	if ($('#datepicker').datepicker('getDate') === null){
+  		document.getElementById('checkout').style.display = "none";
+	}
 });
+
 
 
 
