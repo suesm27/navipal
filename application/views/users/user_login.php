@@ -108,4 +108,4 @@
     </div>
   </div>  <!--color container close-->
   <!-- footer -->
-  <?php $this->load->view("partials/footer"); ?>
+ 
