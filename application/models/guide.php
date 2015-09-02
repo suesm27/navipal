@@ -13,20 +13,16 @@ class Guide extends CI_Model{
 			return $this->db->query("SELECT * FROM guides WHERE email = ? and password = ?", array($email, $encrypted_password))->row_array();	
 		}
 	}
-
 	function get_all_guides(){
 		return $this->db->query("SELECT id, name, description, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password, created_at, updated_at FROM guides")->result_array();
 	}
-
 	function get_guide_by_id($id)
 	{
 		return $this->db->query("SELECT id, name, description, location, image, price, date_format(dob, '%m/%d/%Y') as dob, phone, email, password FROM guides WHERE id = ?", array($id))->row_array();
 	}
-
 	function get_phone_number_by_id($guide_id){
 		return $this->db->query("SELECT phone FROM guides WHERE id = ?", array($guide_id))->row_array();
 	}
-
 	function get_all_guides_locations(){
 		return $this->db->query("SELECT location FROM guides")->result_array();
 	}
@@ -38,7 +34,6 @@ class Guide extends CI_Model{
 	function get_all_guides_names(){
 		return $this->db->query("SELECT name FROM guides")->result_array();
 	}
-
 	function get_guide_rating_by_id($guide_id){
 		$total = $this->db->query("select sum(star) as stars from reviews WHERE guide_id = ?", array($guide_id))->row_array();
 		$count = $this->db->query("select count(*) as numReviews from reviews WHERE guide_id = ?", array($guide_id))->row_array();
@@ -50,7 +45,6 @@ class Guide extends CI_Model{
 			return $rating;
 		}
 	}
-
 	function get_all_guides_ratings(){
 		$ratings = array();
 		$guides = $this->get_all_guides();
@@ -59,7 +53,6 @@ class Guide extends CI_Model{
 		}
 		return $ratings;
 	}
-
 	function add_guide($guide)
 	{
 		date_default_timezone_set("America/Los_Angeles");
@@ -70,20 +63,17 @@ class Guide extends CI_Model{
 		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob']); 
 		return $this->db->query($query, $values);
 	} 
-
 	function delete_guide_by_id($guide_id){
 		$this->db->query("DELETE FROM messages WHERE guide_id = ?", array($guide_id));
 		$this->db->query("DELETE FROM reviews WHERE guide_id = ?", array($guide_id));
 		$this->db->query("DELETE FROM reservations WHERE guide_id = ?", array($guide_id));
 		return $this->db->query("DELETE FROM guides where id = ?", array($guide_id));
 	}
-
 	function message_guide($guide_id, $user_id, $message){
 		$query = "INSERT INTO messages (guide_id, user_id, message, created_at) VALUES (?,?,?, NOW())";
 		$values = array($guide_id, $user_id, $message);
 		return $this->db->query($query, $values);
 	}
-
 	function populate_guides_table(){
 		for($i=0; $i<10; $i++){
 			$name = $this->getrandomstring(rand(4,7)) . " " . $this->getrandomstring(rand(4,10));
@@ -105,7 +95,6 @@ class Guide extends CI_Model{
 			$this->db->query($query, $values);			
 		}
 	}
-
 	function getrandomstring($length) {
        global $template;
        settype($template, "string");
@@ -120,7 +109,6 @@ class Guide extends CI_Model{
        }
        return $rndstring; 
 	}
-
 	function get_random_city(){
 		$city_names = array(
 	'AL'=> 
@@ -224,12 +212,10 @@ class Guide extends CI_Model{
 	'WY'=> 
 		array('AFTON','AIRPORT ROAD','ALBANY','ALBIN','ALCOVA','ALPINE','ALPINE NORTHEAST','ALPINE NORTHWEST','ALTA','ANTELOPE HILLS','ANTELOPE VALLEY-CRESTVIEW','ARAPAHOE','ARROWHEAD SPRINGS','ARVADA','ATLANTIC CITY','AUBURN','BAGGS','BAIROIL','BAR NUNN','BASIN','BEDFORD','BESSEMER BEND','BIG HORN','BIG PINEY','BONDURANT','BOULDER','BOULDER FLATS','BROOKHURST','BUFFALO','BURLINGTON','BURNS','BYRON','CALPET','CARTER','CASPER','CASPER MOUNTAIN','CENTENNIAL','CHEYENNE','CHUGCREEK','CHUGWATER','CLEARMONT','CLEARVIEW ACRES','CODY','COKEVILLE','CORA','COWLEY','CROWHEART','DANIEL','DAYTON','DEAVER','DIAMONDVILLE','DIXON','DOUGLAS','DUBOIS','EAST THERMOPOLIS','EDEN','EDGERTON','ELK MOUNTAIN','ESTERBROOK','ETHETE','ETNA','EVANSTON','EVANSVILLE','FAIRVIEW','FARSON','FONTENELLE','FORT BRIDGER','FORT LARAMIE','FORT WASHAKIE','FOX FARM-COLLEGE','FRANNIE','GARLAND','GILLETTE','GLENDO','GLENROCK','GRAND ENCAMPMENT','GRANGER','GREEN RIVER','GREYBULL','GROVER','GUERNSEY','HANNA','HARTRANDT','HARTVILLE','HAWK SPRINGS','HILL VIEW HEIGHTS','HOBACK','HOMA HILLS','HUDSON','HULETT','HUNTLEY','HYATTVILLE','JACKSON','JAMES TOWN','JEFFREY CITY','JOHNSTOWN','KAYCEE','KEMMERER','KIRBY','LA BARGE','LA GRANGE','LAKEVIEW NORTH','LANCE CREEK','LANDER','LARAMIE','LINGLE','LITTLE AMERICA','LONETREE','LOST SPRINGS','LOVELL','LUCERNE','LUSK','LYMAN','MCKINNON','MC NUTT','MANDERSON','MANVILLE','MARBLETON','MEADOW ACRES','MEADOW LARK LAKE','MEDICINE BOW','MEETEETSE','MIDWEST','MILLS','MOORCROFT','MOOSE WILSON ROAD','MOUNTAIN VIEW','MOUNTAIN VIEW','NEWCASTLE','NORTH ROCK SPRINGS','OAKLEY','OPAL','OSAGE','OWL CREEK','PARKMAN','PAVILLION','PINE BLUFFS','PINEDALE','PINE HAVEN','POINT OF ROCKS','POWDER RIVER','POWELL','PURPLE SAGE','RAFTER J RANCH','RALSTON','RANCHESTER','RANCHETTES','RAWLINS','RED BUTTE','RELIANCE','RIVERSIDE','RIVERTON','ROBERTSON','ROCK RIVER','ROCK SPRINGS','ROLLING HILLS','SARATOGA','SHERIDAN','SHOSHONI','SINCLAIR','SLATER','SLEEPY HOLLOW','SMOOT','SOUTH FLAT','SOUTH GREELEY','SOUTH PARK','STAR VALLEY RANCH','STORY','SUNDANCE','SUPERIOR','SWEENEY RANCH','TABLE ROCK','TAYLOR','TEN SLEEP','TETON VILLAGE','THAYNE','THE BUTTES','THERMOPOLIS','TORRINGTON','TURNERVILLE','UPTON','VAN TASSELL','VETERAN','VISTA WEST','WAMSUTTER','WARREN AFB','WASHAKIE TEN','WASHAM','WEST RIVER','WESTVIEW CIRCLE','WHEATLAND','WILSON','WINCHESTER','WOODS LANDING-JELM','WORLAND','WRIGHT','YODER','Y-O RANCH',), 
 	);
-
 	$rand_state = array_rand($city_names, 1);
 	$rand_city = array_rand($city_names[$rand_state], 1);
 	return $city_names[$rand_state][$rand_city] . ", " . $rand_state;
 	}
-
 	function validate($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|max_length[255]|is_unique[guides.email]');
@@ -243,7 +229,6 @@ class Guide extends CI_Model{
 			return array(validation_errors());
 		}
 	}
-
 	function validate_basic($post){
 		$this->form_validation->set_rules('name', 'Name', 'trim|max_length[45]|required');
 		$this->form_validation->set_rules('location', 'Location', 'trim|max_length[255]|required');
@@ -257,7 +242,6 @@ class Guide extends CI_Model{
 			return array(validation_errors());
 		}
 	}
-
 	function validate_password($post){
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[45]|matches[passwordconf]');
 		$this->form_validation->set_rules('passwordconf', 'Password Confirmation', 'trim|required');
@@ -267,7 +251,6 @@ class Guide extends CI_Model{
 			return array(validation_errors());
 		}
 	}
-
 	function validate_message($post){
 		$this->form_validation->set_rules('message', 'Message', 'trim|required|max_length[255]');
 		if($this->form_validation->run()) {
@@ -276,7 +259,6 @@ class Guide extends CI_Model{
 			return array(validation_errors());
 		}
 	}
-
 	function update_guide($guide_id, $info)
 	{
 		$guideInfo = $this->get_guide_by_id($guide_id);
