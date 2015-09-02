@@ -92,7 +92,9 @@ class Guides extends CI_Controller {
 
 	public function show_guide_dashboard($guide_id){
 		$guide = $this->Guide->get_guide_by_id($guide_id);
-		$this->load->view('guides/guide_dashboard', array("guide" => $guide));
+		$ratings = $this->Guide->get_all_guides_ratings();
+		$this->load->view('guides/guide_dashboard', array("guide" => $guide,
+														  "ratings" => $ratings));
 	}
 
 	public function edit_guide($guide_id){

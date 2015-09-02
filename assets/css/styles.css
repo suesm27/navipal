@@ -3,6 +3,10 @@
 	margin: 0px;
 }
 
+.margin-auto{
+	margin: 0 auto;
+}
+
 .no-bg{
 	background-color: rgba(0,0,0,0);
 	border-color:rgba(0,0,0,0) ;
@@ -16,6 +20,10 @@
 	-webkit-box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
 	-moz-box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
 	box-shadow: inset 0px 5px 10px -5px rgba(0,0,0,0.78);
+}
+
+.text-center{
+	text-align: center;
 }
 
 
@@ -280,6 +288,13 @@ input[type="date"]{
 	font-size: 1.5em;
 }
 
+.edit-input{
+	background-color: rgba(0,0,0,0);
+	border:none;
+	padding: 0px;
+	margin: 10px auto;
+}
+
 
 
 label{
@@ -436,15 +451,51 @@ button.explore:hover{
 		width: 79%;
 		background-color: #F9F9F9;
 		vertical-align: top;
-		padding: 20px;
+		padding: 90px 20px 20px;
 		margin: 0px 4px;
 		overflow: scroll;
 		height: 100%;
+		text-align: center;
 	}
 
 	.guides-dashboard-header{
 		text-align: center;
 		padding: 20px 20px 5px;
+	}
+
+	.info-box-header{
+		
+		color: #fff;
+		margin: 15px auto 0px;
+		padding: 15px;
+
+	}
+
+	.info-box{
+		background-color: #fff;
+		padding: 20px;
+		border:1px solid #e5e5e5;
+		overflow: scroll;
+		margin: 0px auto 20px;
+		height: 150px;
+
+	}
+
+	.info-box-chart{
+		background-color: #fff;
+		padding: 20px;
+		border:1px solid #e5e5e5;
+		
+		margin: 0px auto 20px;
+		
+	}
+
+	.info-box li{
+		list-style: none;
+	}
+
+		.info-box li p{
+		font-size: 1.4em;
 	}
 
 
