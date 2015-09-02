@@ -24,7 +24,7 @@
         for ($i = 0; $i < $star; $i++)
         {
 ?>
-          <span class="glyphicon glyphicon-star text-color2a"></span>
+          <span class="glyphicon glyphicon-star-empty text-color2a"></span>
 <?php    }
 ?>
           </div>
@@ -127,12 +127,12 @@
         echo "<h4>Rating: ";
         for ($i = 0; $i < $review['star']; $i++)
         {
-          echo "<img src='/assets/star.png' height='25' width='25'>";
+          echo "<span class='glyphicon glyphicon-star text-color2a'></span>";
         }
         $star = 5 - $review['star'];
         for ($i = 0; $i < $star; $i++)
         {
-          echo "<img src='/assets/blank.png' height='25' width='25'>";
+          echo "<span class='glyphicon glyphicon-star-empty text-color2a'></span>";
         }
         echo "</h4>";
       }

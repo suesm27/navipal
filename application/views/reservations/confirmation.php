@@ -42,7 +42,7 @@ type="text/javascript"></script>
         echo "<h2>Reservation made on: {$reservation['created_at']}</h2>";
         echo "<h3>Guide: {$reservation['guide_name']}</h3>";
         echo "<h4>Price: \${$reservation['guide_price']}</h4>";
-        echo "<img src='/uploads/{$reservation['guide_image']}'>";
+        echo "<img src='/uploads/{$reservation['guide_id']}.png'>";
         echo "<h3>User: {$reservation['user_name']}</h3>";
         echo "<h3>Reservation Date: {$reservation['date']}</h3><br>";
         echo "<h3>Payment info:</h3>";
