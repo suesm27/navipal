@@ -31,6 +31,10 @@ class Guide extends CI_Model{
 		return $this->db->query("SELECT location FROM guides")->result_array();
 	}
 
+	function get_all_guides_reservations(){
+		return $this->db->query("select count(*) as numReservations, guide_id, guides.name, guides.price, TRUNCATE(guides.price * count(*),2) as earnings from reservations join guides on guide_id = guides.id group by guide_id")->result_array();
+	}
+
 	function get_all_guides_names(){
 		return $this->db->query("SELECT name FROM guides")->result_array();
 	}
@@ -81,23 +85,25 @@ class Guide extends CI_Model{
 	}
 
 	function populate_guides_table(){
-		$name = $this->getrandomstring(rand(4,7)) . " " . $this->getrandomstring(rand(4,10));
-		$description = "lorem ipsum";
-		$location = $this->get_random_city();
-		$price = rand(1, 200);
-		$datestart = strtotime('1960-09-10');//you can change it to your timestamp;
-		$dateend = strtotime('1995-12-31');//you can change it to your timestamp;
-		$daystep = 86400;
-		$datebetween = abs(($dateend - $datestart) / $daystep);
-		$randomday = rand(0, $datebetween);
-		$dob = date("Y-m-d", $datestart + ($randomday * $daystep));
-		$phone = rand(1000000000, 9999999999);
-		$email = $this->getrandomstring(5) . "@gmail.com";
-		$password = "87a0e339fb7757039a79a375ae6ac906";
-		$time = "2015-09-01 20:17:42";
-		$query = "INSERT INTO guides (name, description, location, price, dob, phone, email, password, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)";
-		$values = array($name, $description, $location, $price, $dob, $phone, $email, $password, $time, $time);
-		$this->db->query($query, $values);
+		for($i=0; $i<10; $i++){
+			$name = $this->getrandomstring(rand(4,7)) . " " . $this->getrandomstring(rand(4,10));
+			$description = "lorem ipsum";
+			$location = $this->get_random_city();
+			$price = rand(1, 200);
+			$datestart = strtotime('1960-09-10');//you can change it to your timestamp;
+			$dateend = strtotime('1995-12-31');//you can change it to your timestamp;
+			$daystep = 86400;
+			$datebetween = abs(($dateend - $datestart) / $daystep);
+			$randomday = rand(0, $datebetween);
+			$dob = date("Y-m-d", $datestart + ($randomday * $daystep));
+			$phone = rand(1000000000, 9999999999);
+			$email = $this->getrandomstring(5) . "@gmail.com";
+			$password = "87a0e339fb7757039a79a375ae6ac906";
+			$time = "2015-09-01 20:17:42";
+			$query = "INSERT INTO guides (name, description, location, price, dob, phone, email, password, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)";
+			$values = array($name, $description, $location, $price, $dob, $phone, $email, $password, $time, $time);
+			$this->db->query($query, $values);			
+		}
 	}
 
 	function getrandomstring($length) {
@@ -221,7 +227,7 @@ class Guide extends CI_Model{
 
 	$rand_state = array_rand($city_names, 1);
 	$rand_city = array_rand($city_names[$rand_state], 1);
-	return $city_names[$rand_state][$rand_city] . "," . $rand_state;
+	return $city_names[$rand_state][$rand_city] . ", " . $rand_state;
 	}
 
 	function validate($post){

@@ -6,6 +6,66 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+  <script type="text/javascript">
+    var names = [];
+    var hardcodenames = ['sue', 'sourabh', 'ray'];
+    $(document).ready(function(){
+      $.get('/guides/get_all_guides_reservations', function(res) {
+        for(var i=0; i<res.reservations.length; i++){
+          console.log(res.reservations[i]);
+          names.push(res.reservations[i].name);
+          console.log(names);
+        }
+      }, "json");
+      $('form').submit(function(){
+        return false;
+      });
+      $(function initialize() {
+            $('#chart').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Earnings by Guide'
+                },
+                subtitle: {
+                    text: 'NaviPal Guides'
+                },
+                xAxis: {
+                    categories: names,
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Earnings ($)'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>${point.y:.1f}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Earnings',
+                    data: [49, 71, 106, 129, 144, 176, 135, 148, 216, 194]
+
+                }]
+            });
+        });
+    });
+  </script>
   <style>
   </style>
   <link rel="stylesheet" type="text/css" href="/assets/style.css">
@@ -119,6 +179,7 @@
           ?>
         </tbody>
       </table>
+    <div id="chart"></div>
     <h3>Manage Guides</h3>
     <table class="table table-striped">
       <thead>

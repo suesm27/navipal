@@ -90,6 +90,11 @@ class Guides extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function get_all_guides_reservations(){
+		$data['reservations'] = $this->Guide->get_all_guides_reservations();
+		echo json_encode($data);
+	}
+
 	public function show_guide_dashboard($guide_id){
 		$guide = $this->Guide->get_guide_by_id($guide_id);
 		$ratings = $this->Guide->get_all_guides_ratings();

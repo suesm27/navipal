@@ -19,13 +19,11 @@
           <span class='glyphicon glyphicon-edit'></span>
           <input type="submit" class='ash-p dash-info edit-input' value="Edit">
         </form>
+        <p class="dash-p"><a href="/main/show_upload_page"><?php echo "Upload Profile Picture"; ?></a></p>
       </div>
       <div class="">
       <!-- email -->
        <p class="dash-info border-bottom"><span class="glyphicon glyphicon-envelope"></span> <?php echo $guide['email']; ?></p>
-       <!-- DOB is not populated correctly into the form field -->
-       <!-- <p>Date of Birth: <?php echo $guide['dob']; ?></p> -->
-
        <!-- tour price -->
        <p class="dash-info border-bottom"><span class="glyphicon glyphicon-credit-card"></span> $<?php echo $guide['price'];?></p>
        <!-- location -->
