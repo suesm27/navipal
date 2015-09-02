@@ -15,6 +15,9 @@
         <div class="container">
           <a href='/main/admin_dashboard'>Admin Dashboard</a>
         </div>
+        <div class="container">
+          <a href='/main/show_facebook_login'>Facebook Login</a>
+        </div>
       </div>
 </div>
 </body>
