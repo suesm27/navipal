@@ -64,6 +64,10 @@
 	margin-top: -51px;
 }
 
+.margin-top60{
+	margin-top: 60px;
+}
+
 .padding-top-60{
 	padding-top: 60px;
 }
@@ -112,6 +116,10 @@
 /*white*/
 .text-color4{
 	color: #fff;
+}
+
+.bg-color4{
+	background-color: #fff;
 }
 
 h1,h2,h3,h4,h5,h6,p, input[type="submit"]{

@@ -5,7 +5,7 @@
     <?php $this->load->view("partials/navigation"); ?>
     <div id="panel" class="bg-color3 margin-top-Negative51 padding-top-60 padding-bottom10">
       <!-- guide profile info -->
-      <div class="text-color4">
+      <div class="text-color4 padding-top-60">
         <!-- photo -->
         <img src='/uploads/<?php echo $guide['image'];?>' width='100' height='100' class='profile-photo'>
         <!-- name -->
@@ -28,17 +28,18 @@
 <?php    }
 ?>
           </div>
-
+          <div class="">
           <!-- email -->
           <p class="inline-block margin10"> <span class="glyphicon glyphicon-envelope"></span> <?php echo $guide['email']; ?> </p>
           <!-- DOB is not populated correctly into the form field -->
           <!-- <p>Date of Birth: <?php echo $guide['dob']; ?></p> -->
-
-          <!-- tour price -->
-          <p class="inline-block margin10"><span class="glyphicon glyphicon-credit-card"></span> $<?php echo $guide['price'];?></p>
-          <!-- location -->
-          <p class="inline-block margin10"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $guide['location'];?></p>
-<!-- book a tour button -->
+            <!-- tour price -->
+            <p class="inline-block margin10"><span class="glyphicon glyphicon-credit-card"></span> $<?php echo $guide['price'];?></p>
+            <!-- location -->
+            <p class="inline-block margin10"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $guide['location'];?></p>
+            <!-- book a tour button -->
+          </div>
+          
 <?php 
           if($this->session->userdata('user_login')){?>
           <form action="<?php 
@@ -58,9 +59,10 @@
         </script>
       </form>
           
+         
   </div>
 </div>
-<div class="main-container">
+<div class="main-container ">
   <div class="container">
   
 
@@ -114,7 +116,7 @@
     }
     ?>
   </div>
-  <div class="container">
+  <div class="bg-color4">
 
     <div class="col-md-6">
       <h2>Recent Reviews: </h2>
