@@ -37,9 +37,9 @@
             <p class="inline-block margin10"><span class="glyphicon glyphicon-credit-card"></span> $<?php echo $guide['price'];?></p>
             <!-- location -->
             <p class="inline-block margin10"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $guide['location'];?></p>
-            <!-- book a tour button -->
           </div>
-          
+            <!-- book a tour button -->
+          <div>
 <?php 
           if($this->session->userdata('user_login')){?>
           <form action="<?php 
@@ -58,6 +58,21 @@
           data-locale="auto">
         </script>
       </form>
+      
+        <input type="text" name="datepicker" id="datepicker" placeholder="Check Available Dates">
+        <div class="styled-select">
+         <select>
+            <option disabled="disable">#People</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            
+         </select>
+        </div>
+   
+     
+      </div>
           
          
   </div>
