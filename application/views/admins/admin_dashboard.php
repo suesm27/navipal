@@ -120,7 +120,8 @@
           ?>
         </tbody>
       </table>
-    <div id="chart"></div>
+    <div class="col-md-6" id="barchart"></div>
+    <div class="col-md-6" id="piechart"></div>
     <h3>Manage Guides</h3>
     <table class="table table-striped">
       <thead>

@@ -26,5 +26,23 @@ class Reservation extends CI_Model{
 		$values = array($id); 
 		return $this->db->query($query, $values);
 	} 
+	function populate_reservations_table()
+	{
+		for($i=0; $i<1000; $i++){
+			$datestart = strtotime('2014-09-01');//you can change it to your timestamp;
+			$dateend = strtotime('2015-09-31');//you can change it to your timestamp;
+			$daystep = 86400;
+			$datebetween = abs(($dateend - $datestart) / $daystep);
+			$randomday = rand(0, $datebetween);
+			$date = date("Y-m-d", $datestart + ($randomday * $daystep));
+			$user_id = rand(1, 42);
+			$guide_id = rand(1,10);
+			$confirmation = rand(100000, 999999);
+			$query = "insert into reservations (user_id, guide_id, date, confirmation, created_at, updated_at) values (?,?,?,?,NOW(), NOW())";
+			$values = array($user_id, $guide_id, $date, $confirmation);
+			$this->db->query($query, $values);
+		}
+		return true;
+	}
 }
 ?>

@@ -8,6 +8,7 @@ class Populate extends CI_Controller {
 		$this->load->model('Review');
 		$this->load->model('Availability');
 		$this->load->model('Guide');
+		$this->load->model('Reservation');
 	}
 	public function index(){
 		
@@ -20,5 +21,8 @@ class Populate extends CI_Controller {
 	}
 	public function populate_guides_table(){
 		$this->Guide->populate_guides_table();
+	}
+	public function populate_reservations_table(){
+		$this->Reservation->populate_reservations_table();
 	}
 }

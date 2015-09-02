@@ -1,14 +1,14 @@
 var names = [];
 var earnings = [];
+var prices = [];
 // var hardcodenames = ['sue', 'sourabh', 'ray'];
 $(document).ready(function(){
   $(function initialize() {
     $.get('/guides/get_all_guides_reservations', function(res) {
       for(var i=0; i<res.reservations.length; i++){
-        // console.log(res.reservations[i]);
         names.push(res.reservations[i].name);
         earnings.push(parseInt(res.reservations[i].earnings));
-        // console.log(earnings);
+        prices.push(parseInt(res.reservations[i].price));
       }
         // Load the fonts
         Highcharts.createElement('link', {
@@ -218,7 +218,7 @@ scrollbar: {
 
     // Apply the theme
     Highcharts.setOptions(Highcharts.theme);
-    $('#chart').highcharts({
+    $('#barchart').highcharts({
       chart: {
         type: 'column'
       },
@@ -235,13 +235,13 @@ scrollbar: {
       yAxis: {
         min: 0,
         title: {
-          text: 'Earnings ($)'
+          text: 'Amount ($)'
         }
       },
       tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-        '<td style="padding:0"><b>${point.y:.1f}</b></td></tr>',
+        '<td style="padding:3px; color:#ffffff; text-align:right"><b>${point.y:.1f}</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -255,11 +255,76 @@ scrollbar: {
       credits: {
         enabled: false
       },
-      series: [{
-        name: 'Earnings by Guide',
+      series: [
+      {
+        name: 'Earning',
         data: earnings
-      }]
+      },
+      {
+        name: 'Pricing',
+        data: prices
+      }
+      ]
     });
+    $('#piechart').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Total Earnings by Percentage'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                name: "Brands",
+                colorByPoint: true,
+                data: [{
+                    name: names[0],
+                    y: earnings[0]
+                }, {
+                    name: names[1],
+                    y: earnings[1],
+                }, {
+                    name: names[2],
+                    y: earnings[2]
+                },
+                {
+                    name: names[3],
+                    y: earnings[3]
+                },
+                {
+                    name: names[4],
+                    y: earnings[4]
+                },
+                {
+                    name: names[5],
+                    y: earnings[5]
+                },
+                {
+                    name: names[6],
+                    y: earnings[6]
+                },
+                {
+                    name: names[7],
+                    y: earnings[7]
+                }
+                ]
+            }]
+        });
   }, "json");
 $('form').submit(function(){
   return false;

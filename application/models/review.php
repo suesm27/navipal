@@ -45,12 +45,10 @@ class Review extends CI_Model{
 			$guide_id = rand(1,10);
 			$star = rand(1,5);
 			$numWords = rand(10, 20);
-			$review = '';
-			for($j=0; $j<$numWords; $j++){
-				$review = $review . $this->getrandomstring(rand(3, 8)) . " ";
-			}
+			$reviews = array('You did a great job showing my family around, thanks!', 'I think your accent is very thick and hard to follow...', 'You are awesome! Thanks again!', 'You know nothing Jon Snow...', 'Where did you get your jacket from? It looks nice', 'Please don’t bring your kids with you on your tour next time.', 'Dude you need a haircut', 'Loved the energy! Great work, will definitely reach out to you again!', 'Your driving made me throw up..', 'I think you can afford to do some more research ahead of time instead of trying to Google from your phone on the fly.', 'Where did you buy your shoes by the way?? I forgot to ask', 'Hey…call me sometime?', 'It’s cool that you still live in your parent’s basement and have time to show people around, how do you manage that?', 'Wanna grab a drink sometime?', 'Yeah...if you could just wear pants next time..that would be great...', 'I forgot to tip you, where do you live?', 'What\'s the deal with you and that guy?', 'You have nice boobs. That is all.', 'You\'re my hero.');
+			$review_key = array_rand($reviews, 1);
 			$query = "insert into reviews (user_id, guide_id, review, created_at, star) values (?,?,?,?,?)";
-			$values = array($user_id, $guide_id, $review, $date, $star);
+			$values = array($user_id, $guide_id, $reviews[$review_key], $date, $star);
 			$this->db->query($query, $values);
 		}
 		return true;
