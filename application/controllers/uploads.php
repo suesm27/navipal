@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Upload extends CI_Controller {
+class Uploads extends CI_Controller {
 
 	function __construct()
 	{
@@ -18,6 +18,8 @@ class Upload extends CI_Controller {
 		echo "upload method";
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'gif|jpg|png';
+		$guide_id = $this->session->userdata['current_guide_id'];
+		$config['file_name'] = "$guide_id";
 		// $config['max_size']	= '1000';
 		// $config['max_width']  = '1024';
 		// $config['max_height']  = '1024';

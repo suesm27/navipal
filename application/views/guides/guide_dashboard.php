@@ -37,7 +37,7 @@
    <!-- dashboard -->
    <div class="guide-dashboard inline-block">
    <!-- login success message -->
-   <!-- I don thing we need success message here  
+  
    <div class="container">
         <?php 
         if ($this->session->flashdata('success'))
@@ -69,8 +69,7 @@
           <?php
         }
         ?>
-      </div>
-      -->
+   
    <!-- dashboard begin -->
      <div class="col-sm-4">
       <h4 class="info-box-header bg-color2">EARNINGS THIS MONTH</h4>
@@ -91,6 +90,7 @@
         
       </div>
     </div>
+
     <div class="col-sm-4">
       <h4 class="info-box-header bg-color2">BEST PRACTICES</h4>
       <div class="info-box">
@@ -105,6 +105,7 @@
           
         </ul>
       </div>
+
     </div>
     
     <div class="info-chart">

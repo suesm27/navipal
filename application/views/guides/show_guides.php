@@ -16,7 +16,7 @@
       foreach($guides as $guide){
 ?>
         <!-- Profile image -->
-      <img class='profile-photo' width='125' height='125' src='/uploads/<?php echo $guide['image'];?>'>
+      <img class='profile-photo' width='125' height='125' src='/uploads/<?php echo "{$guide['id']}.png";?>'>
       <!-- name -->
       <h2 class="guide-name"><a class="text-color4" href='/guides/view_profile/<?php echo $guide['id']?>'><?php echo $guide['name'];?></a></h2>
         <!-- star rating -->

@@ -69,6 +69,7 @@
       ?>
     </div>
     <div class="container">
+      <button class="btn btn-lg btn-info"><a href="/guides/view_profile/<?php echo $guide['id']; ?>">Go Back</a></button>
 	<?php
     // Get the PHP helper library from twilio.com/docs/php/install
       require_once('assets/twilio-php/Services/Twilio.php'); // Loads the library
