@@ -297,7 +297,7 @@ input[type="password"],
 input[type="text"],
 input[type="date"]{
 	border: none;
-	width: 100%;
+	/*width: 100%;*/
 	height: 60px;
 	background-color: #fff;
 	padding: 15px;
@@ -514,6 +514,38 @@ button.explore:hover{
 		.info-box li p{
 		font-size: 1.4em;
 	}
+
+	/**********selected********/
+	.styled-select select {
+   background: transparent;
+   width: 60px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   color: 000;
+   font-size: 1.5em;
+   vertical-align: top;
+   margin-top: 12px;
+   }
+
+   .styled-select {
+   width: 60px;
+   
+   overflow: hidden;
+   background: url("/assets/images/down_arrow_select.png") no-repeat right #fff;
+  
+   border: 1px solid #ccc;
+   height: 60px;
+   display: inline-block;
+   vertical-align: top;
+   border-left: 1px solid grey;
+   }
+
+
 
 
 

@@ -23,7 +23,35 @@ $(document).ready(function(){
 	scrollTosection(gotoSection3,section3 );
 	scrollTosection(ScrollToSectionHome,sectionHome );
 	
+	// datepicker
+	$("#datepicker").datepicker({
+			firstDay: 1,
+			showButtonPanel: true,
+			closeText:"Close",
+
+			minDate: 0,
+			// maxDate: "+3D",
+			numberOfMonths: 2,
+
+			beforeShowDay: booked,
+
+			constraintInput: true
+		});
+
+		function booked(theDate){
+			if (theDate.getDay() == 0 || theDate.getDay() == 6)
+				return [false, "", "Weekends disable"];
+
+			return[true, ""];
+		}
+
+	// select picker
+	$('.selectpicker').selectpicker({
+      style: 'btn-info',
+      size: 4
+  });
 });
+
 
 
 
