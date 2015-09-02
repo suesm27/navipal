@@ -3,7 +3,7 @@
   <body>
     <!-- navigation -->
     <?php $this->load->view("partials/navigation"); ?>
-    <div id="panel" class="bg-color3 margin-top-Negative51 padding-top-60">
+    <div id="panel" class="bg-color3 margin-top-Negative51 padding-top-60 padding-bottom10">
       <!-- guide profile info -->
       <div class="text-color4">
         <!-- photo -->
@@ -38,16 +38,15 @@
           <p class="inline-block margin10"><span class="glyphicon glyphicon-credit-card"></span> $<?php echo $guide['price'];?></p>
           <!-- location -->
           <p class="inline-block margin10"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $guide['location'];?></p>
-
-
-          <?php 
+<!-- book a tour button -->
+<?php 
           if($this->session->userdata('user_login')){?>
           <form action="<?php 
           $user_id = $this->session->userdata('current_user_id');
           echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-09-10"; 
           ?>" method="post">
           <script
-          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          src="https://checkout.stripe.com/checkout.js" class="stripe-button "
           data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
           data-name="Book Your Tour"
           data-image="/assets/navipal_icon.png"
@@ -58,7 +57,14 @@
           data-locale="auto">
         </script>
       </form>
+          
+  </div>
+</div>
+<div class="main-container">
+  <div class="container">
+  
 
+  <!-- message box -->
       <form class="form-horizontal" roll='form' action="/guides/message_guide/<?php echo $guide['id'];?>/<?php echo $this->session->userdata('current_user_id') ?>" method='post'>
         <input type='hidden' name='action' value='message'>
         <div class="form-group">
@@ -77,10 +83,6 @@
       echo "</a></h4>";
     }
     ?>
-  </div>
-</div>
-<div class="main-container">
-  <div class="container">
     <?php 
     if ($this->session->flashdata('success'))
     {
