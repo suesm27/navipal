@@ -1,12 +1,14 @@
 var names = [];
-var hardcodenames = ['sue', 'sourabh', 'ray'];
+var earnings = [];
+// var hardcodenames = ['sue', 'sourabh', 'ray'];
 $(document).ready(function(){
   $(function initialize() {
     $.get('/guides/get_all_guides_reservations', function(res) {
       for(var i=0; i<res.reservations.length; i++){
-        console.log(res.reservations[i]);
+        // console.log(res.reservations[i]);
         names.push(res.reservations[i].name);
-        console.log(names);
+        earnings.push(parseInt(res.reservations[i].earnings));
+        // console.log(earnings);
       }
         // Load the fonts
         Highcharts.createElement('link', {
@@ -255,8 +257,7 @@ scrollbar: {
       },
       series: [{
         name: 'Earnings by Guide',
-        data: [49, 71, 106, 129, 144, 176, 135, 148]
-
+        data: earnings
       }]
     });
   }, "json");
