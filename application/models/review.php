@@ -30,5 +30,44 @@ class Review extends CI_Model{
 		$values = array($id); 
 		return $this->db->query($query, $values);
 	} 
+
+	function populate_reviews_table()
+	{
+		for($i=0; $i<100; $i++){
+			$datestart = strtotime('2014-01-10');//you can change it to your timestamp;
+			$dateend = strtotime('2015-09-03');//you can change it to your timestamp;
+			$daystep = 86400;
+			$datebetween = abs(($dateend - $datestart) / $daystep);
+			$randomday = rand(0, $datebetween);
+
+			$date = date("Y-m-d", $datestart + ($randomday * $daystep));
+			$user_id = rand(22, 42);
+			$guide_id = rand(1,10);
+			$star = rand(1,5);
+			$numWords = rand(10, 20);
+			$review = '';
+			for($j=0; $j<$numWords; $j++){
+				$review = $review . $this->getrandomstring(rand(3, 8)) . " ";
+			}
+			$query = "insert into reviews (user_id, guide_id, review, created_at, star) values (?,?,?,?,?)";
+			$values = array($user_id, $guide_id, $review, $date, $star);
+			$this->db->query($query, $values);
+		}
+		return true;
+	}
+	function getrandomstring($length) {
+       global $template;
+       settype($template, "string");
+       $template = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       settype($length, "integer");
+       settype($rndstring, "string");
+       settype($a, "integer");
+       settype($b, "integer");
+       for ($a = 0; $a <= $length; $a++) {
+               $b = rand(0, strlen($template) - 1);
+               $rndstring .= $template[$b];
+       }
+       return $rndstring; 
+	}
 }
 ?>

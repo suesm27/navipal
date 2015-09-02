@@ -18,7 +18,6 @@ class Reservation extends CI_Model{
 		$this->db->query($query, $values);
 		$reservation_id = $this->db->insert_id();
 		return $reservation_id;
-
 	} 
 	
 	function delete_reservation_by_id($id)

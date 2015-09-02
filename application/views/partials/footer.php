@@ -18,7 +18,13 @@
         <div class="container">
           <a href='/main/show_facebook_login'>Facebook Login</a>
         </div>
-      </div>
+        <div class="container">
+          <a href='/populate/populate_availability_table'>Populate Availability table (+1000 entries)</a>
+        </div>
+        <div class="container">
+          <a href='/populate/populate_reviews_table'>Populate Reviews table (+100 entries)</a>
+        </div>
+        </div>
 </div>
 </body>
 </html>
