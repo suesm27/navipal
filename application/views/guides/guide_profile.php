@@ -41,8 +41,9 @@
             <!-- book a tour button -->
           <div>
 <?php 
-          if($this->session->userdata('user_login')){?>
-          <form action="<?php 
+          if($this->session->userdata('user_login')){
+          ?>
+          <form id="checkout" action="<?php 
           $user_id = $this->session->userdata('current_user_id');
           echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-09-10"; 
           ?>" method="post">
