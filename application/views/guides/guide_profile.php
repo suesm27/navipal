@@ -167,12 +167,14 @@
     ?>
   </div>
   <!-- right column -->
+  <script type="text/javascript" src="../../assets/js/directions.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
   <div class="interactive-booktour-container">
     <div id="control" class="panel">
       <strong>Start:</strong>
       <input id="start" type="text">
       <strong>End:</strong>
-      <input id="end" type="text" value="San Jose, CA">
+      <input id="end" type="text" value="<?php echo $guide['location'];?>">
     </div>
     <div id="directions-panel" class="panel"></div>
     <div id="map"></div>
