@@ -17,16 +17,13 @@ $(document).ready(function(){
   });
 
 
-// enter key
+ // enter key
   $( "#address" ).keypress(function() {
     if (event.keyCode == 13) {
-      
-  console.log( "Handler for .keypress() called." );
+      var geocoder = new google.maps.Geocoder();
+      geocodeAddress(geocoder, map);
     };
 });
-
-
-
 
   // footer
   $(".footer").hide();
