@@ -58,8 +58,9 @@ class Main extends CI_Controller {
 		}
 		else
 		{
+			$guide_id = $this->session->userdata('current_guide_id');
 			$data = array('upload_data' => $this->upload->data());
-			$this->load->view('upload_success', $data);
+			redirect("/guides/show_guide_dashboard/$guide_id");
 		}
 	}
 
