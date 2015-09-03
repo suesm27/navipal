@@ -12,7 +12,7 @@
  		</div>
  		<div id="navbar" class="navbar-collapse collapse">
  			<ul class="nav navbar-nav navbar-right">
- 				<li><a href="/main/show_home">Home</a></li>
+ 				<li><a href="/home">Home</a></li>
  				<li><a href="/main/show_about">About</a></li>
  				<li><a href="/guides/show_guides">Navipals</a></li>
  				<?php 
