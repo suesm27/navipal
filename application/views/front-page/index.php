@@ -56,7 +56,7 @@
     <div class="search-container">
       <form  action="/guides/show_guides" method="post" id="search">
        <!--  <input type="search" name="search" placeholder="Search the city..." class="search"> -->
-        <button type="submit" class="btn btn-lg btn-3 explore"> explore here...<span class="glyphicon glyphicon-map-marker"></span></button>
+        <button type="submit" class="btn btn-lg btn-4 explore"> explore here...<span class="glyphicon glyphicon-map-marker"></span></button>
       </form>
     </div>
   </div>

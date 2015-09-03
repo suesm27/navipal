@@ -1,41 +1,11 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="http://code.highcharts.com/highcharts.js"></script>
-  <script src="http://code.highcharts.com/modules/exporting.js"></script>
-  <script type="text/javascript" src="/assets/js/charts.js"></script>
-  <link rel="stylesheet" type="text/css" href="/assets/style.css">
-  <script type="text/javascript">
-  </script>
-</head>
-<body>
- <nav class="navbar navbar-default navbar-fixed-top">
-   <div class="container">
-     <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
-       <span class="navbar-brand"></span>
-     </div>
-     <div id="navbar" class="navbar-collapse collapse">
-       <ul class="nav navbar-nav">
-        <li></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li></li>
-     </ul>
-   </div><!--/.nav-collapse -->
- </div><!--/.container -->
-</nav>
-<div class="main-container">
+  <!-- header-login -->
+  <?php $this->load->view("partials/header-dashboard"); ?>
+  <body>
+    <!-- navigation -->
+    <?php $this->load->view("partials/navigation"); ?>
+        <div class="bg-color3 margin-top-Negative51 padding-top-60 ">
+    </div>
+
     <div class="container">
     <?php 
       if ($this->session->flashdata('success'))
@@ -68,11 +38,16 @@
       }
       ?>
     </div>
-  <div class="container">
-    <div class="col-md-6" id="barchart"></div>
-    <div class="col-md-6" id="piechart"></div>
+    <!-- charts -->
+    <div class="bg-color2 padding20 margin-auto text-center">
+      <div class="admin-chart" id="barchart"></div>
+      <div class="admin-chart" id="piechart"></div>
+    </div>
+
+  <div class="container margin-auto">
+  <!-- manage guides -->
     <h3>Manage Guides</h3>
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>ID</th>
@@ -100,7 +75,7 @@
           echo "<td>" . $guide['price'] . "</td>";
           echo "<td>" . date("Y-m-d",strtotime($guide['created_at'])) . "</td>";
           echo "<td>" . date("Y-m-d",strtotime($guide['updated_at'])) . "</td>";
-          echo "<td><a href='/guides/edit_guide/{$guide['id']}'>edit</a> | <a href='#' data-toggle='modal' data-target='#myModalGuide{$guide['id']}'>remove</a></td>";
+          echo "<td><a href='/guides/edit_guide/{$guide['id']}'><span class='glyphicon glyphicon-pencil'></span></a> | <a href='#' data-toggle='modal' data-target='#myModalGuide{$guide['id']}'><span class='glyphicon glyphicon-remove'></span></a></td>";
           echo "</tr>";
           ?>
           <!-- Modal -->
@@ -127,7 +102,7 @@
         </tbody>
       </table>
     <h3>Manage Users</h3>
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>ID</th>
@@ -151,7 +126,7 @@
           echo "<td>" . $user['dob'] . "</td>";
           echo "<td>" . date("Y-m-d",strtotime($user['created_at'])) . "</td>";
           echo "<td>" . date("Y-m-d",strtotime($user['updated_at'])) . "</td>";
-          echo "<td><a href='/users/edit_user/{$user['id']}'>edit</a> | <a href='#' data-toggle='modal' data-target='#myModalUser{$user['id']}'>remove</a></td>";
+          echo "<td><a href='/users/edit_user/{$user['id']}'><span class='glyphicon glyphicon-pencil'></span></a> | <a href='#' data-toggle='modal' data-target='#myModalUser{$user['id']}'><span class='glyphicon glyphicon-remove'></span></a></td>";
           echo "</tr>";
           ?>
           <!-- Modal -->
@@ -177,8 +152,11 @@
           ?>
         </tbody>
       </table>
+      </div>
+      <!-- first table contaien ends -->
+      <div class="container margin-auto">
     <h3>Manage Reservations</h3>
-    <table class="table table-striped">
+    <table class="table table-hover">
       <thead>
         <tr>
           <th>ID</th>
@@ -206,7 +184,7 @@
           echo "<td>" . $reservation['confirmation'] . "</td>";
           echo "<td>" . date("Y-m-d",strtotime($reservation['created_at'])) . "</td>";
           echo "<td>" . date("Y-m-d",strtotime($reservation['updated_at'])) . "</td>";
-          echo "<td><a href='/reservations/edit_reservation/{$reservation['id']}'>edit</a> | <a href='#' data-toggle='modal' data-target='#myModalReservation{$reservation['id']}'>remove</a></td>";
+          echo "<td><a href='/reservations/edit_reservation/{$reservation['id']}'><span class='glyphicon glyphicon-pencil'></span></a> | <a href='#' data-toggle='modal' data-target='#myModalReservation{$reservation['id']}'><span class='glyphicon glyphicon-remove'></span></a></td>";
           echo "</tr>";
           ?>
           <!-- Modal -->
@@ -233,7 +211,11 @@
         </tbody>
       </table>
     </div> <!-- /container -->
-  </div>
+
+
 </div>
-</body>
-</html>
+  <!-- footer-->
+
+
+
+

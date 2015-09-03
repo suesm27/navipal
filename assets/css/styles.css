@@ -1,6 +1,6 @@
 /*general*/
 #main-logo{
-	margin:10px;
+	/*margin:10px;*/
 	
 }
 .external-logo{
@@ -57,6 +57,15 @@
 	font-size: 0.9em;
 }
 
+/*table hover bootstrap*/
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #f5bd25;
+}
+
+.table{
+	font-size: 1.1em;
+}
+
 /*blue*/
 .bg-color1{
 	background-color: #42b8dd;
@@ -73,6 +82,10 @@
 
 .btn-3{
 	background-color: #42B8DD;
+}
+
+.btn-4{
+	background-color: #F5BD25;
 }
 
 .text-color1{
@@ -360,7 +373,7 @@
 }
 button .glyphicon-map-marker{
 	
-	background-color: #F5BD25;
+	background-color: #2D2C2C;
 	font-size: 0.9em;
 	padding: 24px;
 	/* border-radius: 10px; */
@@ -468,7 +481,7 @@ button.explore{
 }
 
 .explore:hover{
-	color: #F5BD25;
+	color: #42B8DD;
 }
 
 /*sections*/
@@ -694,6 +707,15 @@ button.explore{
 
 	h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 		font-family: 'Open Sans', sans-serif !important;
+	}
+
+
+	/*adming charts*/
+	.admin-chart{
+		width: 40%;
+		display: inline-block;
+		margin: 20px 20px;
+
 	}
 
 

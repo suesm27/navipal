@@ -1,6 +1,6 @@
 <!-- header -->
 <?php $this->load->view("partials/header-show-guides") ?>
-<body>
+<body style="background-color:#42b8dd;">
   <!-- navigation -->
   <?php $this->load->view("partials/navigation") ?>
   
