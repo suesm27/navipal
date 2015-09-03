@@ -442,6 +442,8 @@ input[type="date"]{
 	color: #42b8dd;
 	font-size: 1.5em;
 }
+
+
 /*eliminates focus blue border from text area and input fields*/
 textarea:focus, input:focus, select:focus{
 	outline: 0;
@@ -735,6 +737,44 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	height: 40%;
 	margin: 0 auto;
 	text-align: center;
+}
+
+/*uploads page*/
+.glyphicon-user{
+	width: 120px;
+	height: 120px;
+	color: #fff;
+	background-color: #e2ded8;
+	margin: 45px auto;
+	padding-top: 15px;
+	font-size: 5.5em;
+	border-radius: 50%;
+	border:1px solid #f7f4ef;
+}
+
+.photo-upload-container{
+	max-width: 400px;
+	padding: 20px;
+	color: #fff;
+	margin-top: 100px;
+
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 

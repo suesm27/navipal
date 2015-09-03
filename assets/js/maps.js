@@ -20,7 +20,7 @@ $(document).ready(function(){
 // enter key
   $( "#address" ).keypress(function() {
     if (event.keyCode == 13) {
-      
+      // add correct function
   console.log( "Handler for .keypress() called." );
     };
 });
