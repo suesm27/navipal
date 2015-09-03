@@ -6,7 +6,7 @@
   
   <div id="panel" class="bg-color3 margin-top-Negative51 padding-top-60">
 
-    <input id="address" class="margin-top30" type="textbox" value="San Jose, CA">
+    <input id="address" class="margin-top30" type="textbox" value="">
     <!-- send when press enter -->
 
 
