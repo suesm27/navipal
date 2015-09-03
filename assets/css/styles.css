@@ -295,6 +295,10 @@
 	box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
 }
 
+.glyphicon-option-horizontal:hover{
+	background-color: #42B8DD;
+}
+
 /*navigation*/
 
 .navbar-default .navbar-nav>li>a/*login styles*/{
@@ -354,7 +358,7 @@
 	z-index: -1;
 
 }
-.glyphicon-map-marker{
+button .glyphicon-map-marker{
 	
 	background-color: #F5BD25;
 	font-size: 0.9em;
@@ -424,6 +428,7 @@ textarea:focus, input:focus, select:focus{
 
 #datepicker{
 	width: 15%;
+	font-size: 1.2em;
 }
 .edit-input{
 	background-color: rgba(0,0,0,0);
