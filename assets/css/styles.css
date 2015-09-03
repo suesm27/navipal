@@ -28,6 +28,9 @@
 .text-center{
 	text-align: center;
 }
+.no-list-style{
+	list-style: none;
+}
 
 .med-font{
 	font-size: 0.9em;
@@ -242,7 +245,30 @@ h1,h2,h3,h4,h5,h6,p, input[type="submit"]{
 	text-align: center;
 
 }
+#footer-icon-container{
+	
+	text-align: center;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
 
+.glyphicon-option-horizontal{
+	width: 65px;
+	height: 65px;
+	background-color: #fff;
+	color: #F5BD25;
+	text-align: center;
+	font-size: 2.5em;
+	/*position: fixed;
+	bottom: 10px;*/
+	padding-top: 17px;
+	/*shadow*/
+	-webkit-box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
+	-moz-box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
+	box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
+}
 
 /*navigation*/
 
@@ -416,7 +442,11 @@ button.explore:hover{
 	margin: 100px auto 0px;
 }
 
-
+.footer-icon-container{
+	position: absolute;
+	width: 100%;
+	bottom: 153px;
+}
 
 @font-face {
 	font-family: "Flaticon";
@@ -454,12 +484,20 @@ button.explore:hover{
 		margin: 0 auto;
 		text-align: center;
 		line-height: 12px;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 0;
+		position:fixed;
+		left:0px;
+		bottom:0px;
+
+		width:100%;
+			/*shadow*/
+	-webkit-box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
+	-moz-box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
+	box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
 
 	}
+
+
+	
 
 	/**********************GUIDES PAGE********************/
 	.main-container {
@@ -523,7 +561,7 @@ button.explore:hover{
 
 	.guides-dashboard-header{
 		text-align: center;
-		padding: 20px 20px 5px;
+		padding: 72px 20px 5px;
 	}
 
 	.info-box-header{
@@ -557,7 +595,7 @@ button.explore:hover{
 		list-style: none;
 	}
 
-		.info-box li p{
+	.info-box li p{
 		font-size: 1.4em;
 	}
 
@@ -565,33 +603,33 @@ button.explore:hover{
 
 	/**********selected********/
 	.styled-select select {
-   background: transparent;
-   width: 60px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   color: 000;
-   font-size: 1.5em;
-   vertical-align: top;
-   margin-top: 12px;
-   }
+		background: transparent;
+		width: 60px;
+		padding: 5px;
+		font-size: 16px;
+		line-height: 1;
+		border: 0;
+		border-radius: 0;
+		height: 34px;
+		-webkit-appearance: none;
+		color: 000;
+		font-size: 1.5em;
+		vertical-align: top;
+		margin-top: 12px;
+	}
 
-   .styled-select {
-   width: 60px;
-   
-   overflow: hidden;
-   background: url("/assets/images/down_arrow_select.png") no-repeat right #fff;
-  
-   border: 1px solid #ccc;
-   height: 60px;
-   display: inline-block;
-   vertical-align: top;
-   border-left: 1px solid grey;
-   }
+	.styled-select {
+		width: 60px;
+
+		overflow: hidden;
+		background: url("/assets/images/down_arrow_select.png") no-repeat right #fff;
+
+		border: 1px solid #ccc;
+		height: 60px;
+		display: inline-block;
+		vertical-align: top;
+		border-left: 1px solid grey;
+	}
 
 
 

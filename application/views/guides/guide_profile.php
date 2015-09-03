@@ -223,5 +223,5 @@
 
 </div>
 
-</body>
-</html>
+  <!-- footer -->
+<?php $this->load->view("partials/footer") ?>

@@ -111,8 +111,8 @@
    </div>
  </div>
 </div>
-<!-- footer -->
-
+<!-- footer -->  <!-- footer -->
+<?php $this->load->view("partials/footer") ?>
 
 
 

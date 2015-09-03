@@ -8,6 +8,7 @@
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?callback=initMap" async defer></script>
 <script type="text/javascript" src="/assets/js/maps.js"></script>
+<script type="text/javascript" src="../../assets/js/ux-main.js"></script>
 
 <!-- <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initialize" async defer></script> -->
 <!--******************** CSS ***************** -->

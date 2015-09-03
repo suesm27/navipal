@@ -24,7 +24,7 @@ $(document).ready(function(){
 	scrollTosection(gotoSection1,section1 );
 	scrollTosection(gotoSection2,section2 );
 	scrollTosection(gotoSection3,section3 );
-	scrollTosection(ScrollToSectionHome,sectionHome );
+	scrollTosection(ScrollToSectionHome,sectionHome ); // home page scroll ends
 	
 	
 	$.get("/guides/get_guide_availability_by_guide_id/"+guide_id, function(res) {
@@ -69,29 +69,22 @@ $(document).ready(function(){
 	});
 	}
 
-	// 	// select picker
-	// $('.selectpicker').selectpicker({
-	//       style: 'btn-info',
-	//       size: 4
-	// });
+
 
 	if ($('#datepicker').datepicker('getDate') === null){
   		document.getElementById('checkout').style.display = "none";
-	}
-});
+	} // date picker ends
+
+	// footer
+	$(".footer").hide();
+	$("#navipal-footer-icon, .navipal-footer-icon").click(function(){
+		$(".footer").slideToggle("fast");
+
+	});
+
+	
+	//$("#navipal-footer-icon").animate({marginTop : "-20px"}, 500);
 
 
+});//document.ready ends
 
-
-
-
-
-
-
-
-
-// $("#ScrollToSection1").click(function() {
-// 	    $('html, body').animate({
-// 	        scrollTop: $("#section1").offset().top
-// 	    }, 1000);
-// 	});
