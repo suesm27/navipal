@@ -15,6 +15,19 @@ $(document).ready(function(){
   $('form').submit(function(){
     return false;
   });
+
+
+// enter key
+  $( "#address" ).keypress(function() {
+    if (event.keyCode == 13) {
+      
+  console.log( "Handler for .keypress() called." );
+    };
+});
+
+
+
+
   // footer
   $(".footer").hide();
   $("#navipal-footer-icon, .navipal-footer-icon").click(function(){
@@ -50,8 +63,8 @@ function initialize(){
       } 
       else {
         alert('Geocode was not successful for the following reason: ' + status);
-     }
-   });
+      }
+    });
   }
 }
 
