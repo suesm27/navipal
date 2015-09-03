@@ -1,5 +1,7 @@
   <!-- header -->
   <?php $this->load->view("partials/header-login"); ?>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
   <body>
     <!-- navigation -->
     <?php $this->load->view("partials/navigation"); ?>
@@ -72,43 +74,54 @@
      <div class="col-sm-4">
       <h4 class="info-box-header bg-color2">EARNINGS THIS MONTH</h4>
       <div class="info-box">
-        <h2>$1,200</h2>
+        <h2><?php 
+        echo "\$$earnings_this_month"; ?></h2>
       </div>
     </div>
     <div class="col-sm-4">
       <h4 class="info-box-header bg-color2">UPCOMING TOURS</h4>
       <div class="info-box">
         <ul>
-          <li><p>Ross Silva</p></li>
-          <li><p>Kelley Schimmel</p></li>
-          <li><p>Tim Draper</p></li>
-          <li><p>Jon Roberts</p></li>
-          <li><p>Jon Roberts</p></li>
+          <?php 
+          foreach($reservations as $reservation){
+            echo "<li><p>" . $reservation['user_name'] . " - " . $reservation['date'] . "</p></li>";
+          }
+           ?>
         </ul>
         
       </div>
     </div>
 
     <div class="col-sm-4">
-      <h4 class="info-box-header bg-color2">BEST PRACTICES</h4>
+      <h4 class="info-box-header bg-color2">Earnings YTD</h4>
       <div class="info-box">
         <ul>
-          <li><p>Info</p></li>
-          <li><p>Info</p></li>
-          <li><p>Info</p></li>
-          <li><p>Info</p></li>
-          <li><p>Info</p></li>
-          <li><p>Info</p></li>
-          <li><p>Info</p></li>
-          
+          <li><h1><?php 
+        echo "\$$earnings_ytd"; ?></h1></li>
         </ul>
       </div>
 
     </div>
+
+     <div class="col-sm-12">
+      <h4 class="info-box-header bg-color2">Messages</h4>
+      <div class="info-box">
+        <div id="messages">
+
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/show_messages.js"></script>
     
-    <div class="info-chart">
-     <img src="../assets/images/chart-sample.png" width="960" class="img-responsive text-center margin-auto" alt="sample chart">
+    <div id="linechart">
    </div>
+
+   <div>
+    <input type="hidden" id="guide_id" value="<?php echo $guide['id']; ?>">
+   </div>
+
+    <script type="text/javascript" src="/assets/js/guide_dashboard_chart.js"></script>
  </div>
 </div>
 <!-- footer -->  <!-- footer -->

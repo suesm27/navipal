@@ -8,6 +8,7 @@ class Guides extends CI_Controller {
 		$this->load->model('Guide');
 		$this->load->model('Review');
 		$this->load->model('Availability');
+		$this->load->model('Reservation');
 	}
 
 	public function index(){
@@ -96,16 +97,34 @@ class Guides extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function get_all_messages_by_guide_id($guide_id){
+		$data['messages'] = $this->Guide->get_all_messages_by_guide_id($guide_id);
+		echo json_encode($data);
+	}
+
 	public function get_guide_availability_by_guide_id($guide_id){
 		$data['availability'] = $this->Availability->get_guide_availability_by_guide_id($guide_id);
+		echo json_encode($data);
+	}
+
+	public function get_month_by_month_earnings_by_guide_id($guide_id){
+		$data['month_by_month_earnings'] = $this->Guide->get_month_by_month_earnings_by_guide_id($guide_id);
 		echo json_encode($data);
 	}
 
 	public function show_guide_dashboard($guide_id){
 		$guide = $this->Guide->get_guide_by_id($guide_id);
 		$ratings = $this->Guide->get_all_guides_ratings();
+		$earnings_this_month = $this->Guide->get_monthly_earning_by_guide_id($guide_id);
+		$earnings_ytd = $this->Guide->get_ytd_earning_by_guide_id($guide_id);
+		$reservations = $this->Reservation->get_reservations_by_guide_id($guide_id);
+		$month_by_month_earnings = $this->Guide->get_month_by_month_earnings_by_guide_id($guide_id);
 		$this->load->view('guides/guide_dashboard', array("guide" => $guide,
-														  "ratings" => $ratings));
+														  "ratings" => $ratings,
+														  "earnings_this_month" => $earnings_this_month,
+														  "earnings_ytd" => $earnings_ytd,
+														  "reservations" => $reservations
+														  ));
 	}
 
 	public function edit_guide($guide_id){
