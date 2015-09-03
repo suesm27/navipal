@@ -41,7 +41,6 @@ function initialize(){
             infowindow.open(map, marker);
           }
         })(marker, i));
-        sleep(10);
       } 
       else {
         alert('Geocode was not successful for the following reason: ' + status);
