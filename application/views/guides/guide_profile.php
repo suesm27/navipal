@@ -200,7 +200,7 @@
         </div>
         <div class="modal-body">
 
-         <form class="form-horizontal" roll='form' action='/Users/signin_action_other/<?php echo $guide['id']; ?>' method='post'>
+         <form class="form-horizontal" roll='form' action='/Users/signin_action_guide_profile/<?php echo $guide['id']; ?>' method='post'>
           <div class="form-group">
             <label>Email: </label>
             <input type="email" class="form-control" name="email" required>

@@ -34,7 +34,7 @@ class Users extends CI_Controller {
 		}
 	}
 
-	public function signin_action_other($guide_id){
+	public function signin_action_guide_profile($guide_id){
 		if($this->session->userdata('guide_login')){
 			$this->session->set_userdata('guide_login', false);
 			$this->session->set_userdata('current_guide_id', null);
@@ -53,6 +53,50 @@ class Users extends CI_Controller {
 			$error[] = 'No matching record found!';
 			$this->session->set_flashdata('errors', $error);
 			redirect("/guides/view_profile/$guide_id");
+		}
+	}
+
+	public function signin_action_show_guides(){
+		if($this->session->userdata('guide_login')){
+			$this->session->set_userdata('guide_login', false);
+			$this->session->set_userdata('current_guide_id', null);
+			$this->session->set_userdata('name', null);
+		}
+		$user = $this->User->get_user($this->input->post());
+		if($user){
+			$this->session->set_userdata('current_user_id', $user['id']);
+			$this->session->set_userdata('name', $user['name']);
+			$this->session->set_userdata('user_login', true);
+			$success[] = 'Login successful!';
+			$this->session->set_flashdata('success', $success);
+			redirect('/guides/show_guides');
+		}
+		else{
+			$error[] = 'No matching record found!';
+			$this->session->set_flashdata('errors', $error);
+			redirect('/guides/show_guides');
+		}
+	}
+
+	public function signin_action_show_about(){
+		if($this->session->userdata('guide_login')){
+			$this->session->set_userdata('guide_login', false);
+			$this->session->set_userdata('current_guide_id', null);
+			$this->session->set_userdata('name', null);
+		}
+		$user = $this->User->get_user($this->input->post());
+		if($user){
+			$this->session->set_userdata('current_user_id', $user['id']);
+			$this->session->set_userdata('name', $user['name']);
+			$this->session->set_userdata('user_login', true);
+			$success[] = 'Login successful!';
+			$this->session->set_flashdata('success', $success);
+			redirect('/main/show_about');
+		}
+		else{
+			$error[] = 'No matching record found!';
+			$this->session->set_flashdata('errors', $error);
+			redirect('/main/show_about');
 		}
 	}
 
