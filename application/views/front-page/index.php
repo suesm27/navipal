@@ -55,8 +55,8 @@
     <!-- <img src="../assets/images/cover1.jpg" class="img-responsive" alt="Traveler taking a photo"> -->
     <div class="search-container">
       <form  action="/guides/show_guides" method="post" id="search">
-        <input type="search" name="search" placeholder="Search the city..." class="search">
-        <button type="submit" class="explore no-bg">explore</button>
+       <!--  <input type="search" name="search" placeholder="Search the city..." class="search"> -->
+        <button type="submit" class="btn btn-lg btn-3 explore">explore</button>
       </form>
     </div>
   </div>

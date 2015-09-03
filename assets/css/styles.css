@@ -47,6 +47,10 @@
 	border-radius: 0px;
 }
 
+.btn-3{
+	background-color: #42B8DD;
+}
+
 .text-color1{
 	color: #42b8dd;
 }
@@ -381,7 +385,7 @@ button.explore-small{
 }
 
 button.explore:hover{
-	color: #42b8dd;
+	color: #F5BD25;
 }
 
 /*sections*/
