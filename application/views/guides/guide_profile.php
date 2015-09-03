@@ -1,5 +1,5 @@
   <!-- header -->
-  <?php $this->load->view("partials/header-login"); ?>
+  <?php $this->load->view("partials/header-guide-profile"); ?>
   <body>
     <!-- navigation -->
     <?php $this->load->view("partials/navigation"); ?>

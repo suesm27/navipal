@@ -10,7 +10,7 @@
 <script type="text/javascript" src="/assets/js/maps.js"></script>
 
 <!-- <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initialize" async defer></script> -->
-<script type="text/javascript" src="../../assets/js/ux-main.js"></script>
+<!-- <script type="text/javascript" src="../../assets/js/ux-main.js"></script> -->
 <!--******************** CSS ***************** -->
 <!-- fonts -->
 <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700' rel='stylesheet' type='text/css'>
