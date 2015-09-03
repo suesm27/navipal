@@ -66,6 +66,23 @@
                 <label>Date of Birth: </label>
                 <input type="date" class="form-control" name="dob" required>
               </div>
+              <div class="form-group">
+                <label>Description: </label>
+                <textarea class="form-control" rows="5" name="description"></textarea>
+                <input type="date" class="form-control" name="description" required>
+              </div>
+              <div class="form-group">
+                <label>Location: </label>
+                <input type="text" class="form-control" name="location" required>
+              </div>
+              <div class="form-group">
+                <label>Price: </label>
+                <input type="text" class="form-control" name="price" required>
+              </div>
+              <div class="form-group">
+                <label>Phone #: </label>
+                <input type="text" class="form-control" name="phone" required>
+              </div>
 
               <div class="form-group">
                 <button type="submit" class="btn btn-lg btn-1 float-right">Register</button>

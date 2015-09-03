@@ -89,14 +89,15 @@ class Guide extends CI_Model{
 		$t = time();
 		$now = date("Y-m-d H:i:s",$t);
 		$encrypted_password = md5($now.$guide['password']);
-		$query = "INSERT INTO guides (name, email, password, created_at, dob) VALUES (?,?,?,?,?)";
-		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob']); 
+		$query = "INSERT INTO guides (name, email, password, created_at, dob, description, location, price, phone) VALUES (?,?,?,?,?,?,?,?,?)";
+		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob'], $guide['description'], $guide['location'], $guide['price'], $guide['phone']); 
 		return $this->db->query($query, $values);
 	} 
 	function delete_guide_by_id($guide_id){
 		$this->db->query("DELETE FROM messages WHERE guide_id = ?", array($guide_id));
 		$this->db->query("DELETE FROM reviews WHERE guide_id = ?", array($guide_id));
 		$this->db->query("DELETE FROM reservations WHERE guide_id = ?", array($guide_id));
+		$this->db->query("DELETE FROM availability WHERE guide_id = ?", array($guide_id));
 		return $this->db->query("DELETE FROM guides where id = ?", array($guide_id));
 	}
 	function message_guide($guide_id, $user_id, $message){
