@@ -7,7 +7,6 @@ $(document).ready(function(){
       for(var i=0; i<res.month_by_month_earnings.length; i++){
         month_by_month_earning.push(parseInt(res.month_by_month_earnings[i].count));
       }
-      console.log(month_by_month_earning);
         // Load the fonts
         Highcharts.createElement('link', {
          href: '//fonts.googleapis.com/css?family=Unica+One',

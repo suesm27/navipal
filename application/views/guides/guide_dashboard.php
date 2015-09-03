@@ -102,6 +102,17 @@
       </div>
 
     </div>
+
+     <div class="col-sm-12">
+      <h4 class="info-box-header bg-color2">Messages</h4>
+      <div class="info-box">
+        <div id="messages">
+
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/js/show_messages.js"></script>
     
     <div id="linechart">
    </div>

@@ -97,6 +97,11 @@ class Guides extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function get_all_messages_by_guide_id($guide_id){
+		$data['messages'] = $this->Guide->get_all_messages_by_guide_id($guide_id);
+		echo json_encode($data);
+	}
+
 	public function get_guide_availability_by_guide_id($guide_id){
 		$data['availability'] = $this->Availability->get_guide_availability_by_guide_id($guide_id);
 		echo json_encode($data);

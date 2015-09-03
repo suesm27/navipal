@@ -31,6 +31,10 @@ class Guide extends CI_Model{
 		return $this->db->query("select count(*) as numReservations, guide_id, guides.name, guides.price, TRUNCATE(guides.price * count(*),2) as earnings from reservations join guides on guide_id = guides.id group by guide_id")->result_array();
 	}
 
+	function get_all_messages_by_guide_id($guide_id){
+		return $this->db->query("select messages.id, user_id, guide_id, users.name as user_name, messages.message, messages.created_at from messages join users on users.id = messages.user_id where guide_id = ?", array($guide_id))->result_array();
+	}
+
 	function get_guide_price_by_id($guide_id){
 		$result = $this->db->query("SELECT price FROM guides where id = ?", array($guide_id))->row_array();
 		return $result['price'];

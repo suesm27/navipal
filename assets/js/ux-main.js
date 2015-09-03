@@ -28,12 +28,10 @@ $(document).ready(function(){
 	
 	
 	$.get("/guides/get_guide_availability_by_guide_id/"+guide_id, function(res) {
-		console.log(res);
 		for(var i=0; i<res.availability.length; i++){
 			array.push(res.availability[i].date);
 		}
 		initDatePicker();
-		console.log(array);
 	}, "json");
 
 	function initDatePicker(){
