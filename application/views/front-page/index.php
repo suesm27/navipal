@@ -38,10 +38,10 @@
   <!-- scroll to navigation -->
   <div class="regular-container">
     <div class="scroll-nav-container" >
-      <a href="#" id="ScrollToSectionHome"><span class="scroll-nav">1</span></a>
-      <a href="#" id="ScrollToSection1"> <span class="scroll-nav">2</span></a>
-      <a href="#" id="ScrollToSection2"><span class="scroll-nav">3</span></a>
-      <a href="#" id="ScrollToSection3"><span class="scroll-nav">4</span></a>
+      <a href="#" id="ScrollToSectionHome"><span class="scroll-nav"><i class="scroll glyphicon glyphicon-map-marker"></i></span></a>
+      <a href="#" id="ScrollToSection1"> <span class="scroll-nav"><i class="scroll flaticon-magnifier72"></i></a>
+      <a href="#" id="ScrollToSection2"><span class="scroll-nav"><i class="scroll flaticon-plussign1"></i></span></a>
+      <a href="#" id="ScrollToSection3"><span class="scroll-nav"><i class="scroll flaticon-travel25"></i></span></a>
     </div>
   </div>
   <!-- cover -->
