@@ -530,6 +530,8 @@ button.explore{
 }
 
 #navipal-footer-icon{
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
 	/*shadow*/
 	-webkit-box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);
 	-moz-box-shadow: 0px -3px 1px 0px rgba(0,0,0,0.36);

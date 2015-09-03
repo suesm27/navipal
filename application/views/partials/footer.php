@@ -1,13 +1,13 @@
 <div id="footer-icon-container" >
   
   <!-- <span class="glyphicon glyphicon-option-horizontal" id="navipal-footer-icon"></span> -->
-  <img src="/assets/navipal_icon.png" alt="navipal logo" width="50" id="navipal-footer-icon">
+  <img src="/assets/navipal_icon.png" alt="navipal logo" width="37" id="navipal-footer-icon">
 </div>
 <div class="footer row">
 <div class="footer-icon-container">
   
  <!--  <span class="glyphicon glyphicon-option-horizontal" id="navipal-footer-icon"></span> -->
- <img src="/assets/navipal_icon.png" alt="navipal logo" width="50" id="navipal-footer-icon">
+ <img src="/assets/navipal_icon.png" alt="navipal logo" width="37" id="navipal-footer-icon">
 </div>
  <div class="container col-md-4">
   <h3 class="text-color4">Links</h3>
