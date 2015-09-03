@@ -12,7 +12,7 @@ class Review extends CI_Model{
 
 	function get_reviews_by_guide_id($id)
 	{
-		return $this->db->query("SELECT reviews.id, user_id, users.name as user_name, guide_id, guides.name as guide_name, reviews.review, reviews.created_at, reviews.star FROM reviews JOIN users on reviews.user_id = users.id JOIN guides on reviews.guide_id = guides.id WHERE guide_id = ?", array($id))->result_array();
+		return $this->db->query("SELECT reviews.id, user_id, users.name as user_name, guide_id, guides.name as guide_name, reviews.review, reviews.created_at, reviews.star FROM reviews JOIN users on reviews.user_id = users.id JOIN guides on reviews.guide_id = guides.id WHERE guide_id = ? order by reviews.created_at DESC", array($id))->result_array();
 	}
 
 	function add_review($user_id, $guide_id, $review, $star)

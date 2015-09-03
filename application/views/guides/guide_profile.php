@@ -140,6 +140,35 @@
 <div class="bg-color4">
   <!-- messages -->
   <div class="guide-mesages-container bg-color5 padding20">
+    <?php 
+      if(!$this->session->userdata('user_login')){
+        echo "<h4 data-toggle='modal' data-target='#myModal'><a href='#'>";
+        echo "Login to leave a review for {$guide['name']}!";
+        echo "</a></h4>";
+      }
+      else{?>
+        <h4>Add a review:</h4>
+          <form class='form-horizontal' roll='form' action='/guides/add_review/<?php echo $this->session->userdata('current_user_id'); ?>/<?php echo $guide['id'];?>' method='post'>
+          <div class="form-group">
+            <textarea class="form-control" rows="3" name="review"></textarea>
+          </div>
+          <div class="form-group">
+              <label>Rating: </label>
+              <select class="form-control" name="rating" value="" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select> stars.
+            </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-primary">Submit Review</button>
+          </div>
+        </form>
+      <?php
+      }
+    ?>
     <h2 class="text-center">Recent Reviews: </h2>
     <?php       
     foreach($reviews as $review){ 
