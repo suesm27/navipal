@@ -8,10 +8,12 @@
  				<span class="icon-bar"></span>
  				<span class="icon-bar"></span>
  			</button>
- 			<!-- <a class="navbar-brand" href="#"><img src="assets/images/navipal_logo_960.png" width="200" class="img-responsive" align="Navipal logo"></a> -->
+ 			<a class="navbar-brand" href="/main/show_home"><img src="../../assets/images/navipal_logo_960.png" width="150" class="img-responsive" align="Navipal logo"></a>
  		</div>
  		<div id="navbar" class="navbar-collapse collapse">
  			<ul class="nav navbar-nav navbar-right">
+ 				<li><a href="/main/show_home">Home</a></li>
+ 				<li><a href="/main/show_about">About</a></li>
  				<?php 
  				if((!$this->session->userdata('user_login')) && (!$this->session->userdata('guide_login'))){
  					echo "<li data-toggle='modal' data-target='#myModal'><a href='#'>";
