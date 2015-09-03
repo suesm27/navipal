@@ -3,7 +3,8 @@
   <body>
     <!-- navigation -->
     <?php $this->load->view("partials/navigation"); ?>
-        <div class="bg-color3 margin-top-Negative51 padding-top-60 ">
+    <!-- nav background hack this should be fixed -->
+    <div class="bg-color3 margin-top-Negative51 padding-top-60 ">
     </div>
 
     <div class="container">
