@@ -10,8 +10,8 @@
     <img src="../../uploads/1.png" class="profile-photo" width="120" height="120">
     <img src="../../uploads/2.png" class="profile-photo" width="120" height="120">
     <img src="../../uploads/3.png" class="profile-photo" width="120" height="120">
-    <h1 class="h1-large text-color4">Interested in becominga guide?</h1>
-    <button class="btn btn-1 btn-lg">Hell yeah!</button>
+    <h1 class="h1-large text-color4">Interested in becoming a guide?</h1>
+    <a href="/guides/index"><button class="btn btn-1 btn-lg">Hell yeah!</button></a>
     </div>
     <div class="small-container padding-top-60">
     <p class="p-large text-color3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
