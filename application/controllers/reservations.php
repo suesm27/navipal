@@ -15,8 +15,9 @@ class Reservations extends CI_Controller {
 		$this->load->view('reservations/show_reservations', array('reservations' => $reservations));
 	}
 
-	public function show_confirmation($user_id, $guide_id, $date){
+	public function show_confirmation($user_id, $guide_id){
 		$post = $this->input->post();
+		$date = $this->input->post('date');
 		$user_phone = $this->User->get_phone_number_by_id($user_id);
 		$guide_phone = $this->Guide->get_phone_number_by_id($guide_id);
 		$reservation_id = $this->add_reservation($user_id, $guide_id, $date);

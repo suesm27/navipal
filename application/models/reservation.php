@@ -17,6 +17,7 @@ class Reservation extends CI_Model{
 
 	function add_reservation($user_id, $guide_id, $date)
 	{
+		$this->db->query("delete from availability where guide_id = ? and date = ?", array($guide_id, $date));
 		$confirmation_number = rand(100000, 900000);
 		$query = "INSERT INTO reservations (user_id, guide_id, date, confirmation, created_at, updated_at) VALUES (?,?,?,$confirmation_number, NOW(), NOW())";
 		$values = array($user_id, $guide_id, $date); 

@@ -45,8 +45,9 @@
             ?>
             <form id="checkout" action="<?php 
             $user_id = $this->session->userdata('current_user_id');
-            echo "/reservations/show_confirmation/$user_id/{$guide['id']}/2015-09-10"; 
+            echo "/reservations/show_confirmation/$user_id/{$guide['id']}"; 
             ?>" method="post">
+            <input type="hidden" id="date" name="date" value="">
             <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button "
             data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
@@ -220,7 +221,10 @@
 
   </div>
 </div><!-- end of Modal -->
-
+   <div>
+    <input type="hidden" id="guide_id" value="<?php echo $guide['id']; ?>">
+   </div>
+<script type="text/javascript" src="../../assets/js/datepicker.js"></script>
 </div>
 
   <!-- footer -->
