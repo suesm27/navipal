@@ -31,6 +31,11 @@ class Guide extends CI_Model{
 		return $this->db->query("select count(*) as numReservations, guide_id, guides.name, guides.price, TRUNCATE(guides.price * count(*),2) as earnings from reservations join guides on guide_id = guides.id group by guide_id")->result_array();
 	}
 
+	function get_guide_price_by_id($guide_id){
+		$result = $this->db->query("SELECT price FROM guides where id = ?", array($guide_id))->row_array();
+		return $result['price'];
+	}
+
 	function get_all_guides_names(){
 		return $this->db->query("SELECT name FROM guides")->result_array();
 	}
@@ -53,6 +58,27 @@ class Guide extends CI_Model{
 		}
 		return $ratings;
 	}
+
+	function get_monthly_earning_by_guide_id($guide_id){
+		$result = $this->db->query("select count(*) as count from reservations where guide_id = ? and date >= LAST_DAY(CURRENT_DATE) + INTERVAL 1 DAY - INTERVAL 1 MONTH
+  AND date < LAST_DAY(CURRENT_DATE) + INTERVAL 1 DAY", array($guide_id))->row_array();
+		$count = $result['count'];
+		$earning = ($count) * ($this->get_guide_price_by_id($guide_id));
+		return $earning;
+	}
+
+	function get_ytd_earning_by_guide_id($guide_id){
+		$result = $this->db->query("select count(*) as count from reservations where guide_id = ? and YEAR(date) = YEAR(CURRENT_DATE) and date < CURRENT_DATE;", array($guide_id))->row_array();
+		$count = $result['count'];		
+		$earning = $count * $this->get_guide_price_by_id($guide_id);
+		return $earning;
+	}
+
+	function get_month_by_month_earnings_by_guide_id($guide_id){
+		$result = $this->db->query("select (count(date)*price) as count from reservations join guides on guides.id = reservations.guide_id where guide_id = ? group by MONTH(date);", array($guide_id))->result_array();
+		return $result;
+	}
+
 	function add_guide($guide)
 	{
 		date_default_timezone_set("America/Los_Angeles");

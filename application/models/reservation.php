@@ -10,6 +10,11 @@ class Reservation extends CI_Model{
 		return $this->db->query("SELECT reservations.id, user_id, users.name as user_name, guide_id, guides.name as guide_name, date_format(date, '%a, %M %D, %Y') as date, confirmation, reservations.created_at, guides.id as guide_id, guides.image as guide_image, guides.price as guide_price FROM reservations JOIN users on reservations.user_id = users.id JOIN guides on reservations.guide_id = guides.id WHERE reservations.id = ?", array($id))->row_array();
 	}
 
+	function get_reservations_by_guide_id($guide_id)
+	{
+		return $this->db->query("select users.name as user_name, date_format(date, '%Y-%m-%d') as date from reservations join users on users.id = reservations.user_id where guide_id = ? and date > CURRENT_DATE order by date asc", array($guide_id))->result_array();
+	}
+
 	function add_reservation($user_id, $guide_id, $date)
 	{
 		$confirmation_number = rand(100000, 900000);
@@ -30,7 +35,7 @@ class Reservation extends CI_Model{
 	{
 		for($i=0; $i<1000; $i++){
 			$datestart = strtotime('2014-09-01');//you can change it to your timestamp;
-			$dateend = strtotime('2015-09-31');//you can change it to your timestamp;
+			$dateend = strtotime('2015-09-01');//you can change it to your timestamp;
 			$daystep = 86400;
 			$datebetween = abs(($dateend - $datestart) / $daystep);
 			$randomday = rand(0, $datebetween);
