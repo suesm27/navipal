@@ -2,6 +2,7 @@
 
 $route['default_controller'] = "main/show_home";
 $route['404_override'] = '';
-$route['home'] = "main/index";
+$route['home'] = "main/show_home";
+$route['guide_dashboard'] = 'guides/show_guide_dashboard/$1';
 
 //end of routes.php
