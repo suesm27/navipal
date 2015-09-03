@@ -69,7 +69,6 @@
               <div class="form-group">
                 <label>Description: </label>
                 <textarea class="form-control" rows="5" name="description"></textarea>
-                <input type="date" class="form-control" name="description" required>
               </div>
               <div class="form-group">
                 <label>Location: </label>
@@ -83,7 +82,6 @@
                 <label>Phone #: </label>
                 <input type="text" class="form-control" name="phone" required>
               </div>
-
               <div class="form-group">
                 <button type="submit" class="btn btn-lg btn-1 float-right">Register</button>
               </div>

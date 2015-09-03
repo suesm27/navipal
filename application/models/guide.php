@@ -89,8 +89,8 @@ class Guide extends CI_Model{
 		$t = time();
 		$now = date("Y-m-d H:i:s",$t);
 		$encrypted_password = md5($now.$guide['password']);
-		$query = "INSERT INTO guides (name, email, password, created_at, dob, description, location, price, phone) VALUES (?,?,?,?,?,?,?,?,?)";
-		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob'], $guide['description'], $guide['location'], $guide['price'], $guide['phone']); 
+		$query = "INSERT INTO guides (name, email, password, created_at, dob, description, location, price, phone, updated_at) VALUES (?,?,?,?,?,?,?,?,?,?)";
+		$values = array($guide['name'], $guide['email'], $encrypted_password, $now, $guide['dob'], $guide['description'], $guide['location'], $guide['price'], $guide['phone'], $now); 
 		return $this->db->query($query, $values);
 	} 
 	function delete_guide_by_id($guide_id){
