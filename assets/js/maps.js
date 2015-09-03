@@ -12,9 +12,9 @@ $(document).ready(function(){
       guides_names.push(res.guides_names[i].name);
     }
   }, "json");
-  $('form').submit(function(){
-    return false;
-  });
+  // $('form').submit(function(){
+  //   return false;
+  // });
 
 
  // enter key

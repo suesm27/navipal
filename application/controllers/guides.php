@@ -170,6 +170,13 @@ class Guides extends CI_Controller {
 		}
 	}
 
+	public function add_review($user_id, $guide_id){
+		$review = $this->input->post('review');
+		$star = $this->input->post('rating');
+		$this->Review->add_review($user_id, $guide_id, $review, $star);
+		redirect("/guides/view_profile/$guide_id");
+	}
+
 	public function logoff()
 	{
 		$this->session->sess_destroy();
