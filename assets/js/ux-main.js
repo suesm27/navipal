@@ -81,7 +81,7 @@ $(document).ready(function(){
 	});
 
 	
-	//$("#navipal-footer-icon").animate({marginTop : "-20px"}, 500);
+	
 
 
 });//document.ready ends

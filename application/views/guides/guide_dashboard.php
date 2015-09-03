@@ -4,13 +4,15 @@
   <script src="http://code.highcharts.com/modules/exporting.js"></script>
   <body>
     <!-- navigation -->
-    <?php $this->load->view("partials/navigation"); ?>
+    <?php $this->load->view("partials/navigation-guide-dashboard"); ?>
     <div class="dashboard-container">
 
       
       <!-- guide sidebar -->
       <div class="guide-profile-dashboard bg-color2 inline-block">
         <div class="guides-dashboard-header bg-color3 ">
+        <!-- logo -->
+        <a href="main/show_home"><img src="assets/navipal_logo.png" width="150" class="img-responsive external-logo" alt="navipal logo"></a>
 
          <!-- photo -->
          <img src='/uploads/<?php echo "{$guide['id']}.png";?>' width='65' height='65' class='profile-photo'>
@@ -103,7 +105,7 @@
 
     </div>
 
-     <div class="col-sm-12">
+     <div class="col-sm-12" >
       <h4 class="info-box-header bg-color2">Messages</h4>
       <div class="info-box">
         <div id="messages">

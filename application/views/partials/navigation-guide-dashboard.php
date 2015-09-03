@@ -8,7 +8,7 @@
  				<span class="icon-bar"></span>
  				<span class="icon-bar"></span>
  			</button>
- 			<a class="navbar-brand" href="/main/show_home"><img src="../../assets/navipal_logo.png" id="main-logo" width="150" class="img-responsive" align="Navipal logo"></a>
+ 			<!-- <a class="navbar-brand" href="/main/show_home"><img src="../../assets/images/navipal_logo_960.png" width="150" class="img-responsive" align="Navipal logo"></a> -->
  		</div>
  		<div id="navbar" class="navbar-collapse collapse">
  			<ul class="nav navbar-nav navbar-right">

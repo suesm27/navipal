@@ -1,124 +1,103 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Login/Registration</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- <style>
- .navbar-brand {
-  padding: 0;
- }
- </style>
- <link rel="stylesheet" type="text/css" href="/assets/style.css">
-</head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <span class="navbar-brand"><img src="/assets/navipal_logo.png" alt="Navipal" height="50" width="140"></span>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li></li>
-        </ul>
-      </div><!--/.nav-collapse -->
-    </div><!--/.container -->
-  </nav>
-  <div class="main-container">
-    <div class="container">
-      <?php 
-      if ($this->session->flashdata('success'))
-      {
-        ?>
-        <div class="alert alert-success">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Nice!</strong>
-          <?php 
-          foreach($this->session->flashdata('success') as $s){
-            echo $s;
-          }
-          ?>
-        </div>
-        <?php
-      }
-      if ($this->session->flashdata('errors'))
-      {
-        ?>
-        <div class="alert alert-danger">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Error!</strong>
-          <?php 
-          foreach($this->session->flashdata('errors') as $error){
-            echo $error;
-          }
-          ?>
-        </div>
-        <?php
-      }
-      ?>
+  <!-- header-login -->
+  <?php $this->load->view("partials/header-login"); ?>
+  <body>
+    <!-- navigation -->
+    <?php $this->load->view("partials/navigation"); ?>
+    <div class="bg-color3 margin-top-Negative51 padding-top-60 ">
     </div>
-    <div class="container">
-      <div class="col-md-6">
-        <h3>Register to be a NaviPal</h3>
-        <form class='form-horizontal' roll='form' action='/guides/register_action' method='post'>
-          <div class="form-group">
-            <label>Name: </label>
-            <input type="text" class="form-control" name="name" required>
+    <div class="bg-color2  padding-top-60 height100">
+
+      <div class="container">
+        <?php 
+        if ($this->session->flashdata('success'))
+        {
+          ?>
+          <div class="alert alert-success">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Nice!</strong>
+            <?php 
+            foreach($this->session->flashdata('success') as $s){
+              echo $s;
+            }
+            ?>
           </div>
-          <div class="form-group">
-            <label>Email: </label>
-            <input type="email" class="form-control" name="email" required>
+          <?php
+        }
+        if ($this->session->flashdata('errors'))
+        {
+          ?>
+          <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong>
+            <?php 
+            foreach($this->session->flashdata('errors') as $error){
+              echo $error;
+            }
+            ?>
           </div>
-          <div class="form-group">
-            <label>Password: </label>
-            <P>*Password should be at least 8 characters.</p>
-            <input type="password" class="form-control" name="password" required>
-          </div>
-          <div class="form-group">
-            <label>Confirm Password: </label>
-            <input type="password" class="form-control" name="passwordconf" required>
-          </div>
-          <div class="form-group">
-            <label>Date of Birth: </label>
-            <input type="date" class="form-control" name="dob" required>
-          </div>
-          
-          <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary">Register</button>
-          </div>
-        </form>
+          <?php
+        }
+        ?>
       </div>
-      <div class="col-md-6">
-        <h3>Login to Dashboard</h3>
-        <form class="form-horizontal" roll='form' action='/guides/signin_action' method='post'>
-          <div class="form-group">
-            <label>Email: </label>
-            <input type="email" class="form-control" name="email" required>
+      <!-- registration form -->
+      <div class="med-container">
+
+        <div class="col-md-6">
+          <h3>Register to be a NaviPal</h3>
+          <form class='form-horizontal right-margin left-margin' roll='form' action='/guides/register_action' method='post'>
+            <div class="form-group">
+              <label>Name: </label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+              <label>Email: </label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+              <label>Password: </label>
+              <P>*Password should be at least 8 characters.</p>
+                <input type="password" class="form-control" name="password" required>
+              </div>
+              <div class="form-group">
+                <label>Confirm Password: </label>
+                <input type="password" class="form-control" name="passwordconf" required>
+              </div>
+              <div class="form-group">
+                <label>Date of Birth: </label>
+                <input type="date" class="form-control" name="dob" required>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-1 float-right">Register</button>
+              </div>
+            </form>
           </div>
-          <div class="form-group">
-            <label>Password: </label>
-            <input type="password" class="form-control" name="password" required>
+
+          <div class="col-md-6">
+            <h3>Login to Dashboard</h3>
+            <form class="form-horizontal right-margin left-margin" roll='form' action='/guides/signin_action' method='post'>
+              <div class="form-group">
+                <label>Email: </label>
+                <input type="email" class="form-control" name="email" required>
+              </div>
+              <div class="form-group">
+                <label>Password: </label>
+                <input type="password" class="form-control" name="password" required>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
+              </div>
+            </form>
+            <div class="container">
+              <a href='/users'>Register as a user</a>
+            </div>
           </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-lg btn-primary">Sign In</button>
-          </div>
-        </form>
+        </div> <!-- /container -->
+        
       </div>
-    </div> <!-- /container -->
-    <div class="container">
-      <a href='/users'>Register as a user</a>
-    </div>
-  </div>
-</body>
-</html>
+    </div> 
+
+    <!-- footer -->
+    <?php
+    $this->load->view("partials/footer");
+    ?>

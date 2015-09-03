@@ -15,6 +15,12 @@ $(document).ready(function(){
   $('form').submit(function(){
     return false;
   });
+  // footer
+  $(".footer").hide();
+  $("#navipal-footer-icon, .navipal-footer-icon").click(function(){
+    $(".footer").slideToggle("fast");
+
+  });
 });
 function initialize(){
   map = new google.maps.Map(document.getElementById('map'), {

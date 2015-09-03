@@ -3,8 +3,9 @@
   <body>
     <!-- navigation -->
     <?php $this->load->view("partials/navigation"); ?>
-
-    <div class="bg-color2 margin-top-Negative51 padding-top-60">
+    <div class="bg-color3 margin-top-Negative51 padding-top-60 ">
+    </div>
+    <div class="bg-color2  padding-top-60">
       <div class="main-container">
        <!--Form error and success messages -->
        <div class="container">
@@ -64,48 +65,50 @@
               <div class="form-group">
                <label>Phone Number:</label>
                <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd" name="phone" required>
-              </div>
-              <div class="form-group">
-                <label>Date of Birth: </label>
-                <input type="date" name="dob" required>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-lg btn-1 float-right">Register</button>
-              </div>
-            </form>
-          </div>
-
-          
-          
+             </div>
+             <div class="form-group">
+              <label>Date of Birth: </label>
+              <input type="date" name="dob" required>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-lg btn-1 float-right">Register</button>
+            </div>
+          </form>
         </div>
 
 
 
-      </div> <!--main container close-->
-      <div class="section-container bg-color3">
-        <div class="small-container">
-
-          <!-- login form -->
-          <h3 class="text-color4">Login</h3>
-          <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
-            <div class="form-group">
-              <label>Email: </label>
-              <input type="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label>Password: </label>
-              <input type="password" name="password" required>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
-            </div>
-          </form>
-
-        </form>
       </div>
-      
 
+
+
+    </div> <!--main container close-->
+    <div class="section-container bg-color3">
+      <div class="small-container">
+        <!-- login form -->
+        <h3 class="text-color4">Login</h3>
+        <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
+          <div class="form-group">
+            <label>Email: </label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>Password: </label>
+            <input type="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-1 float-right">Sign In</button>
+          </div>
+        </form>
+        
+      </div>
     </div>
-  </div>  <!--color container close-->
-  <!-- footer -->
- 
+
+
+
+
+
+    <!-- footer -->
+    <?php
+    $this->load->view("partials/footer");
+    ?>
