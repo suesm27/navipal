@@ -170,6 +170,7 @@
   <script type="text/javascript" src="../../assets/js/directions.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap" async defer></script>
   <div class="interactive-booktour-container">
+  <h2>Get directions to your guide!</h2>
     <div id="control" class="panel">
       <strong>Start:</strong>
       <input id="start" type="text">
