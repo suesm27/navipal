@@ -14,10 +14,4 @@ $(document).ready(function(){
       $('#messages').append(html);
     }
   }, "json");
-
-  console.log(all_html);
-  // $('#messages').html(all_html);;
-  $('form').submit(function(){
-    return false;
-  });
 });
