@@ -15,11 +15,12 @@
       <?php 
       foreach($guides as $guide){
 ?>
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6 col-sm-12">
         <!-- Profile image -->
       <img class='profile-photo' width='125' height='125' src='/uploads/<?php echo "{$guide['id']}.png";?>'>
       <!-- name -->
       <h2 class="guide-name"><a class="text-color4" href='/guides/view_profile/<?php echo $guide['id']?>'><?php echo $guide['name'];?></a></h2>
+       <p class="text-color4"><?php echo $guide['location'];?></p class="text-color4">
         <!-- star rating -->
               <div class="">
       <?php        
@@ -42,7 +43,6 @@
       <!-- description -->
         <!-- <h4 class="text-color4"><?php echo $guide['description'];?></h4> -->
        <!-- <h4>Price: \<?php echo $guide['price'];?>/night</h4> -->
-       <p class="text-color4"><?php echo $guide['location'];?></p class="text-color4">
    </div>
 <?php 
       }
