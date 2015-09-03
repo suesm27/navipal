@@ -5,6 +5,7 @@ function initMap() {
     zoom: 9,
     center: {lat: 37.338208, lng: -121.886329}
   });
+  map.set('scrollwheel', false);
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
