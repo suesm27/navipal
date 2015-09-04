@@ -14,11 +14,7 @@
     <a href="/guides/index"><button class="btn btn-1 btn-lg">Hell yeah!</button></a>
     </div>
     <div class="small-container padding-top-60">
-    <p class="p-large text-color3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. </p>
+    <p class="p-large text-color3">What better way to make money than to share the city you love?! All you need to do is register, login, setup your profile, and start earning! Our growing customer base will always provide a demand for NaviPals all over the globe. Sign up today and share your experience with the world!  </p>
     </div>
       <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
@@ -36,7 +32,7 @@
         </div>
         <div class="modal-body">
 
-         <form class="form-horizontal" roll='form' action='/Users/signin_action_show_about' method='post'>
+         <form class="form-horizontal" roll='form' action='/users/signin_action_show_about' method='post'>
           <div class="form-group">
             <label>Email: </label>
             <input type="email" class="form-control" name="email" required>
