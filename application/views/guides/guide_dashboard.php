@@ -40,7 +40,7 @@
    <div class="guide-dashboard inline-block">
    <!-- login success message -->
   
-   <div class="container">
+   <!-- <div class="container"> -->
         <?php 
         if ($this->session->flashdata('success'))
         {
@@ -117,7 +117,7 @@
     <script type="text/javascript" src="/assets/js/show_messages.js"></script>
     
     <div id="linechart">
-   </div>
+   <!-- </div>  -->
 
    <div>
     <input type="hidden" id="guide_id" value="<?php echo $guide['id']; ?>">
