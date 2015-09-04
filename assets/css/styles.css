@@ -1,7 +1,8 @@
 /*general*/
 #main-logo{
 	/*margin:10px;*/
-
+position: absolute;
+left: 100px;
 }
 a:hover{
 	text-decoration: none;

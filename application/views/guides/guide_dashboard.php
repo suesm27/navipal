@@ -4,7 +4,7 @@
   <script src="http://code.highcharts.com/modules/exporting.js"></script>
   <body>
     <!-- navigation -->
-    <?php $this->load->view("partials/navigation-guide-dashboard"); ?>
+    <?php $this->load->view("partials/navigation"); ?>
     <div class="dashboard-container">
 
       
@@ -12,7 +12,7 @@
       <div class="guide-profile-dashboard bg-color2 inline-block">
         <div class="guides-dashboard-header bg-color3 ">
         <!-- logo -->
-        <a href="main/show_home"><img src="assets/navipal_logo.png" width="150" class="img-responsive external-logo" alt="navipal logo"></a>
+        <!-- <a href="main/show_home"><img src="assets/navipal_logo.png" width="150" class="img-responsive external-logo" alt="navipal logo"></a> -->
 
          <!-- photo -->
          <img src='/uploads/<?php echo "{$guide['id']}.png";?>' width='65' height='65' class='profile-photo'>
