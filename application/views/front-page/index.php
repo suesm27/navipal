@@ -15,7 +15,7 @@
           <!-- login succes and error message will go here -->
           </div>
           <div class="modal-body">
-           <form class="form-horizontal" roll='form' action='/Users/signin_action' method='post'>
+           <form class="form-horizontal" roll='form' action='/users/signin_action' method='post'>
             <div class="form-group">
               <label>Email: </label>
               <input type="email" class="form-control" name="email" required>
