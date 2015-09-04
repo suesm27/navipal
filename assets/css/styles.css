@@ -296,6 +296,18 @@ a:hover{
 	text-align: center;
 
 }
+
+.glyphicon-camera{
+	background-color: #F5BD25;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: 8px;
+	font-size: 1.2em;
+	cursor: pointer;
+
+}
 #footer-icon-container{
 
 	text-align: center;
@@ -460,6 +472,7 @@ textarea:focus, input:focus, select:focus{
 	border:none;
 	padding: 0px;
 	margin: 10px auto;
+	margin-bottom: 0px;
 }
 
 

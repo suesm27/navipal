@@ -23,7 +23,7 @@
           <span class='glyphicon glyphicon-edit'></span>
           <input type="submit" class='ash-p dash-info edit-input' value="Edit">
         </form>
-        <p class="dash-p"><a href="/main/show_upload_page"><?php echo "Upload Profile Picture"; ?></a></p>
+        <p ><a href="/main/show_upload_page"><span class="glyphicon glyphicon-camera text-color4"> </span></a></p>
       </div>
       <div class="">
       <!-- email -->
