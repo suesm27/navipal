@@ -14,7 +14,7 @@
   <ul class="no-list-style">
     <li><a href='/guides'>Login to Guide Dashboard</a></li>
     <br>
-    <li><a href='/main/admin_dashboard'>Admin Dashboard</a></li>
+    <li><a href='/admins'>Login to Admin Dashboard</a></li>
 <!--     <li><a href='/populate/populate_availability_table'>Populate Availability table (+1000 entries)</a></li>
     <li><a href='/populate/populate_reviews_table'>Populate Reviews table (+100 entries)</a></li>
     <li><a href='/populate/populate_guides_table'>Populate Guides table (+1 entry)</a></li>

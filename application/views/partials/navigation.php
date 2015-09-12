@@ -26,7 +26,6 @@
  					echo "Sign Up";
  					echo "</a></li>";
  				} 
-
  				if($this->session->userdata('guide_login')){
  					$guide_id = $this->session->userdata('current_guide_id');
  					echo "<li id='scroll-test'><a href='/guides/show_guide_dashboard/$guide_id'>";
@@ -49,4 +48,3 @@
  		</div><!--/.nav-collapse -->
  	</div>
  </nav>
- 
