@@ -2,7 +2,7 @@
 
 $autoload['packages'] = array();
 
-$autoload['libraries'] = array('database', 'session', 'form_validation', 'encrypt');
+$autoload['libraries'] = array('database', 'session', 'form_validation');
 
 $autoload['helper'] = array('url');
 
